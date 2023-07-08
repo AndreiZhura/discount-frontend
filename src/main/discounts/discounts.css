@@ -1,0 +1,44 @@
+.discounts {
+    margin-top: 50px;
+}
+
+.discount {
+    width: 330px;
+    height: 230px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   
+    border-radius: 10%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.discount__image {
+    width: 80%;
+
+}
+
+.discount__container {
+    width: 100%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgb(199, 190, 190);
+
+}
+
+.discount__like {
+    width: 35px;
+    height: 35px;
+    align-self: center;
+    border: none;
+    border-radius: 50%;
+}
+
+.discount__like_add {
+    background-image: url(../../img/like.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
