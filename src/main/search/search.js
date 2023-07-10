@@ -15,6 +15,7 @@ function Search() {
                 <button className="search-form__button"
 
                 ></button>
+            <button className="account"></button>
             </form>
         </div>
     );
