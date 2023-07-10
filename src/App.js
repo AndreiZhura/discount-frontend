@@ -4,15 +4,20 @@ import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, Split
 import '@vkontakte/vkui/dist/vkui.css';
 import Main from './main/main';
 import AddDiscount from './addDiscount/addDiscount';
+import {Routes , Route } from 'react-router-dom';
+import Register from '../src/auth/Register/Register';
 
 
 const App = () => {
 
-
 	return (
      <>
-	<Main/>
-	<AddDiscount/>
+	<Routes>
+		<Route path='/' element = {
+		<Main/>
+		} />
+		<Route path='/register' element ={<Register/>}/>
+	</Routes>
 	 </>
 		
 	);

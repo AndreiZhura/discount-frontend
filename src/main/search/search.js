@@ -1,6 +1,7 @@
 import React from "react";
 import '../search/search.css';
-import lupa from "../../img/lupa.svg"
+import lupa from "../../img/lupa.svg";
+import { Link } from 'react-router-dom'; 
 
 function Search() {
     return (
@@ -15,7 +16,7 @@ function Search() {
                 <button className="search-form__button"
 
                 ></button>
-            <button className="account"></button>
+            <Link to="/register" className="account"></Link>
             </form>
         </div>
     );
