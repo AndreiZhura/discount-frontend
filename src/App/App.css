@@ -1,0 +1,14 @@
+.page {
+    margin: 0 auto;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color:black;
+    max-width: 1514px;
+    height: 100%;
+    border: 1px solid yellow;
+}
+
+
+
+*{
+    box-sizing: border-box;
+}

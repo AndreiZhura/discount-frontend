@@ -11,11 +11,9 @@ function Main(props) {
     return (
         <>
         <main className="main">
-         <h1 className="main__title">Скидки, акции, промокоды! </h1>
          <Search/>
-         <Discount/>
         </main>
-        <AddDiscount/>
+
         </>
     );
 }

@@ -9,14 +9,11 @@ function Search() {
             <form className="search-form__forma">
                 <img className="lupa" alt="поиск" src={lupa} />
                 <input className="seach-form__input"
-                    placeholder="Скидки"
+                    placeholder="Поиск"
                     type="search"
                     name="search"
                 />
-                <button className="search-form__button"
-
-                ></button>
-            <Link to="/register" className="account"></Link>
+           
             </form>
         </div>
     );

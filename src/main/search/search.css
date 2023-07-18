@@ -1,38 +1,27 @@
 .search-form {
- 
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid red;
 }
+
 .search-form__forma {
     display: flex;
     align-items: center;
+    border: 1px solid green;
+    margin-top: 33px;
 }
+
 .lupa {
+    width: 44px;
+    height: 44px;
 }
+
 .seach-form__input {
-}
-
-.search-form__button{
-    cursor: pointer;
-    background-image: url(../../img/find.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 34px;
-    height: 34px;
-    margin-right: 26px;
-    border-radius: 20px;
-    border: none;
-    transition: opacity 0.5s ease;
-    margin-left: 10px;
-}
-
-.account{
-    width: 60px;
-    height: 60px;
-    margin-right: 26px;
-    border-radius: 20px;
-    border: none;
-    background-image: url(../../img/accaunt.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 60px 60px;
-    background-color: white;
+    width: 599px;
+    height: 69px;
+    border: 4.43px solid #AAA190;
+    border-radius: 34px;
+    margin-right: 30px;
+    font-size: 32px;
+    padding: 0 20px;
 }
