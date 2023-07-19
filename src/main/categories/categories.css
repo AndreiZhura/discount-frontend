@@ -1,0 +1,39 @@
+.categories{
+    border: 1px solid green;
+    width: 100%;
+}
+
+.categories__container{
+    border: 1px solid yellow;
+    width: 1290px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+}
+
+.categories__arrows{
+    border:1px solid green;
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+}
+
+.categories__arrow:first-child{
+    background-image: url('../../img/left_arrows.svg');
+}
+
+.categories__arrow:last-child{
+    background-image: url('../../img/right_arrows.svg');
+}
+
+
+.categories__name{
+    border: 1px solid green;
+    width: 595px;
+    height: 44px;
+    background-color: #AAA190;
+    border-radius: 11px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+
