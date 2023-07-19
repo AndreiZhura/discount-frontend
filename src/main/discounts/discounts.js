@@ -14,7 +14,7 @@ function Discount() {
                 </div>
                 <div className="discount__container">
                     <h3 className="discount__title">
-                        Название скидки
+                        Пятерочка
                     </h3>
                     <button className="discount__like discount__like_add"></button>
                 </div>

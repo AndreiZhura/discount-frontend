@@ -9,7 +9,6 @@
     padding-top: 70px;
     padding-bottom: 10px;
     margin-bottom: 80px;
-    border: 1px solid green;
 }
 
 .discount:first-child {
@@ -26,12 +25,10 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
-    border: 1px solid red;
 }
 
 .one {
     position: relative;
-    border: 1px solid yellow;
     width: 100%;
     height: 100%;
 }
@@ -44,6 +41,7 @@
     width: 38px;
     height: 38px;
     border: none;
+    background-color: white;
     background-image: url('../../img/setting.svg');
     background-position: center;
     background-repeat: no-repeat;
@@ -68,17 +66,27 @@
 }
 
 .discount__like {
-    width: 35px;
-    height: 35px;
-    align-self: center;
-    border: none;
-    border-radius: 50%;
-}
-
-.discount__like_add {
     background-image: url(../../img/like.svg);
     background-repeat: no-repeat;
     background-position: center;
+    background-color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    align-self: center;
+}
+
+
+.discount__like_add {
+    position: relative;
+    top: -5px;
+    right: -10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 46px;
+    background-image: url(../../img/likeAdd.svg);
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
 }
 
 @media screen and (max-width:1279px) {
