@@ -13,7 +13,6 @@ function Search() {
                     type="search"
                     name="search"
                 />
-           
             </form>
         </div>
     );

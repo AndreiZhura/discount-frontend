@@ -12,6 +12,7 @@ function Main(props) {
         <>
         <main className="main">
          <Search/>
+         <Discount/>
         </main>
 
         </>

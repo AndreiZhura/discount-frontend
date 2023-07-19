@@ -4,39 +4,58 @@
     margin-right: auto;
     display: grid;
     row-gap: 30px;
-    column-gap: 24.3px;
+    column-gap: 55.3px;
     grid-template-columns: 1fr 1fr 1fr;
     padding-top: 70px;
     padding-bottom: 10px;
     margin-bottom: 80px;
+    border: 1px solid green;
+}
+
+.discount:first-child {
+    margin-left: 45px;
 }
 
 .discount {
-    width: 330px;
-    height: 230px;
-    margin-top: 30px;
-    margin-left: 30px;
-    border-radius: 10%;
+    width: 325px;
+    height: 239px;
+    margin-top: 25px;
+    border-radius: 25% 0% 25% 0%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    border: 1px solid red;
 }
 
-.discount__delete {
+.one {
     position: relative;
-    background-color: transparent;
-    cursor: pointer;
-    margin-top: 10px;
-    left: 135px;
+    border: 1px solid yellow;
+    width: 100%;
+    height: 100%;
+}
+
+.discount__setting {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    left: 260px;
+    width: 38px;
+    height: 38px;
     border: none;
-    font-size: 16px;
+    background-image: url('../../img/setting.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .discount__image {
-    width: 80%;
-
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
 }
 
 .discount__container {
@@ -68,7 +87,8 @@
         row-gap: 15px;
         column-gap: 10px;
     }
-    .movies-buttons{
+
+    .movies-buttons {
         width: 92.5vw;
         margin: 0 auto;
     }
@@ -95,14 +115,15 @@
         margin-bottom: 71px;
     }
 
-    
+
 }
 
 @media screen and (max-width:766px) {
     .discounts {
         grid-template-columns: 1fr;
     }
-    .movies-buttons{
+
+    .movies-buttons {
 
         width: calc(100vw - 2 * 3.75vw);
 
@@ -115,14 +136,14 @@
 @media screen and (max-width:425px) {
     .discounts {
         width: 99%;
-       
+
         padding-top: 41px;
         row-gap: 9px;
     }
 
     .movies-buttons__button {
-      width: 236px;
-      height: 36px;
+        width: 236px;
+        height: 36px;
     }
 }
 
@@ -130,5 +151,5 @@
     .discounts {
         row-gap: 16px;
         margin-bottom: 81px;
-    }   
+    }
 }
