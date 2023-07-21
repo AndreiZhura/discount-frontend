@@ -13,6 +13,7 @@ function Main(props) {
         <main className="main">
          <Search/>
          <Categories/>
+         <Categories/>
         </main>
 
         </>
