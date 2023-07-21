@@ -94,4 +94,8 @@
     background-position: 0px 5px;
 }
 
-
+.discount__add:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-delay: 0.5s;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import './main.css';
 import Search from "./search/search";
 import Categories from "./categories/categories";
-import AddDiscount from '../addDiscount/addDiscount';
+import AddCategories from "./addCategories/addCategories";
 
 
 
@@ -14,6 +14,7 @@ function Main(props) {
          <Search/>
          <Categories/>
          <Categories/>
+         <AddCategories/>
         </main>
 
         </>

@@ -1,6 +1,6 @@
 import React from "react";
-import '../discount/discount'
-import './addDiscount';
+import '../discounts/discounts'
+
 import addDiscount from '../../img/addDiscount.svg'
 
 function AddDiscount(){
