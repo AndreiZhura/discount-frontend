@@ -1,0 +1,23 @@
+.settings {
+    width: 100%;
+    height: 100%;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+
+}
+.setting {
+    border: 1px solid red;
+    width: 745px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+}
+.setting__logo {
+    width: 745px;
+    display:flex;
+    gap: 20px;
+}
+.setting__text {
+}
