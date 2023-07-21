@@ -1,7 +1,7 @@
 import React from "react";
 import './discount';
 import pyaterochka from '../../img/pyaterochka.webp'
-import addDiscount from '../../img/addDiscount.svg'
+
 
 function Discount() {
     return (
