@@ -17,7 +17,7 @@ function SettingsDiscount() {
                     <img className="input-file-img" src={addPictures} />
                     <label for="add-file" className="input__file-label">Добавить картинку</label>
                 </div>
-                <input type="text" className="input__text" />
+                <textarea className="input__text" placeholder="Описание данного сервиса..."></textarea>
                 <input type="text" />
                 <input type="date" />
                 <input type="text" />
