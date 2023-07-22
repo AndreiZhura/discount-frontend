@@ -6,17 +6,23 @@ import '@vkontakte/vkui/dist/vkui.css';
 import Main from '../main/main';
 //import AddDiscount from '../addDiscount/addDiscount';
 import { Routes, Route } from 'react-router-dom';
-import Register from '../auth/Register/Register';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
 import Footer from '../main/footer/footer';
+import Register from '../auth/Register/Register.js';
+import Login from '../auth/Login/Login.js'
+
 
 
 const App = () => {
 
 	return (
 		<>
-			<SettingsDiscount />
-			<Footer/>
+			<Routes>
+				<Route path="/" element={<Main />} />
+				<Route path="/setting" element={<SettingsDiscount />} />
+				<Route path="/signup" element={<Register />} />
+				<Route path="/signin" element={<Login />} />
+			</Routes>
 		</>
 
 	);
