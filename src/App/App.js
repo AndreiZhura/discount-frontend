@@ -8,6 +8,7 @@ import Main from '../main/main';
 import { Routes, Route } from 'react-router-dom';
 import Register from '../auth/Register/Register';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
+import Footer from '../main/footer/footer';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
 	return (
 		<>
 			<SettingsDiscount />
+			<Footer/>
 		</>
 
 	);

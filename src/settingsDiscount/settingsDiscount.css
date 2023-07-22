@@ -4,7 +4,6 @@
     border: 1px solid green;
     display: flex;
     justify-content: center;
-
 }
 
 .setting {
@@ -17,6 +16,7 @@
 }
 
 .setting__logo {
+    border: 1px solid hotpink;
     width: 745px;
     display: flex;
     gap: 20px;
@@ -68,7 +68,7 @@
     cursor: pointer;
 }
 
-.input__text{
+.input__text {
     width: 745px;
     height: 245.626708984375px;
     border-radius: 10.149864196777344px;
@@ -77,4 +77,127 @@
     background-color: #F1F2F6;
     padding-top: 10px;
     padding-left: 10px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.input__add-text {
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #671309;
+    border: none;
+    background-color: white;
+    align-self: flex-start;
+}
+
+.input__promocode {
+    display: flex;
+    gap: 10px;
+}
+
+.input__add-promocode {
+    width: 460.8038024902344px;
+    height: 91.34877014160156px;
+    border-radius: 10.149864196777344px;
+    background-color: #F1F2F6;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 20px;
+
+}
+
+.input__add-date {
+    width: 233.44686889648438px;
+    height: 91.34877014160156px;
+    border-radius: 10.149864196777344px;
+    background-color: #F1F2F6;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.input__button-promocode {
+    height: 31px;
+    width: 100%;
+    font-family: Inter;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    color: #671309;
+    text-align: left;
+    background-image: url('../img/plus.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    border: none;
+    background-color: white;
+}
+
+.input__add-link {
+    width: 745px;
+    height: 91.34877014160156px;
+    border-radius: 10.149864196777344px;
+    box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
+    background-color: #F1F2F6;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.input__barcode {
+    width: 745px;
+    height: 284.1961975097656px;
+    border-radius: 10.149864196777344px;
+    background: #F1F2F6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input__barcode-add {
+    display: none;
+}
+
+.input-barcode-img {}
+
+.input__file-label {}
+
+
+.setting__buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.setting__button {
+    width: 351.1852722167969px;
+    height: 62.92915344238281px;
+    border-radius: 6.08991813659668px;
+    box-shadow: 2.029972791671753px 4.059945583343506px 8.119891166687012px 0px #00000073;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
 }
