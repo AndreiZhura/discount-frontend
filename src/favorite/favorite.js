@@ -1,9 +1,9 @@
 import React from "react";
-import './favorites.css';
-import Discount from "../discount/discount";
-import arrowsDown from '../../img/arrow_to_down.svg'
+import './favorite.css';
+import Discount from "../main/discount/discount";
+import arrowsDown from '../img/arrow_to_down.svg'
 
-function Favorites() {
+function Favorite() {
     return (
         <div className="favorites">
          <div className="categories__container ">
@@ -24,4 +24,4 @@ function Favorites() {
     );
 }
 
-export default Favorites;
+export default Favorite;

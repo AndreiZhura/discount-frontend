@@ -10,6 +10,7 @@ import SettingsDiscount from '../settingsDiscount/settingsDiscount';
 import Footer from '../main/footer/footer';
 import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
+import Favorites from '../favorites/favorites';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
 				<Route path="/setting" element={<SettingsDiscount />} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
+				<Route path="/favorites" element={<Favorites />} />
 			</Routes>
 		</>
 
