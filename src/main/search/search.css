@@ -17,18 +17,46 @@
     margin-right: 24px;
 }
 
-.seach-form__input {
+.seach-form__search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
     width: 599px;
     height: 69px;
     border: 4.43px solid #AAA190;
     border-radius: 34px;
     margin-right: 52px;
     padding: 0 20px;
+}
+
+.seach-form__input{
+   
     font-family: Inter;
     font-size: 27px;
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
     text-align: left;
+    border: none;
+    border-radius: 10px;
+    outline:none;
+}
 
+.search-form__enter{
+    background-image: url(../../img/enter.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    border: none;
+    background-color: white;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+.search-form__enter:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-delay: 0.2s;
 }
