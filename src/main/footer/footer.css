@@ -1,4 +1,5 @@
 .footer {
+    position: relative;
     width: 1290px;
     margin-left: auto;
     margin-right: auto;
@@ -54,4 +55,16 @@
     text-align: center;
     color: white;
     border: none;
+}
+
+.secret-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+}
+.secret-button__link {
+    color: white;
 }

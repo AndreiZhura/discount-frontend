@@ -1,0 +1,5 @@
+.categories__name-arrows:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition-delay: 0.5s;
+}

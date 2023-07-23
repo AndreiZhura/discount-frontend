@@ -11,6 +11,7 @@ import Footer from '../main/footer/footer';
 import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Favorites from '../favorites/favorites';
+import Profile from '../auth/Profile/Profile.js';
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
 				<Route path="/setting" element={<SettingsDiscount />} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
+				<Route path="/profile" element={<Profile />} />
 				<Route path="/favorites" element={<Favorites />} />
 			</Routes>
 		</>
