@@ -14,7 +14,6 @@ function Main(props) {
             <main className="main">
                 <Search />
                 <Categories />
-                <Categories />
                 <AddCategories />
             </main>
             <Footer />

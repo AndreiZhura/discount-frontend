@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 function Profile() {
   return (
     <>
-
     <section className="profile">
       <div className="profile-main">
         <h1 className="profile__title">Привет, Виталий!</h1>
