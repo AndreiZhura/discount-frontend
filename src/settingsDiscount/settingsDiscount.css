@@ -6,17 +6,14 @@
 }
 
 .setting {
-    width: 800px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
+    margin-top: 55px;
+    width: 745px;
 }
 
 .setting__logo {
     width: 745px;
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .setting__text {
@@ -27,9 +24,11 @@
     letter-spacing: 0em;
     text-align: left;
     color: #520005;
+
 }
 
 .input__file {
+    margin-top: 0;
     width: 745px;
     height: 298.406005859375px;
     border-radius: 10.149864196777344px;
@@ -38,7 +37,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 20px;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
+    margin-bottom: 25px;
 
 }
 
@@ -57,7 +58,6 @@
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: left;
     width: 231px;
     color: #000000;
     opacity: 40%;
@@ -72,15 +72,14 @@
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
     border: none;
     background-color: #F1F2F6;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-top: 21px;
+    padding-left: 33px;
     font-family: Inter;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: left;
-
+    margin-bottom: 122px;
 }
 
 .input__add-text {
@@ -94,11 +93,13 @@
     border: none;
     background-color: white;
     align-self: flex-start;
+    margin-bottom: 103px;
 }
 
 .input__promocode {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 18px;
 }
 
 .input__add-promocode {
@@ -111,9 +112,7 @@
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: left;
-    padding-left: 20px;
-
+    padding-left: 28px;
 }
 
 .input__add-date {
@@ -126,7 +125,7 @@
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0em;
-    text-align: left;
+    padding-left: 32px;
 }
 
 .input__button-promocode {
@@ -144,6 +143,9 @@
     background-position: right;
     border: none;
     background-color: white;
+    padding-left: 30px;
+    margin-bottom: 38px;
+
 }
 
 .input__add-link {
@@ -159,9 +161,11 @@
     letter-spacing: 0em;
     text-align: left;
     padding-left: 30px;
+    margin-bottom: 27px;
 }
 
 .input__barcode {
+    position: relative;
     width: 745px;
     height: 284.1961975097656px;
     border-radius: 10.149864196777344px;
@@ -170,20 +174,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 68px;
 }
 
 .input__barcode-add {
     display: none;
 }
 
-.input-barcode-img {}
+.input__file-barcode {
+    position: absolute;
+    top: 27px;
+    left: 30px;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+    opacity: 40%;
+}
 
-.input__file-label {}
+.input-barcode-img {
+    margin-top: 0px;
+}
 
 
 .setting__buttons {
     display: flex;
-    gap: 10px;
+    margin-bottom: 50px;
 }
 
 .setting__button {
@@ -191,10 +209,16 @@
     height: 62.92915344238281px;
     border-radius: 6.08991813659668px;
     box-shadow: 2.029972791671753px 4.059945583343506px 8.119891166687012px 0px #00000073;
+    border: none;
     font-family: Inter;
     font-size: 24px;
     font-weight: 400;
     line-height: 29px;
     letter-spacing: 0em;
     text-align: center;
+    color: #671309;
+}
+
+.setting__button:first-child{
+    margin-right: 34px;
 }
