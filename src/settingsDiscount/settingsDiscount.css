@@ -2,7 +2,13 @@
     --width745: 745px;
     --width700: 700px;
     --width650: 650px;
-    --width600: 600px
+    --width600: 600px;
+    --width550: 550px;
+    --width500: 500px;
+    --width450: 450px;
+    --width400: 400px;
+    --width350: 350px;
+    --width300: 300px;
 }
 
 .settings {
@@ -249,16 +255,6 @@
 
     }
 
-    .input__add-promocode {
-        width: 400px;
-        margin-right: 10px;
-    }
-
-    .input__add-date {
-        width: 200px;
-        padding-left: 10px;
-    }
-
     .input__add-link {
         width: var(--width90);
 
@@ -266,6 +262,15 @@
 
     .input__barcode {
         width: 100%;
+    }
+
+}
+
+@media screen and (max-width:737px) {
+
+    .input__add-link {
+        width: 100%;
+
     }
 
 }
@@ -316,7 +321,16 @@
 
     .input__text {
         width: 100%;
+    }
 
+    .input__add-promocode {
+        width: 400px;
+        margin-right: 10px;
+    }
+
+    .input__add-date {
+        width: 200px;
+        padding-left: 10px;
     }
 
     .input__add-link {
@@ -326,6 +340,271 @@
 
     .input__barcode {
         width: 100%;
+    }
+
+}
+
+@media screen and (max-width:635px) {
+    .setting {
+        width: var(--width550);
+    }
+
+    .setting__logo {
+        width: var(--width550);
+
+    }
+
+    .input__file {
+        width: var(--width550);
+    }
+
+    .input__text {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .input__add-text {
+        margin-bottom: 50px;
+    }
+
+    .input__add-promocode {
+        width: 300px;
+        margin-right: 10px;
+    }
+
+    .input__add-date {
+        width: 200px;
+        padding-left: 10px;
+    }
+
+    .input__add-link {
+        width: var(--width550);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:585px) {
+    .setting {
+        width: var(--width500);
+    }
+
+    .setting__logo {
+        width: var(--width500);
+
+    }
+
+    .input__file {
+        width: var(--width500);
+    }
+
+    .input__text {
+        width: 100%;
+    }
+
+    .input__add-promocode {
+        width: 300px;
+        margin-right: 10px;
+    }
+
+    .input__add-date {
+        width: 200px;
+        padding-left: 10px;
+    }
+
+    .input__add-link {
+        width: var(--width500);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:539px) {
+    .setting {
+        width: var(--width450);
+    }
+
+    .setting__logo {
+        width: var(--width450);
+
+    }
+
+    .input__file {
+        width: var(--width450);
+    }
+
+    .input__text {
+        width: 100%;
+    }
+
+    .input__add-promocode {
+        width: 250px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .input__add-date {
+        width: 200px;
+        padding-left: 10px;
+        font-size: 20px;
+    }
+
+    .input__add-link {
+        width: var(--width450);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:487px) {
+    .setting {
+        width: var(--width400);
+    }
+
+    .setting__logo {
+        width: var(--width400);
+
+    }
+
+    .input__file {
+        width: var(--width400);
+    }
+
+    .input__text {
+        width: 100%;
+    }
+
+    .input__add-promocode {
+        width: 220px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .input__add-date {
+        width: 150px;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+
+    .input__add-link {
+        width: var(--width400);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+
+@media screen and (max-width:425px) {
+    .setting {
+        width: var(--width350);
+    }
+
+    .setting__logo {
+        width: var(--width350);
+
+    }
+
+    .input__file {
+        width: var(--width350);
+    }
+
+    .input__text {
+        width: 100%;
+    }
+
+    .input__add-promocode {
+        width: 200px;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    .input__add-date {
+        width: 130px;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+
+    .input__add-link {
+        width: var(--width350);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+    .setting__button {
+        width: 173px;
+        height: 31px;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+}
+
+
+@media screen and (max-width:373px) {
+    .setting {
+        width: var(--width300);
+    }
+
+    .setting__logo {
+        width: var(--width300);
+
+    }
+
+    .input__file {
+        width: var(--width300);
+    }
+
+    .input__text {
+        width: 100%;
+    }
+
+    .input__add-promocode {
+        width: 150px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+
+    .input__add-date {
+        width: 130px;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+
+    .input__add-link {
+        width: var(--width300);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+    .setting__button {
+        width: 173px;
+        height: 31px;
+        border-radius: 3px;
+        font-size: 12px;
+        line-height: 15px;
     }
 
 }
