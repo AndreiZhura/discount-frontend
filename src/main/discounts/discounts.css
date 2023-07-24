@@ -14,7 +14,6 @@
     grid-template-columns:  1fr 1fr 1fr ;
     padding-left: 120px;
     width: 94%;
-    border: 1px solid black;
 }
 
 .discount {
@@ -147,6 +146,27 @@
 @media screen and (max-width:681px) {
     .discounts {
       width: 70%;
+    }
+    
+}
+
+@media screen and (max-width:485px) {
+    .discounts {
+      width: 80%;
+    }
+    
+}
+
+@media screen and (max-width:419px) {
+    .discounts {
+      width: 90%;
+    }
+    
+}
+
+@media screen and (max-width:395px) {
+    .discounts {
+      width: 100%;
     }
     
 }

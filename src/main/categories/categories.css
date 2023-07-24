@@ -2,7 +2,6 @@
     width: 100%;
     margin-top: 32px;
     margin-bottom: 72px;
-    border: 1px solid green;
 }
 
 .categories__container{
@@ -10,7 +9,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 45px;
-    border: 1px solid yellow;
 }
 
 .categories__arrow:first-child{
@@ -63,4 +61,18 @@
     .categories__name{
         width: 400px;
     }
+}
+
+@media screen and (max-width:485px) {
+    .categories__name{
+        width: 350px;
+    }
+    
+}
+
+@media screen and (max-width:379px) {
+    .categories__name{
+        width: 300px;
+    }
+    
 }
