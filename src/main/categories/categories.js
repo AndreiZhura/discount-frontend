@@ -1,6 +1,6 @@
 import React from "react";
 import './categories.css';
-import Discount from "../discounts/discounts";
+import Discounts from "../discounts/discounts";
 import arrowsDown from '../../img/arrow_to_down.svg'
 
 
@@ -12,7 +12,7 @@ function Categories() {
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">Категория 1</p>
                 </div>
-                    <Discount />
+                    <Discounts />
             </div>
 
         </div>

@@ -1,6 +1,5 @@
 .add-categories {
-    border: 1px solid gold;
-    margin-top: -42px;
+    margin-top: -7px;
 }
 
 .categories__name-arrows:hover {
@@ -10,7 +9,6 @@
 }
 
 .categories__name-plus{
-    border: 1px solid hotpink;
     height: 40px;
     width: 27px;
     margin-top: 0;

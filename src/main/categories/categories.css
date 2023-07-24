@@ -1,15 +1,16 @@
 .categories{
-    border: 1px solid green;
     width: 100%;
-    margin-bottom: 13px;
+    margin-top: 32px;
+    margin-bottom: 72px;
+    border: 1px solid green;
 }
 
 .categories__container{
-    border: 1px solid yellow;
     width: 1290px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 45px;
+    border: 1px solid yellow;
 }
 
 .categories__arrow:first-child{
@@ -31,7 +32,6 @@
 
 .categories__name{
     display: flex;
-    border: 1px solid green;
     width: 595px;
     height: 44px;
     background-color: #AAA190;
@@ -56,4 +56,11 @@
     line-height: 32.17px;
 }
 
-
+@media screen and (max-width:859px) {
+    .categories__container{
+        width: 100%;
+    }
+    .categories__name{
+        width: 400px;
+    }
+}

@@ -12,9 +12,9 @@
     row-gap: 30px;
     column-gap: 55.3px;
     grid-template-columns:  1fr 1fr 1fr ;
-    border: 1px solid black;
     padding-left: 120px;
     width: 94%;
+    border: 1px solid black;
 }
 
 .discount {
@@ -105,4 +105,48 @@
     cursor: pointer;
     transform: scale(1.2);
     transition-delay: 0.5s;
+}
+
+@media screen and (max-width:1279px) {
+    .discounts {
+        grid-template-columns:  1fr 1fr;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+}
+
+@media screen and (max-width:1161px) {
+    .discounts {
+        width: 80%;
+        column-gap: 0px;
+    }
+}
+
+@media screen and (max-width:1046px) {
+    .discounts {
+        padding-left: 0px;
+        margin-left: 0;
+    }
+    .discount {
+     justify-self: center;
+    }
+}
+
+
+@media screen and (max-width:984px) {
+    .discounts {
+      grid-template-columns: 1fr;
+      width: 50%;
+      margin-left: auto;
+    }
+    
+}
+
+@media screen and (max-width:681px) {
+    .discounts {
+      width: 70%;
+    }
+    
 }

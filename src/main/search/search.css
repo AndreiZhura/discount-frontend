@@ -1,13 +1,11 @@
 .search-form {
     display: flex;
     justify-content: flex-end;
-    border: 1px solid red;
 }
 
 .search-form__forma {
     display: flex;
     align-items: center;
-    border: 1px solid green;
     margin-top: 33px;
 }
 
