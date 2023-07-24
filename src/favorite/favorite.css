@@ -1,10 +1,106 @@
-.favorites{
+.favorites {
     display: flex;
 }
 
-.favorites__container{
+.favorites__container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 0;
     row-gap: 50px;
+    column-gap: 20px;
     place-items: center;
+    margin-top: 30px;
 }
+
+.categories__name_favorites {
+    width: 465.50732421875px;
+    height: 50.5986213684082px;
+    margin-top: 25px;
+    margin-left: 19px;
+}
+
+.categories__name-title_favorites{
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width:1482px) {
+    .favorites__container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width:1262px) {
+    .favorites__container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width:1262px) {
+    .favorites__container {
+        width: 95%;
+        
+    }
+}
+
+@media screen and (max-width:1062px) {
+    .favorites__container {
+        width: 70%;
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media screen and (max-width:1062px) {
+    .favorites__container {
+        width: 75%;        
+    }
+}
+
+@media screen and (max-width:878px) {
+    .favorites__container {
+        width: 80%;      
+    }
+}
+
+@media screen and (max-width:841px) {
+    .favorites__container {
+      grid-template-columns: 1fr; 
+    }
+}
+
+@media screen and (max-width:520px) {
+    .categories__name_favorites {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .categories__name_favorites {
+        width: 380px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .favorites__container {
+        width: 100%;        
+    }
+    .categories__name_favorites {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width:368px) {
+    .categories__name_favorites {
+        width: 300px;
+    }
+}
+
