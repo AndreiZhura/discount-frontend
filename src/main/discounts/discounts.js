@@ -9,6 +9,7 @@ function Discounts() {
     return (
         <div className="discounts">
             <Discount />
+            <Discount />
             <AddDiscount/>
           
         </div>

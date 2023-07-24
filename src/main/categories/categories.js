@@ -12,11 +12,7 @@ function Categories() {
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">Категория 1</p>
                 </div>
-                <div className="categories__arrows">
-                    <button className="categories__arrow"></button>
                     <Discount />
-                    <button className="categories__arrow"></button>
-                </div>
             </div>
 
         </div>
