@@ -1,3 +1,10 @@
+:root {
+    --width745: 745px;
+    --width700: 700px;
+    --width650: 650px;
+    --width600: 600px
+}
+
 .settings {
     width: 100%;
     height: 100%;
@@ -7,11 +14,11 @@
 
 .setting {
     margin-top: 55px;
-    width: 745px;
+    width: var(--width745);
 }
 
 .setting__logo {
-    width: 745px;
+    width: var(--width745);
     display: flex;
     gap: 15px;
 }
@@ -29,7 +36,7 @@
 
 .input__file {
     margin-top: 0;
-    width: 745px;
+    width: var(--width745);
     height: 298.406005859375px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
@@ -66,7 +73,7 @@
 }
 
 .input__text {
-    width: 745px;
+    width: var(--width745);
     height: 245.626708984375px;
     border-radius: 10.149864196777344px;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
@@ -149,7 +156,7 @@
 }
 
 .input__add-link {
-    width: 745px;
+    width: var(--width745);
     height: 91.34877014160156px;
     border-radius: 10.149864196777344px;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
@@ -166,7 +173,7 @@
 
 .input__barcode {
     position: relative;
-    width: 745px;
+    width: var(--width745);
     height: 284.1961975097656px;
     border-radius: 10.149864196777344px;
     background: #F1F2F6;
@@ -219,6 +226,106 @@
     color: #671309;
 }
 
-.setting__button:first-child{
+.setting__button:first-child {
     margin-right: 34px;
+}
+
+@media screen and (max-width:807px) {
+    .setting {
+        width: var(--width90);
+    }
+
+    .setting__logo {
+        width: var(--width90);
+
+    }
+
+    .input__file {
+        width: var(--width90);
+    }
+
+    .input__text {
+        width: 100%;
+
+    }
+
+    .input__add-promocode {
+        width: 400px;
+        margin-right: 10px;
+    }
+
+    .input__add-date {
+        width: 200px;
+        padding-left: 10px;
+    }
+
+    .input__add-link {
+        width: var(--width90);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:730px) {
+    .setting {
+        width: var(--width650);
+    }
+
+    .setting__logo {
+        width: var(--width650);
+
+    }
+
+    .input__file {
+        width: var(--width650);
+    }
+
+    .input__text {
+        width: 100%;
+
+    }
+
+    .input__add-link {
+        width: var(--width650);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:692px) {
+    .setting {
+        width: var(--width600);
+    }
+
+    .setting__logo {
+        width: var(--width600);
+
+    }
+
+    .input__file {
+        width: var(--width600);
+    }
+
+    .input__text {
+        width: 100%;
+
+    }
+
+    .input__add-link {
+        width: var(--width600);
+
+    }
+
+    .input__barcode {
+        width: 100%;
+    }
+
 }
