@@ -54,9 +54,11 @@
     line-height: 32.17px;
 }
 
+
+
 @media screen and (max-width:859px) {
     .categories__container{
-        width: 100%;
+        width: 90%;
     }
     .categories__name{
         width: 400px;
@@ -75,4 +77,11 @@
         width: 300px;
     }
     
+}
+
+@media screen and (max-width:361px) {
+    .categories__name{
+        margin-left: 0;
+    }
+
 }
