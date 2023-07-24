@@ -71,6 +71,12 @@
     }
     
 }
+@media screen and (max-width:393px) {
+    .categories__name{
+        margin-left: 0;
+    }
+
+}
 
 @media screen and (max-width:379px) {
     .categories__name{
@@ -79,9 +85,3 @@
     
 }
 
-@media screen and (max-width:361px) {
-    .categories__name{
-        margin-left: 0;
-    }
-
-}
