@@ -10,9 +10,13 @@ function Search(props) {
      props.onInputHandler(event.target.value);
     }
 
+    function onSubmitHandler(event){
+        event.preventDefault()
+    }
+
     return (
         <div className="search-form">
-            <form className="search-form__forma">
+            <form className="search-form__forma" onSubmit={onSubmitHandler}>
                 <img className="lupa" alt="поиск" src={lupa} />
                 <div className="seach-form__search">
                     <input className="seach-form__input"
@@ -21,7 +25,9 @@ function Search(props) {
                         name="search"
                         onInput={HandleInput}
                     />
-                    <button className="search-form__enter"></button>
+                    <button className="search-form__enter"
+                    
+                    ></button>
                 </div>
             </form>
         </div>

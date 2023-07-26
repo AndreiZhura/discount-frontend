@@ -13,13 +13,9 @@ function Main(props) {
         <>
             <main className="main">
                 <Search
+                    search={props.search}
                     onInputHandler={props.onInputHandler}
                 />
-                <div>
-                    {
-                        props.search
-                    }
-                </div>
                 <Categories />
                 <AddCategories />
             </main>

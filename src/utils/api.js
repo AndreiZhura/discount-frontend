@@ -1,5 +1,6 @@
 export const BASE_URL = 'http://localhost:3001';
 
+//обработка ошибок
 function getResponse(res) {
   if (res.ok) {
     return res.json();
@@ -18,6 +19,21 @@ export const register = (email, password, name) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ email, password, name })
+  })
+
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+//добавление карточки
+export const getDiscount = () => {
+  return fetch(`${BASE_URL}/positions`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
   })
 
     .then((res) => {

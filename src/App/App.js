@@ -32,6 +32,17 @@ const App = () => {
 		setSearch(value);
 	}
 
+	function GetDiscount() {
+		api.getDiscount()
+			.then((result) => {
+				console.log(result)
+			})
+			.catch((err) => {
+				console.error(err);
+			})
+	}
+	GetDiscount();
+
 	return (
 		<>
 			<Routes>
