@@ -17,10 +17,11 @@ function Main(props) {
                     onInputHandler={props.onInputHandler}
                 />
                 {props.category.length === 0 ? <div>Добавьте новую категорию</div> :
-                    props.category.map((item) => {
+                    props.category.map((category) => {
                         return (
                             <Categories
-                                item={item}
+                                category={category}
+                                discount = {props.discount}
                             />
                         )
                     })}

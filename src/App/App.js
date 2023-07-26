@@ -41,7 +41,6 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
-				//console.log(result.data);
 				setDiscount(result.data);
 			})
 			.catch((err) => {
@@ -62,6 +61,7 @@ const App = () => {
 
 	useEffect(() => {
 		GetCategories();
+		GetDiscount();
 	  }, []);
 
 
@@ -72,6 +72,7 @@ const App = () => {
 					search={search}
 					onInputHandler={AddSearch}
 					category = {category}
+					discount = {discount}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount />} />
 				<Route path="/signup" element={<Register />} />

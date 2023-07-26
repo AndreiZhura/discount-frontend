@@ -11,9 +11,11 @@ function Categories(props) {
             <div className="categories__container">
                 <div className="categories__name">
                     <img className="categories__name-arrows" src={arrowsDown} />
-                    <p className="categories__name-title">{props.item.categories}</p>
+                    <p className="categories__name-title">{props.category.categories}</p>
                 </div>
-                    <Discounts />
+                <Discounts
+                    discount={props.discount}
+                />
             </div>
 
         </div>

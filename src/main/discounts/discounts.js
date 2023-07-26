@@ -5,10 +5,19 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 
-function Discounts() {
+function Discounts(props) {
     return (
         <div className="discounts">
-            <Discount />
+            {
+                    props.discount.length === 0 ? <p>Добавьте акцию</p> :
+                        props.discount.map((discount) => {
+                            return (
+                                <Discount
+                                    discount={discount}
+                                />
+                            );
+                        })
+                }
             <AddDiscount/>
           
         </div>
