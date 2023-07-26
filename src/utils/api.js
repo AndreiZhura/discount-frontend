@@ -40,3 +40,18 @@ export const getDiscount = () => {
       return getResponse(res)
     })
 }
+
+//Добавление категории
+export const getCategories = () => {
+  return fetch(`${BASE_URL}/categories`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+
+    .then((res) => {
+      return getResponse(res)
+    })
+}

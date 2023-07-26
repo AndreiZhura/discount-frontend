@@ -27,6 +27,12 @@ const App = () => {
 	//Поиск
 	const [search, setSearch] = useState('');
 
+	//загрузка категорий
+	const [category, setCategory] = useState([]);
+	//загрузка скидок
+	const [discount , setDiscount] = useState([]);
+
+
 	//Функции
 	function AddSearch(value) {
 		setSearch(value);
@@ -35,13 +41,29 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
-				console.log(result)
+				//console.log(result.data);
+				setDiscount(result.data);
 			})
 			.catch((err) => {
 				console.error(err);
 			})
 	}
-	GetDiscount();
+	
+
+	function GetCategories(){
+		api.getCategories()
+		.then((result)=>{
+			setCategory(result.data);
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
+	useEffect(() => {
+		GetCategories();
+	  }, []);
+
 
 	return (
 		<>
@@ -49,6 +71,7 @@ const App = () => {
 				<Route path="/" element={<Main
 					search={search}
 					onInputHandler={AddSearch}
+					category = {category}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount />} />
 				<Route path="/signup" element={<Register />} />

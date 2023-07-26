@@ -16,7 +16,15 @@ function Main(props) {
                     search={props.search}
                     onInputHandler={props.onInputHandler}
                 />
-                <Categories />
+                {props.category.length === 0 ? <div>Добавьте новую категорию</div> :
+                    props.category.map((item) => {
+                        return (
+                            <Categories
+                                item={item}
+                            />
+                        )
+                    })}
+
                 <AddCategories />
             </main>
             <Footer />
