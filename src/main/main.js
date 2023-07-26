@@ -12,8 +12,14 @@ function Main(props) {
     return (
         <>
             <main className="main">
-                <Search />
-                <Categories />
+                <Search
+                    onInputHandler={props.onInputHandler}
+                />
+                <div>
+                    {
+                        props.search
+                    }
+                </div>
                 <Categories />
                 <AddCategories />
             </main>

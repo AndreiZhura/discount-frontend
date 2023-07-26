@@ -5,7 +5,7 @@ import addPictures from '../img/add-pictyres.svg'
 import plusAdd from '../img/plusAdd.svg'
 
 
-function SettingsDiscount() {
+function SettingsDiscount(props) {
     return (
         <div className="settings">
             <form className="setting">
@@ -13,6 +13,7 @@ function SettingsDiscount() {
                     <img src={settingLogo} />
                     <p className="setting__text">НАСТРОЙКИ</p>
                 </div>
+                <input className="setting__name-discount" type="text" placeholder="Название скидки"/>
                 <div className="input__file">
                     <input type="file" className="input__file-add" placeholder="Добавить картинку" name="add-file" id="add-file" />
                     <img className="input-file-img" src={addPictures} />

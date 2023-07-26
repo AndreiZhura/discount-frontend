@@ -1,17 +1,19 @@
 import '../App/App.css'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+/*
 import bridge from '@vkontakte/vk-bridge';
 import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';
+import '@vkontakte/vkui/dist/vkui.css';*/
+
+// Компоненты
 import Main from '../main/main';
-//import AddDiscount from '../addDiscount/addDiscount';
-import { Routes, Route } from 'react-router-dom';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
-import Footer from '../main/footer/footer';
 import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Favorites from '../favorites/favorites';
 import Profile from '../auth/Profile/Profile.js';
+//////////////////////////////////////////////////
 
 //Подключаем Api
 import * as api from '../utils/api';
@@ -21,10 +23,22 @@ import * as api from '../utils/api';
 
 const App = () => {
 
+	//Хуки
+	//Поиск
+	const [search, setSearch] = useState('');
+
+	//Функции
+	function AddSearch(value) {
+		setSearch(value);
+	}
+
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<Main />} />
+				<Route path="/" element={<Main
+					search={search}
+					onInputHandler={AddSearch}
+				/>} />
 				<Route path="/setting" element={<SettingsDiscount />} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
