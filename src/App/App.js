@@ -13,6 +13,10 @@ import Login from '../auth/Login/Login.js'
 import Favorites from '../favorites/favorites';
 import Profile from '../auth/Profile/Profile.js';
 
+//Подключаем Api
+import * as api from '../utils/api';
+
+
 
 
 const App = () => {

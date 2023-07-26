@@ -27,8 +27,13 @@
     justify-content: space-between;
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
 }
 
+.discount:hover {
+    transform: scale(1.1);
+    
+}
 
 
 .discount__main {
@@ -189,6 +194,9 @@
 @media screen and (max-width:485px) {
     .discounts {
         width: 80%;
+    }
+    .discount:hover {
+        transform: none;
     }
 
 }
