@@ -23,7 +23,8 @@ function Main(props) {
                                 key = {id}
                                 category={category}
                                 discount = {props.discount}
-                                
+                                onChange = {props.onChange}
+                                func =  {props.func}
                             />
                         )
                     })}

@@ -15,7 +15,7 @@ function Discounts(props) {
                     props.category._id === props.discount.category ?
                         <Discount
                             discount={props.discount}
-                            
+                            func =  {props.func}
                         />:
                         <></>
             }

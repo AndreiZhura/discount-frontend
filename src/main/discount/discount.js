@@ -7,17 +7,16 @@ import { useState } from 'react';
 
 function Discount(props) {
 
-    
-
-    function onTest(){
-      console.log(props.discount)
+    function test(){
+        props.func(props.discount)
     }
+    
     return (
         <div className="discount">
-            <Link className="discount__link" to="/setting" onClick={onTest}>
+            <Link className="discount__link" to="/setting" onClick = {test}>
       
             <div className="discount__main">
-                <Link to="/signin" className="discount__setting"></Link>
+                <Link to="/signin" className="discount__setting" ></Link>
                 <img className="discount__image" src={props.discount.image} />
             </div>
             </Link>

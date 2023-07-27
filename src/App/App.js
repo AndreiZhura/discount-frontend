@@ -30,7 +30,10 @@ const App = () => {
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
 	//загрузка скидок
-	const [discount , setDiscount] = useState([]);
+	const [discount, setDiscount] = useState([]);
+
+	//инфо о скидке
+	const [infoDiscount, setInfoDiscount] = useState([]);
 
 
 	//Функции
@@ -48,25 +51,29 @@ const App = () => {
 				console.error(err);
 			})
 	}
-	
 
-	function GetCategories(){
+
+	function GetCategories() {
 		api.getCategories()
-		.then((result)=>{
-			//console.log(result.data)
-			setCategory(result.data);
-		})
-		.catch((err) => {
-			console.error(err);
-		})
+			.then((result) => {
+				//console.log(result.data)
+				setCategory(result.data);
+			})
+			.catch((err) => {
+				console.error(err);
+			})
 	}
 
 	//Поднятие стейта 
+	const pull_data = (data) => {
+		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
+	}
+
 
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
-	  }, []);
+	}, []);
 
 
 	return (
@@ -75,10 +82,13 @@ const App = () => {
 				<Route path="/" element={<Main
 					search={search}
 					onInputHandler={AddSearch}
-					category = {category}
-					discount = {discount}
+					category={category}
+					discount={discount}
+					func={pull_data}
 				/>} />
-				<Route path="/setting" element={<SettingsDiscount />} />
+				<Route path="/setting" element={<SettingsDiscount
+					infoDiscount={infoDiscount}
+				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
 				<Route path="/profile" element={<Profile />} />

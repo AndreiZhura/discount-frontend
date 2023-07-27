@@ -6,6 +6,7 @@ import plusAdd from '../img/plusAdd.svg'
 
 
 function SettingsDiscount(props) {
+    console.log(props.infoDiscount)
     return (
         <div className="settings">
             <form className="setting">
@@ -13,7 +14,7 @@ function SettingsDiscount(props) {
                     <img src={settingLogo} />
                     <p className="setting__text">НАСТРОЙКИ</p>
                 </div>
-                <input className="setting__name-discount" type="text" placeholder="Название скидки"/>
+                <input className="setting__name-discount" type="text" placeholder="Название скидки" value={props.infoDiscount.name}/>
                 <div className="input__file">
                     <input type="file" className="input__file-add" placeholder="Добавить картинку" name="add-file" id="add-file" />
                     <img className="input-file-img" src={addPictures} />
