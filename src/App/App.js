@@ -61,6 +61,8 @@ const App = () => {
 		})
 	}
 
+	//Поднятие стейта 
+
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();

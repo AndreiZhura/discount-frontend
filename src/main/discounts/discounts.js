@@ -6,8 +6,7 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Discounts(props) {
-    console.log(props.category._id)
-    console.log(props.discount.category)
+
     return (
         <div className="discounts">
 
@@ -16,6 +15,7 @@ function Discounts(props) {
                     props.category._id === props.discount.category ?
                         <Discount
                             discount={props.discount}
+                            
                         />:
                         <></>
             }

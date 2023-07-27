@@ -19,6 +19,7 @@ function Categories(props) {
                                 <Discounts
                                     category={props.category}
                                     discount={discount}
+                                  
                                 />
                             );
                         })
