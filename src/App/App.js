@@ -41,6 +41,7 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
+				//console.log(result.data)
 				setDiscount(result.data);
 			})
 			.catch((err) => {
@@ -52,6 +53,7 @@ const App = () => {
 	function GetCategories(){
 		api.getCategories()
 		.then((result)=>{
+			//console.log(result.data)
 			setCategory(result.data);
 		})
 		.catch((err) => {

@@ -1,6 +1,6 @@
 import React from "react";
 import './discount';
-import pyaterochka from '../../img/pyaterochka.webp'
+
 
 
 function Discount(props) {
