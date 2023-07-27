@@ -10,16 +10,17 @@ function Discounts(props) {
     console.log(props.discount.category)
     return (
         <div className="discounts">
-            { props.category._id === props.discount.category ?
-                 <Discount
-                 discount = {props.discount}
-                 />:
-                 <>
-                     <AddDiscount/>
-                 </>
+
+            {
+                props.discount.length === 0 ? <AddDiscount /> :
+                    props.category._id === props.discount.category ?
+                        <Discount
+                            discount={props.discount}
+                        />:
+                        <></>
             }
-            <AddDiscount/>
-          
+            <AddDiscount />
+
         </div>
     );
 }

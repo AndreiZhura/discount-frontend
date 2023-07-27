@@ -30,6 +30,12 @@
     transition: 0.5s;
 }
 
+.discount__link{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
 .discount:hover {
     transform: scale(1.1);
     
