@@ -20,10 +20,10 @@ function SettingsDiscount(props) {
                     <img className="input-file-img" src={addPictures} />
                     <label for="add-file" className="input__file-label">Добавить картинку</label>
                 </div>
-                <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..."></textarea>
+                <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..." >{props.infoDiscount.description}</textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 <div className="input__promocode">
-                    <input type="text" placeholder="Промокод" className="input__add-promocode" />
+                    <input type="text" placeholder="Промокод" value={props.infoDiscount.barcode} className="input__add-promocode" />
                     <input type="text" className="input__add-date" placeholder="До __ __ ______г." />
                 </div>
                 <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
