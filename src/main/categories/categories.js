@@ -1,5 +1,7 @@
 import Discounts from "../discounts/discounts";
 import arrowsDown from '../../img/arrow_to_down.svg'
+import AddDiscount from "../addDiscount/addDiscount";
+
 
 
 function Categories(props) {
@@ -13,16 +15,13 @@ function Categories(props) {
                     <p className="categories__name-title">{props.category.categories}</p>
                 </div>
                 {
-                    props.discount.length === 0 ? <p>Добавьте акцию</p> :
-                        props.discount.map((discount) => {
-                            return (
-                                <Discounts
-                                    category={props.category}
-                                    discount={discount}
-                                    func =  {props.func}
-                                />
-                            );
-                        })
+                 
+                   <Discounts
+                   category={props.category}
+                   discount={props.discount}
+                   func =  {props.func}
+                   />
+                                           
                 }
             </div>
 
