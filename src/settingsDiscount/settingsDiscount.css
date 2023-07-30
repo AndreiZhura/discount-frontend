@@ -39,7 +39,7 @@
     color: #520005;
 }
 
-.setting__name-discount{
+.setting__name-discount {
     width: var(--width745);
     height: 91.34877014160156px;
     border-radius: 10.149864196777344px;
@@ -53,6 +53,29 @@
     margin-bottom: 25px;
     border: none;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
+}
+
+.input__file-container {
+    position: relative;
+}
+
+.input__file-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+}
+
+.input__file_pull {
+    border: 1px solid black;
+    object-fit: cover;
 }
 
 .input__file {
@@ -79,6 +102,8 @@
 .input-file-img {
     opacity: 0.20000000298023224px;
 }
+
+
 
 .input__file-label {
     font-family: Inter;
@@ -203,6 +228,24 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 68px;
+}
+
+.input__barcode-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--width745);
+    height: 284.1961975097656px;
+    border-radius: 10.149864196777344px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.input__barcode-image {
+
+    height: 284.1961975097656px;
+    object-fit: contain;
+    overflow: hidden;
 }
 
 .input__barcode-add {

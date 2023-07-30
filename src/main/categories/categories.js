@@ -5,8 +5,7 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Categories(props) {
-    //console.log(props.discount.name)
-    //console.log( props.category)
+ 
     return (
         <div className="categories">
             <div className="categories__container">
@@ -14,15 +13,13 @@ function Categories(props) {
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">{props.category.categories}</p>
                 </div>
-                {
-                 
-                   <Discounts
-                   category={props.category}
-                   discount={props.discount}
-                   func =  {props.func}
-                   />
-                                           
-                }
+
+                    <Discounts
+                        category={props.category}
+                        discount={props.discount}
+                        func={props.func}
+                    />
+                
             </div>
 
         </div>
