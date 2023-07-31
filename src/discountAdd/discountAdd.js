@@ -2,6 +2,7 @@ import React from "react";
 import '../settingsDiscount/settingsDiscount.css'
 import settingLogo from '../img/setting.svg'
 import addPictures from '../img/add-pictyres.svg'
+import plusAdd from '../img/plusAdd.svg'
 
 
 function DiscountAdd(){
