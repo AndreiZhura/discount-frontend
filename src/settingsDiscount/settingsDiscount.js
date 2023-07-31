@@ -6,7 +6,10 @@ import plusAdd from '../img/plusAdd.svg'
 
 
 function SettingsDiscount(props) {
-    console.log(props.infoDiscount)
+    const date = new Date;
+    //const formatDate = date.toLocaleDateString(props.infoDiscount.date);
+  
+
     return (
         <div className="settings">
             <form className="setting">
@@ -32,7 +35,7 @@ function SettingsDiscount(props) {
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 <div className="input__promocode">
                     <input type="text" placeholder="Промокод" value={props.infoDiscount.link} className="input__add-promocode" />
-                    <input type="text" className="input__add-date" placeholder="До __ __ ______г." value={props.infoDiscount.date} />
+                    <input type="date" className="input__add-date" placeholder="До __ __ ______г." value={props.infoDiscount.date} />
                 </div>
                 <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
                 <input type="text" className="input__add-link" placeholder="Добавить ссылку" />

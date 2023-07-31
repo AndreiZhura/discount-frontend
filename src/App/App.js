@@ -13,6 +13,8 @@ import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Favorites from '../favorites/favorites';
 import Profile from '../auth/Profile/Profile.js';
+import DiscountAdd from '../discountAdd/discountAdd';
+import LookDiscount from '../lookDiscount/lookDiscount';
 //////////////////////////////////////////////////
 
 //Подключаем Api
@@ -89,6 +91,8 @@ const App = () => {
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
 				/>} />
+				<Route path='/discount' element={<LookDiscount />} />
+				<Route path='/add-discount' element={<DiscountAdd />} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
 				<Route path="/profile" element={<Profile />} />

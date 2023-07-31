@@ -20,7 +20,7 @@ function Main(props) {
                     props.category.map((category, id) => {
                         return (
                             <Categories
-                                key = {id}
+                              key = {id}  
                                 category={category}
                                 discount = {props.discount}
                                 onChange = {props.onChange}

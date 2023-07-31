@@ -13,10 +13,10 @@ function Discount(props) {
     
     return (
         <div className="discount">
-            <Link className="discount__link" to="/setting" onClick = {test}>
+            <Link className="discount__link" to="/discount" onClick = {test}>
       
             <div className="discount__main">
-                <Link to="/signin" className="discount__setting" ></Link>
+                <Link to="/setting" className="discount__setting" ></Link>
                 <img className="discount__image" src={props.discount.image} />
             </div>
             </Link>
