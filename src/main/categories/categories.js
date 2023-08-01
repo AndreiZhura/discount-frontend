@@ -15,7 +15,6 @@ function Categories(props) {
                 </div>
 
                     <Discounts
-                    
                         category={props.category}
                         discount={props.discount}
                         func={props.func}

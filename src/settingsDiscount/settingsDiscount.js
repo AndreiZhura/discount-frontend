@@ -6,13 +6,20 @@ import plusAdd from '../img/plusAdd.svg'
 
 
 function SettingsDiscount(props) {
-    const date = new Date;
-    //const formatDate = date.toLocaleDateString(props.infoDiscount.date);
-  
+
+
+    function handleDiscountDelete() {
+        props.onCardDelete(props.infoDiscount._id);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
 
     return (
         <div className="settings">
-            <form className="setting">
+            <form className="setting" onSubmit={handleSubmit}>
                 <div className="setting__logo">
                     <img src={settingLogo} />
                     <p className="setting__text">НАСТРОЙКИ</p>
@@ -53,7 +60,7 @@ function SettingsDiscount(props) {
                 }
                 <div className="setting__buttons">
                     <button className="setting__button">СОХРАНИТЬ</button>
-                    <button className="setting__button">УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
+                    <button className="setting__button" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
                 </div>
             </form>
         </div>

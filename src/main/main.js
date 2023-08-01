@@ -29,7 +29,9 @@ function Main(props) {
                         )
                     })}
 
-                <AddCategories />
+                <AddCategories
+                  handleNewCategory = {props.handleNewCategory}
+                />
             </main>
             <Footer />
         </>

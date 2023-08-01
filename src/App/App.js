@@ -54,6 +54,16 @@ const App = () => {
 			})
 	}
 
+	function DeleteDiscount(discountID){
+		api.deleteDiscount(discountID)
+		.then((result)=>{
+          console.log(result)
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
 
 	function GetCategories() {
 		api.getCategories()
@@ -71,11 +81,22 @@ const App = () => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
 	}
 
+	function handleNewCategory(categoryName) {
+		console.log(categoryName)
+		api.addNewCategories(categoryName)
+			.then((categoryName) => {
+				console.log(categoryName)
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	}
+
 
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
-	}, []);
+	}, [category]);
 
 
 	return (
@@ -87,9 +108,11 @@ const App = () => {
 					category={category}
 					discount={discount}
 					func={pull_data}
-				/>} />
+					handleNewCategory={handleNewCategory}
+					/>} />
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
+					onCardDelete = {DeleteDiscount}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd />} />

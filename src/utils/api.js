@@ -41,6 +41,24 @@ export const getDiscount = () => {
     })
 }
 
+//удаление карточки
+
+export const deleteDiscount = (id) =>{
+  return fetch(`${BASE_URL}/positions/${id}`,{
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+    .then((res) => {
+      return getResponse(res)
+    })
+  })
+}
+
+
+// Категории
+
 //Добавление категории
 export const getCategories = () => {
   return fetch(`${BASE_URL}/categories`, {
@@ -54,4 +72,18 @@ export const getCategories = () => {
     .then((res) => {
       return getResponse(res)
     })
+}
+
+export const addNewCategories = (categoryName) => {
+   return fetch(`${BASE_URL}/categories`,{
+    method: 'POST',
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({categories:categoryName})
+   })  
+   .then((res) => {
+    return getResponse(res)
+  })
 }
