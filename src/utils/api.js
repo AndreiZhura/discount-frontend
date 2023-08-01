@@ -44,15 +44,16 @@ export const getDiscount = () => {
 //удаление карточки
 
 export const deleteDiscount = (id) =>{
+  console.log(`api ${id}`)
   return fetch(`${BASE_URL}/positions/${id}`,{
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
-    .then((res) => {
-      return getResponse(res)
-    })
+  })
+  .then((res) => {
+    return getResponse(res)
   })
 }
 

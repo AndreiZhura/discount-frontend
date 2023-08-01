@@ -1,6 +1,7 @@
 import '../App/App.css'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 /*
 import bridge from '@vkontakte/vk-bridge';
 import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
@@ -19,6 +20,7 @@ import LookDiscount from '../lookDiscount/lookDiscount';
 
 //Подключаем Api
 import * as api from '../utils/api';
+
 
 
 
@@ -54,14 +56,14 @@ const App = () => {
 			})
 	}
 
-	function DeleteDiscount(discountID){
+	function DeleteDiscount(discountID) {
 		api.deleteDiscount(discountID)
-		.then((result)=>{
-          console.log(result)
-		})
-		.catch((err) => {
-			console.error(err);
-		})
+			.then((result) => {
+				console.log(result)
+			})
+			.catch((err) => {
+				console.error(err);
+			})
 	}
 
 
@@ -82,7 +84,7 @@ const App = () => {
 	}
 
 	function handleNewCategory(categoryName) {
-		console.log(categoryName)
+		
 		api.addNewCategories(categoryName)
 			.then((categoryName) => {
 				console.log(categoryName)
@@ -109,10 +111,10 @@ const App = () => {
 					discount={discount}
 					func={pull_data}
 					handleNewCategory={handleNewCategory}
-					/>} />
+				/>} />
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
-					onCardDelete = {DeleteDiscount}
+					onCardDelete={DeleteDiscount}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd />} />

@@ -3,6 +3,7 @@ import './settingsDiscount.css'
 import settingLogo from '../img/setting.svg';
 import addPictures from '../img/add-pictyres.svg'
 import plusAdd from '../img/plusAdd.svg'
+import { Link } from "react-router-dom";
 
 
 function SettingsDiscount(props) {
@@ -42,7 +43,7 @@ function SettingsDiscount(props) {
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 <div className="input__promocode">
                     <input type="text" placeholder="Промокод" value={props.infoDiscount.link} className="input__add-promocode" />
-                    <input type="date" className="input__add-date" placeholder="До __ __ ______г." value={props.infoDiscount.date} />
+                    <input type="text" className="input__add-date" placeholder="До __ __ ______г." value={props.infoDiscount.date} />
                 </div>
                 <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
                 <input type="text" className="input__add-link" placeholder="Добавить ссылку" />
@@ -60,7 +61,9 @@ function SettingsDiscount(props) {
                 }
                 <div className="setting__buttons">
                     <button className="setting__button">СОХРАНИТЬ</button>
+                    <Link to='/'>
                     <button className="setting__button" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
+                    </Link>
                 </div>
             </form>
         </div>
