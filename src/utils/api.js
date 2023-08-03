@@ -33,7 +33,6 @@ export const addNewDiscount = (name,image,description,promocode,link,barcode,dat
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Content-Type': 'multipart/form-data',
     },
 
     body: JSON.stringify({name,image,description,promocode,link,barcode,date,category})

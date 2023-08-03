@@ -95,11 +95,11 @@ const App = () => {
 	}
     
 	function handleAddDiscount(name,image,description,promocode,link,barcode,date,category) {
-		console.log('handleAddDiscount')
-		console.log(name,image,description,promocode,link,barcode,date,category)
-         api.addNewDiscount(name,image,description,promocode,link,barcode,date,category)
-		 .then((res) => {
-			console.log(res)
+		
+        api.addNewDiscount(name,image,description,promocode,link,barcode,date,category)
+		.then((name,image,description,promocode,link,barcode,date,category)=>{
+			console.log("Успех")
+
 		})
 		.catch((error) => {
 			console.log(error)
