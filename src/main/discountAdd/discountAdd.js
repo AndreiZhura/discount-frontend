@@ -15,10 +15,11 @@ function DiscountAdd(props) {
     const [date, setDate] = useState(null);
     const [category, setCategory] = useState('')
 
+    
     function handleSubmit(e) {
         e.preventDefault();
         setCategory(props.categoryID)
-        props.handleAddDiscount(name,image,description,promocode,link,barcode,date,category);
+        props.handleAddDiscount(name,image,description,promocode,link,barcode,date,props.categoryID);
 
     }
 

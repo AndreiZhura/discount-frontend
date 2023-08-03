@@ -1,6 +1,7 @@
 import '../App/App.css'
 import { useState, useEffect, } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 /*
 import bridge from '@vkontakte/vk-bridge';
@@ -34,7 +35,7 @@ const App = () => {
 	//инфо о скидке
 	const [infoDiscount, setInfoDiscount] = useState([]);
 
-
+	const history = useNavigate();
 
 	//Функции
 	function AddSearch(value) {
@@ -55,7 +56,7 @@ const App = () => {
 	function DeleteDiscount(discountID) {
 		api.deleteDiscount(discountID)
 			.then((result) => {
-				console.log(result)
+				//console.log(result)
 				GetDiscount();
 			})
 			.catch((err) => {
@@ -67,8 +68,6 @@ const App = () => {
 	function GetCategories() {
 		api.getCategories()
 			.then((result) => {
-				console.log('App')
-				console.log(result.data)
 				setCategory(result.data);
 			})
 			.catch((err) => {
@@ -81,6 +80,7 @@ const App = () => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
 	}
 	const infoCategoryID = (id) => {
+		console.log(categoryID)
 		setCategoryID(id)
 	}
 
@@ -101,6 +101,7 @@ const App = () => {
 		api.addNewDiscount(name, image, description, promocode, link, barcode, date, category)
 			.then((name, image, description, promocode, link, barcode, date, category) => {
 				GetDiscount();
+				history("/");
 				console.log("Успех")
 
 			})
