@@ -6,7 +6,7 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Discounts(props) {
-
+  
     return (
         <div className="discounts">
 
@@ -18,21 +18,12 @@ function Discounts(props) {
                                 <Discount
                                     key={id}
                                     discount={discount}
-                                    func={props.func}
+                                    dataDiscount={props.dataDiscount}
                                 /> : <></>
                         );
                     })
             }
-            {
-                props.category.map((category, id) => {
-                    return (
-                        <AddDiscount
-                            key={id}
-                            category={category}
-                        />
-                    );
-                })
-            }
+            <AddDiscount/>
         </div>
     );
 }

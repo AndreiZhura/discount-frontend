@@ -14,7 +14,7 @@ import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Favorites from '../favorites/favorites';
 import Profile from '../auth/Profile/Profile.js';
-import DiscountAdd from '../discountAdd/discountAdd';
+import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
 //////////////////////////////////////////////////
 
@@ -75,7 +75,7 @@ const App = () => {
 	}
 
 	//Поднятие стейта 
-	const pull_data = (data) => {
+	const dataDiscount = (data) => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
 	}
 
@@ -117,7 +117,7 @@ const App = () => {
 					onInputHandler={AddSearch}
 					category={category}
 					discount={discount}
-					func={pull_data}
+					dataDiscount={dataDiscount}
 					handleNewCategory={handleNewCategory}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount

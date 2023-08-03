@@ -8,7 +8,7 @@ import Footer from "./footer/footer";
 
 
 function Main(props) {
-   
+
     return (
         <>
             <main className="main">
@@ -20,17 +20,17 @@ function Main(props) {
                     props.category.map((category, id) => {
                         return (
                             <Categories
-                              key = {id}  
+                                key={id}
                                 category={category}
-                                discount = {props.discount}
-                                onChange = {props.onChange}
-                                func =  {props.func}
+                                discount={props.discount}
+                                onChange={props.onChange}
+                                dataDiscount={props.dataDiscount}
                             />
                         )
                     })}
 
                 <AddCategories
-                  handleNewCategory = {props.handleNewCategory}
+                    handleNewCategory={props.handleNewCategory}
                 />
             </main>
             <Footer />

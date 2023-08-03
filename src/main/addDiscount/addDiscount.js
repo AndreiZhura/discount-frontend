@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 
 import addDiscount from '../../img/addDiscount.svg'
 
-function AddDiscount(){
+function AddDiscount(props){
+    console.log(props.category)
     return(
         <div className="discount">
             <Link className="discount__main" to='/add-discount'>
