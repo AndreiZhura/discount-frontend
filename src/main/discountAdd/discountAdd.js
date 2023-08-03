@@ -27,7 +27,7 @@ function DiscountAdd(props) {
     }
 
     function handleImage(e) {
-        setImage(e.target.files)
+        setImage(e.target.value)
     }
 
     function handleDescription(e) {
@@ -67,7 +67,7 @@ function DiscountAdd(props) {
                     onChange={handleName}
                 />
                 <div className="input__file">
-                    <input type="file"
+                    <input type="text"
                         onChange={handleImage}
                         className="input__file-add"
                         placeholder="Добавить картинку"
@@ -104,7 +104,7 @@ function DiscountAdd(props) {
                 />
                 <div className="input__barcode">
                     <input
-                        type="file"
+                        type="text"
                         className="input__barcode-add"
                         placeholder="Добавить штрихкоде"
                         name="add-barcode"

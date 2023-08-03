@@ -26,7 +26,7 @@ export const register = (email, password, name) => {
     })
 }
 
-export const addNewDiscount = (discount) => {
+export const addNewDiscount = (name,image,description,promocode,link,barcode,date,category) => {
 
   return fetch(`${BASE_URL}/positions`, {
     method: 'POST',
@@ -36,17 +36,10 @@ export const addNewDiscount = (discount) => {
       'Content-Type': 'multipart/form-data',
     },
 
-    body: JSON.stringify({
-      name: discount.name,
-      image: discount.image,
-      description: discount.description,
-      promocode: discount.promocode,
-      link: discount.link,
-      barcode: discount.barcode,
-      date: discount.date,
-      category: discount.category
-    })
-
+    body: JSON.stringify({name,image,description,promocode,link,barcode,date,category})
+  })
+  .then((res) => {
+    return getResponse(res)
   })
 }
 

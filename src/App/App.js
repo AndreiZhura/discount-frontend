@@ -97,13 +97,13 @@ const App = () => {
 	function handleAddDiscount(name,image,description,promocode,link,barcode,date,category) {
 		console.log('handleAddDiscount')
 		console.log(name,image,description,promocode,link,barcode,date,category)
-        /* api.addNewDiscount()
+         api.addNewDiscount(name,image,description,promocode,link,barcode,date,category)
 		 .then((res) => {
 			console.log(res)
 		})
 		.catch((error) => {
 			console.log(error)
-		})*/
+		})
 	}
 
 
