@@ -27,7 +27,7 @@ export const register = (email, password, name) => {
 }
 
 export const addNewDiscount = (discount) => {
-  console.log(discount)
+
   return fetch(`${BASE_URL}/positions`, {
     method: 'POST',
     headers: {

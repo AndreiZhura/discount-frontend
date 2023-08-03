@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './discounts.css'
 import Discount from "../discount/discount";
 import AddDiscount from "../addDiscount/addDiscount";
@@ -6,7 +6,8 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Discounts(props) {
-  
+    console.log('discounts')
+    console.log(props.category)
     return (
         <div className="discounts">
 
@@ -19,11 +20,16 @@ function Discounts(props) {
                                     key={id}
                                     discount={discount}
                                     dataDiscount={props.dataDiscount}
+                                  
                                 /> : <></>
                         );
                     })
             }
-            <AddDiscount/>
+            <AddDiscount
+              handleAddDiscount = {props.handleAddDiscount}
+              category = {props.category}
+              infoCategoryID = {props.infoCategoryID}
+            />
         </div>
     );
 }

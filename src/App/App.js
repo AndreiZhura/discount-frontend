@@ -23,17 +23,17 @@ import * as api from '../utils/api';
 
 
 const App = () => {
-
 	//Хуки
 	//Поиск
 	const [search, setSearch] = useState('');
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
+	const [categoryID, setCategoryID] = useState([]);
 	//загрузка скидок
 	const [discount, setDiscount] = useState([]);
-
 	//инфо о скидке
 	const [infoDiscount, setInfoDiscount] = useState([]);
+
 
 
 	//Функции
@@ -66,7 +66,8 @@ const App = () => {
 	function GetCategories() {
 		api.getCategories()
 			.then((result) => {
-				//console.log(result.data)
+				console.log('App')
+				console.log(result.data)
 				setCategory(result.data);
 			})
 			.catch((err) => {
@@ -77,6 +78,9 @@ const App = () => {
 	//Поднятие стейта 
 	const dataDiscount = (data) => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
+	}
+    const infoCategoryID = (id) =>{
+		setCategoryID(id)
 	}
 
 	function handleNewCategory(categoryName) {
@@ -89,26 +93,26 @@ const App = () => {
 				console.log(error)
 			})
 	}
-    /*
+    
 	function handleAddDiscount(name,image,description,promocode,link,barcode,date,category) {
+		console.log('handleAddDiscount')
 		console.log(name,image,description,promocode,link,barcode,date,category)
-         api.addNewDiscount()
+        /* api.addNewDiscount()
 		 .then((res) => {
 			console.log(res)
 		})
 		.catch((error) => {
 			console.log(error)
-		})
+		})*/
 	}
-*/
+
 
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
 	}, []);
 
-
-
+	
 	return (
 		<>
 			<Routes>
@@ -118,7 +122,9 @@ const App = () => {
 					category={category}
 					discount={discount}
 					dataDiscount={dataDiscount}
+					infoCategoryID = {infoCategoryID}
 					handleNewCategory={handleNewCategory}
+					handleAddDiscount = {handleAddDiscount}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
@@ -126,7 +132,8 @@ const App = () => {
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
-					
+					categoryID = {categoryID}
+					handleAddDiscount = {handleAddDiscount}
 				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />

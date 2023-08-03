@@ -8,14 +8,23 @@ import { useState } from 'react';
 function Discount(props) {
 
     function DataDiscount(){
+     
         props.dataDiscount(props.discount)
     }
     
     return (
         <div className="discount">
-            <Link className="discount__link" to="/discount" onClick = {DataDiscount}>
+            <Link 
+            className="discount__link" 
+            to="/discount" 
+            onClick = {DataDiscount}>
+
             <div className="discount__main">
-                <Link to="/setting" className="discount__setting" ></Link>
+                <Link 
+                to="/setting" 
+                className="discount__setting"
+                onClick = {DataDiscount} ></Link>
+                
                 <img className="discount__image" src={props.discount.image} />
             </div>
             </Link>

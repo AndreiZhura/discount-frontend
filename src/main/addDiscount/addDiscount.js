@@ -5,10 +5,16 @@ import { Link } from "react-router-dom";
 import addDiscount from '../../img/addDiscount.svg'
 
 function AddDiscount(props){
-    console.log(props.category)
+    console.log('ADDdiscounts')
+    console.log(props.category._id)
+ 
+    function categoriesID(){
+        props.infoCategoryID(props.category._id)
+    }
+
     return(
         <div className="discount">
-            <Link className="discount__main" to='/add-discount'>
+            <Link className="discount__main" to='/add-discount' onClick={categoriesID}>
                 <img className="discount__add" src={addDiscount} />
             </Link>
         </div>

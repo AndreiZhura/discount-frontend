@@ -15,10 +15,9 @@ function DiscountAdd(props) {
     const [date, setDate] = useState(null);
     const [category, setCategory] = useState('')
 
-    console.log(props.category)
-
     function handleSubmit(e) {
-        e.preventDefault()
+        e.preventDefault();
+        setCategory(props.categoryID)
         props.handleAddDiscount(name,image,description,promocode,link,barcode,date,category);
 
     }
@@ -51,6 +50,8 @@ function DiscountAdd(props) {
     function handleData(e) {
         setDate(e.target.value);
     }
+
+    
 
     return (
         <div className="settings">

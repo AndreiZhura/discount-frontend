@@ -8,7 +8,8 @@ import Footer from "./footer/footer";
 
 
 function Main(props) {
-
+console.log('Main')
+console.log(props.category)
     return (
         <>
             <main className="main">
@@ -16,7 +17,7 @@ function Main(props) {
                     search={props.search}
                     onInputHandler={props.onInputHandler}
                 />
-                {props.category.length === 0 ? <div>Добавьте новую категорию</div> :
+                {props.category.length === 0 ? <></> :
                     props.category.map((category, id) => {
                         return (
                             <Categories
@@ -25,6 +26,7 @@ function Main(props) {
                                 discount={props.discount}
                                 onChange={props.onChange}
                                 dataDiscount={props.dataDiscount}
+                                infoCategoryID = {props.infoCategoryID}
                             />
                         )
                     })}

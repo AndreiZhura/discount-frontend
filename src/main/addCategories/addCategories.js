@@ -6,7 +6,7 @@ import AddCategory from '../../img/addCategory.svg';
 function AddCategories(props) {
 
     const [newCategory, setNewCategory] = useState(false);
-    const [categoryName, setCAtegoryName] = useState('')
+    const [categoryName, setCategoryName] = useState('')
 
     function handleChange() {
         setNewCategory(!newCategory);
@@ -18,7 +18,7 @@ function AddCategories(props) {
     }
 
     function handleCategory(evt) {
-        setCAtegoryName(evt.target.value);
+        setCategoryName(evt.target.value);
     }
 
     return (
@@ -33,7 +33,7 @@ function AddCategories(props) {
                     </div>
                     <form className={newCategory ? "add-categoriesy__form" : "add-categiries__none"} onSubmit={handleSubmit} >
                         <input className='add-categoriesy__text' type='text' placeholder='Добавьте категорию' onChange={handleCategory}/>
-                        <button className='add-categiries__data'>Добавить</button>
+                        <button className='add-categiries__data' onClick={handleChange}>Добавить</button>
                     </form>
                 </div>
             </div>
