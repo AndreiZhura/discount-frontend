@@ -22,15 +22,11 @@ import LookDiscount from '../lookDiscount/lookDiscount';
 import * as api from '../utils/api';
 
 
-
-
-
 const App = () => {
 
 	//Хуки
 	//Поиск
 	const [search, setSearch] = useState('');
-
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
 	//загрузка скидок
@@ -84,7 +80,7 @@ const App = () => {
 	}
 
 	function handleNewCategory(categoryName) {
-		
+
 		api.addNewCategories(categoryName)
 			.then((categoryName) => {
 				console.log(categoryName)
@@ -93,12 +89,24 @@ const App = () => {
 				console.log(error)
 			})
 	}
-
+    /*
+	function handleAddDiscount(name,image,description,promocode,link,barcode,date,category) {
+		console.log(name,image,description,promocode,link,barcode,date,category)
+         api.addNewDiscount()
+		 .then((res) => {
+			console.log(res)
+		})
+		.catch((error) => {
+			console.log(error)
+		})
+	}
+*/
 
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
-	}, [category]);
+	}, []);
+
 
 
 	return (
@@ -117,7 +125,9 @@ const App = () => {
 					onCardDelete={DeleteDiscount}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
-				<Route path='/add-discount' element={<DiscountAdd />} />
+				<Route path='/add-discount' element={<DiscountAdd
+					
+				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
 				<Route path="/profile" element={<Profile />} />

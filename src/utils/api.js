@@ -26,13 +26,38 @@ export const register = (email, password, name) => {
     })
 }
 
+export const addNewDiscount = (discount) => {
+  console.log(discount)
+  return fetch(`${BASE_URL}/positions`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
+    },
+
+    body: JSON.stringify({
+      name: discount.name,
+      image: discount.image,
+      description: discount.description,
+      promocode: discount.promocode,
+      link: discount.link,
+      barcode: discount.barcode,
+      date: discount.date,
+      category: discount.category
+    })
+
+  })
+}
+
 //добавление карточки
 export const getDiscount = () => {
   return fetch(`${BASE_URL}/positions`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Content-Type': 'multipart/form-data',
     }
   })
 
@@ -43,18 +68,18 @@ export const getDiscount = () => {
 
 //удаление карточки
 
-export const deleteDiscount = (id) =>{
+export const deleteDiscount = (id) => {
   console.log(`api ${id}`)
-  return fetch(`${BASE_URL}/positions/${id}`,{
+  return fetch(`${BASE_URL}/positions/${id}`, {
     method: 'DELETE',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
   })
-  .then((res) => {
-    return getResponse(res)
-  })
+    .then((res) => {
+      return getResponse(res)
+    })
 }
 
 
@@ -76,15 +101,16 @@ export const getCategories = () => {
 }
 
 export const addNewCategories = (categoryName) => {
-   return fetch(`${BASE_URL}/categories`,{
+  return fetch(`${BASE_URL}/categories`, {
     method: 'POST',
-    headers:{
+    headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify({categories:categoryName})
-   })  
-   .then((res) => {
-    return getResponse(res)
+    body: JSON.stringify({ categories: categoryName })
   })
+    .then((res) => {
+      return getResponse(res)
+    })
 }
+

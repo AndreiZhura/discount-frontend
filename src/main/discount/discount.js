@@ -25,7 +25,7 @@ function Discount(props) {
                 <h3 className="discount__title">
                     {props.discount.name}
                 </h3>
-                <button className="discount__like"></button>
+               
             </div>
 
         </div>

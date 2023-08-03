@@ -11,7 +11,7 @@ function Discounts(props) {
         <div className="discounts">
 
             {
-                props.discount.length === 0 ? <h1>dsdsfsdfsdf</h1> :
+                props.discount.length === 0 ? <></> :
                     props.discount.map((discount, id) => {
                         return (
                             props.category._id === discount.category ?
@@ -23,7 +23,16 @@ function Discounts(props) {
                         );
                     })
             }
-            <AddDiscount />
+            {
+                props.category.map((category, id) => {
+                    return (
+                        <AddDiscount
+                            key={id}
+                            category={category}
+                        />
+                    );
+                })
+            }
         </div>
     );
 }
