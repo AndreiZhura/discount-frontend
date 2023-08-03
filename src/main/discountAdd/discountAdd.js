@@ -114,7 +114,7 @@ function DiscountAdd(props) {
                     <img className="input-barcode-img" src={plusAdd} />
                     <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
                 </div>
-                <div className="setting__buttons">
+                <div className="setting__buttons setting__buttons_add-discount">
                     <button className="setting__button">СОХРАНИТЬ</button>
                 </div>
             </form>

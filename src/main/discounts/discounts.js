@@ -6,8 +6,6 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Discounts(props) {
-    console.log('discounts')
-    console.log(props.category)
     return (
         <div className="discounts">
 

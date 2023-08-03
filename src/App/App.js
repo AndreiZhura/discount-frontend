@@ -56,6 +56,7 @@ const App = () => {
 		api.deleteDiscount(discountID)
 			.then((result) => {
 				console.log(result)
+				GetDiscount();
 			})
 			.catch((err) => {
 				console.error(err);
@@ -79,7 +80,7 @@ const App = () => {
 	const dataDiscount = (data) => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
 	}
-    const infoCategoryID = (id) =>{
+	const infoCategoryID = (id) => {
 		setCategoryID(id)
 	}
 
@@ -87,23 +88,25 @@ const App = () => {
 
 		api.addNewCategories(categoryName)
 			.then((categoryName) => {
+				GetCategories();
 				console.log(categoryName)
 			})
 			.catch((error) => {
 				console.log(error)
 			})
 	}
-    
-	function handleAddDiscount(name,image,description,promocode,link,barcode,date,category) {
-		
-        api.addNewDiscount(name,image,description,promocode,link,barcode,date,category)
-		.then((name,image,description,promocode,link,barcode,date,category)=>{
-			console.log("Успех")
 
-		})
-		.catch((error) => {
-			console.log(error)
-		})
+	function handleAddDiscount(name, image, description, promocode, link, barcode, date, category) {
+
+		api.addNewDiscount(name, image, description, promocode, link, barcode, date, category)
+			.then((name, image, description, promocode, link, barcode, date, category) => {
+				GetDiscount();
+				console.log("Успех")
+
+			})
+			.catch((error) => {
+				console.log(error)
+			})
 	}
 
 
@@ -112,7 +115,7 @@ const App = () => {
 		GetDiscount();
 	}, []);
 
-	
+
 	return (
 		<>
 			<Routes>
@@ -122,9 +125,9 @@ const App = () => {
 					category={category}
 					discount={discount}
 					dataDiscount={dataDiscount}
-					infoCategoryID = {infoCategoryID}
+					infoCategoryID={infoCategoryID}
 					handleNewCategory={handleNewCategory}
-					handleAddDiscount = {handleAddDiscount}
+					handleAddDiscount={handleAddDiscount}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
@@ -132,8 +135,8 @@ const App = () => {
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
-					categoryID = {categoryID}
-					handleAddDiscount = {handleAddDiscount}
+					categoryID={categoryID}
+					handleAddDiscount={handleAddDiscount}
 				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />

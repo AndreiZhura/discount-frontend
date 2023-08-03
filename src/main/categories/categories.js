@@ -5,8 +5,7 @@ import AddDiscount from "../addDiscount/addDiscount";
 
 
 function Categories(props) {
- console.log('categories')
- console.log(props.category)
+
     return (
         <div className="categories">
             <div className="categories__container">

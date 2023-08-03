@@ -8,8 +8,7 @@ import Footer from "./footer/footer";
 
 
 function Main(props) {
-console.log('Main')
-console.log(props.category)
+
     return (
         <>
             <main className="main">

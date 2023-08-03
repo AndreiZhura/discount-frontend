@@ -275,6 +275,11 @@
     margin-bottom: 50px;
 }
 
+.setting__buttons_add-discount{
+    align-items: center;
+    justify-content: center;
+}
+
 .setting__button {
     width: 351.1852722167969px;
     height: 62.92915344238281px;

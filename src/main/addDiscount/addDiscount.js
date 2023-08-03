@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import addDiscount from '../../img/addDiscount.svg'
 
 function AddDiscount(props){
-    console.log('ADDdiscounts')
-    console.log(props.category._id)
+   
  
     function categoriesID(){
         props.infoCategoryID(props.category._id)
