@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 
 function SettingsDiscount(props) {
-    console.log(props.infoDiscount.image)
+
+    const base = `http://localhost:3001/`;
 
     function handleDiscountDelete() {
         props.onCardDelete(props.infoDiscount._id);
@@ -31,7 +32,7 @@ return (
                 props.infoDiscount.image ?
                     <div className="input__file-container" >
                         <button className="input__file-delete">X</button>
-                        <img className="input__file input__file_pull" src={`http://localhost:3001/uploads/04.08.2023-12.36.05-sber.jpg`} />
+                        <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
                     </div>
                     :
                     <div className="input__file">
@@ -51,7 +52,7 @@ return (
             {
                 props.infoDiscount.barcode ?
                     <div className="input__barcode-container">
-                        <img className="input__barcode-image" src={`http://localhost:3001/uploads/04.08.2023-12.36.05-sber.jpg`} />
+                        <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
                     </div>
                     :
                     <div className="input__barcode">

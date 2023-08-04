@@ -9,8 +9,6 @@ function Discount(props) {
 
     const base = `http://localhost:3001/`;
 
-
-
     function DataDiscount() {
 
         props.dataDiscount(props.discount)

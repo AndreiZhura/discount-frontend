@@ -15,44 +15,50 @@ function DiscountAdd(props) {
     const [date, setDate] = useState(null);
     const [category, setCategory] = useState('')
 
-    
+
     function handleSubmit(e) {
         e.preventDefault();
-        setCategory(props.categoryID)
-        props.handleAddDiscount(name,image,description,promocode,link,barcode,date,props.categoryID);
+       props.handleAddDiscount(name, image, description, promocode, link, barcode, date, props.categoryID);
 
     }
 
     function handleName(e) {
+
         setName(e.target.value)
     }
 
     function handleImage(e) {
-        setImage(e.target.value)
+        
+        setImage(e.target.files[0])
     }
 
     function handleDescription(e) {
+
         setDescription(e.target.value);
     }
 
     function handlePromocode(e) {
+
         setPromocode(e.target.value);
     }
 
-    
+
     function handleLink(e) {
+
         setLink(e.target.value);
     }
-    
-    function handleBarcode(e){
-        setBarcode(e.target.value);
+
+    function handleBarcode(e) {
+
+        setBarcode(e.target.files[0]);
     }
-    
+
     function handleData(e) {
+
         setDate(e.target.value);
     }
 
-    
+
 
     return (
         <div className="settings">
@@ -68,11 +74,12 @@ function DiscountAdd(props) {
                     onChange={handleName}
                 />
                 <div className="input__file">
-                    <input type="text"
+                    <input type="file"
                         onChange={handleImage}
                         className="input__file-add"
                         placeholder="Добавить картинку"
                         name="add-file"
+                        accept="uploads/*"
                         id="add-file" />
                     <img className="input-file-img" src={addPictures} />
                     <label for="add-file" className="input__file-label">Добавить картинку</label>
@@ -105,10 +112,11 @@ function DiscountAdd(props) {
                 />
                 <div className="input__barcode">
                     <input
-                        type="text"
+                        type="file"
                         className="input__barcode-add"
                         placeholder="Добавить штрихкоде"
                         name="add-barcode"
+                        accept="uploads/*"
                         id="add-barcode"
                         onChange={handleBarcode}
                     />

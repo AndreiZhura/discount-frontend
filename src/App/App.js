@@ -2,7 +2,7 @@ import '../App/App.css'
 import { useState, useEffect, } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+;
 /*
 import bridge from '@vkontakte/vk-bridge';
 import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
@@ -96,13 +96,13 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, promocode, link, barcode, date, category) {
-
+	function handleAddDiscount(name, image = File, description, promocode, link, barcode, date, category) {
+		
 		api.addNewDiscount(name, image, description, promocode, link, barcode, date, category)
 			.then((name, image, description, promocode, link, barcode, date, category) => {
 				GetDiscount();
 				history("/");
-				console.log("Успех")
+			
 
 			})
 			.catch((error) => {
