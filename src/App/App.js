@@ -102,6 +102,7 @@ const App = () => {
 			.then((name, image, description, promocode, link, barcode, date, category) => {
 				GetDiscount();
 				history("/");
+				console.log('Успех')
 			})
 			.catch((error) => {
 				console.log(error)

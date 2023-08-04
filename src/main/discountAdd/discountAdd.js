@@ -18,17 +18,16 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-       props.handleAddDiscount(name, image, description, promocode, link, barcode, date, props.categoryID);
+        props.handleAddDiscount(name, image, description, promocode, link, barcode, date, props.categoryID);
 
     }
 
     function handleName(e) {
-
         setName(e.target.value)
     }
 
     function handleImage(e) {
-        
+
         setImage(e.target.files[0])
     }
 
@@ -49,8 +48,8 @@ function DiscountAdd(props) {
     }
 
     function handleBarcode(e) {
-        setBarcode(e.target.files[0]);    
-        
+        setBarcode(e.target.files[0]);
+
     }
 
 

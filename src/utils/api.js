@@ -1,5 +1,6 @@
+
 export const BASE_URL = 'http://localhost:3001';
-import formdata from 'form-data';
+
 //обработка ошибок
 function getResponse(res) {
   if (res.ok) {
@@ -27,18 +28,23 @@ export const register = (email, password, name) => {
 }
 
 export const addNewDiscount = (name, image, description, promocode, link, barcode, date, category) => {
-  console.log(name, image, description, promocode, link, barcode, date, category)
+ 
+  const data = new FormData()
+  data.append('name', name)
+  data.append('image', image)
+  data.append('description', description)
+  data.append('promocode', promocode)
+  data.append('link', link)
+  data.append('barcode', barcode)
+  data.append('date', date)
+  data.append('category', category)
+
   return fetch(`${BASE_URL}/positions`, {
     method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'multipart/form-data',
-    },
-
-    body: JSON.stringify({ name, image, description, promocode, link, barcode, date, category })
+    body: data
   })
     .then((res) => {
-      return getResponse(name, image, description, promocode, link, barcode, date, category)
+      return getResponse(res)
     })
 }
 
