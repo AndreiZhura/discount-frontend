@@ -75,7 +75,7 @@
 
 .input__file_pull {
     border: 1px solid black;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .input__file {

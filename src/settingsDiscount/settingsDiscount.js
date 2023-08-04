@@ -31,7 +31,7 @@ return (
                 props.infoDiscount.image ?
                     <div className="input__file-container" >
                         <button className="input__file-delete">X</button>
-                        <img className="input__file input__file_pull" src={props.infoDiscount.image} />
+                        <img className="input__file input__file_pull" src={`http://localhost:3001/uploads/04.08.2023-12.36.05-sber.jpg`} />
                     </div>
                     :
                     <div className="input__file">
@@ -51,7 +51,7 @@ return (
             {
                 props.infoDiscount.barcode ?
                     <div className="input__barcode-container">
-                        <img className="input__barcode-image" src={props.infoDiscount.barcode} />
+                        <img className="input__barcode-image" src={`http://localhost:3001/uploads/04.08.2023-12.36.05-sber.jpg`} />
                     </div>
                     :
                     <div className="input__barcode">
