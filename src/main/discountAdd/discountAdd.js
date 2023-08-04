@@ -49,9 +49,10 @@ function DiscountAdd(props) {
     }
 
     function handleBarcode(e) {
-
-        setBarcode(e.target.files[0]);
+        setBarcode(e.target.files[0]);    
+        
     }
+
 
     function handleData(e) {
 

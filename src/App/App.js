@@ -96,14 +96,12 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image = File, description, promocode, link, barcode, date, category) {
+	function handleAddDiscount(name, image, description, promocode, link, barcode, date, category) {
 		
 		api.addNewDiscount(name, image, description, promocode, link, barcode, date, category)
 			.then((name, image, description, promocode, link, barcode, date, category) => {
 				GetDiscount();
 				history("/");
-			
-
 			})
 			.catch((error) => {
 				console.log(error)

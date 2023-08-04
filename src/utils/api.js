@@ -32,7 +32,6 @@ export const addNewDiscount = (name, image, description, promocode, link, barcod
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/json',
       'Content-Type': 'multipart/form-data',
     },
 
