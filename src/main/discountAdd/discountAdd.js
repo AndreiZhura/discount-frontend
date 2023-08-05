@@ -97,7 +97,7 @@ function DiscountAdd(props) {
                         className="input__add-promocode"
                         onChange={handlePromocode}
                     />
-                    <input type="text"
+                    <input type="date"
                         className="input__add-date"
                         placeholder="До __ __ ______г."
                         onChange={handleData}
