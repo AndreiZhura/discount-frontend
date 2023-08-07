@@ -46,7 +46,7 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
-				console.log(result.data)
+				//console.log(result.data)
 				setDiscount(result.data);
 			})
 			.catch((err) => {
@@ -96,20 +96,40 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, promocode, link, barcode, date, category) {
-		
-		api.addNewDiscount(name, image, description, promocode, link, barcode, date, category)
-			.then((name, image, description, promocode, link, barcode, date, category) => {
-				GetDiscount();
-				history("/");
-				console.log('Успех')
-			})
-			.catch((error) => {
-				console.log(error)
-			})
+	function handleAddDiscount(name, image, description, link, barcode, category, promocode, date) {
+		if (promocode, date) {
+			api.addNewDiscount(name, image, description, link, barcode, category)
+				.then((result) => {
+					console.log(result)
+					api.addNewPromo(promocode, date, result.data._id)
+						.then((result) => {
+							console.log(result);
+							GetDiscount();
+							history("/");
+						})
+						.catch((error) => {
+							console.log(error)
+						})
+
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		}
+		else {
+			api.addNewDiscount(name, image, description, link, barcode, category)
+				.then((result) => {
+					GetDiscount();
+					history("/");
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		}
+
 	}
 
-	function handlePromo(){
+	function handlePromo() {
 
 	}
 
@@ -139,7 +159,7 @@ const App = () => {
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
 					categoryID={categoryID}
-					positionID = {positionID}
+					positionID={positionID}
 					handleAddDiscount={handleAddDiscount}
 				/>} />
 				<Route path="/signup" element={<Register />} />
