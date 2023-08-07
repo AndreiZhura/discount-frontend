@@ -30,6 +30,7 @@ const App = () => {
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
 	const [categoryID, setCategoryID] = useState([]);
+	const [positionID, setPositionID] = useState([])
 	//загрузка скидок
 	const [discount, setDiscount] = useState([]);
 	//инфо о скидке
@@ -45,7 +46,7 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
-				//console.log(result.data)
+				console.log(result.data)
 				setDiscount(result.data);
 			})
 			.catch((err) => {
@@ -80,7 +81,6 @@ const App = () => {
 		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
 	}
 	const infoCategoryID = (id) => {
-		console.log(categoryID)
 		setCategoryID(id)
 	}
 
@@ -109,6 +109,9 @@ const App = () => {
 			})
 	}
 
+	function handlePromo(){
+
+	}
 
 	useEffect(() => {
 		GetCategories();
@@ -136,6 +139,7 @@ const App = () => {
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
 					categoryID={categoryID}
+					positionID = {positionID}
 					handleAddDiscount={handleAddDiscount}
 				/>} />
 				<Route path="/signup" element={<Register />} />

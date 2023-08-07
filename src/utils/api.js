@@ -27,13 +27,12 @@ export const register = (email, password, name) => {
     })
 }
 
-export const addNewDiscount = (name, image, description, promocode, link, barcode, date, category) => {
+export const addNewDiscount = (name, image, description,  link, barcode, date, category) => {
  
   const data = new FormData()
   data.append('name', name)
   data.append('image', image)
   data.append('description', description)
-  data.append('promocode', promocode)
   data.append('link', link)
   data.append('barcode', barcode)
   data.append('date', date)
@@ -46,6 +45,10 @@ export const addNewDiscount = (name, image, description, promocode, link, barcod
     .then((res) => {
       return getResponse(res)
     })
+}
+
+export const addNewPromo = () =>{
+
 }
 
 //добавление карточки

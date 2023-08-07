@@ -12,12 +12,14 @@ function SettingsDiscount(props) {
 
     const date = new Date(props.infoDiscount.date)
 
+    
     function handleDiscountDelete() {
         props.onCardDelete(props.infoDiscount._id);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        
     }
 
 

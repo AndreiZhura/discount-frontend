@@ -3,9 +3,11 @@ import '../../settingsDiscount/settingsDiscount'
 import settingLogo from '../../img/setting.svg'
 import addPictures from '../../img/add-pictyres.svg'
 import plusAdd from '../../img/plusAdd.svg'
+import AddPromo from "../addPromocode/addPromocode";
 
 
 function DiscountAdd(props) {
+
     const [name, setName] = useState('');
     const [image, setImage] = useState(null);
     const [description, setDescription] = useState('');
@@ -13,14 +15,18 @@ function DiscountAdd(props) {
     const [link, setLink] = useState('');
     const [barcode, setBarcode] = useState('');
     const [date, setDate] = useState(null);
-    const [category, setCategory] = useState('')
-
+    const [counter, setCounter] = useState(0);
 
     function handleSubmit(e) {
         e.preventDefault();
         props.handleAddDiscount(name, image, description, promocode, link, barcode, date, props.categoryID);
 
     }
+
+    const handleClick = () => {
+        setCounter(counter + 1);
+        console.log(counter);
+    };
 
     function handleName(e) {
         setName(e.target.value)
@@ -91,19 +97,21 @@ function DiscountAdd(props) {
                     placeholder="Описание данного сервиса..."
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
-                <div className="input__promocode">
-                    <input type="text"
-                        placeholder="Промокод"
-                        className="input__add-promocode"
-                        onChange={handlePromocode}
-                    />
-                    <input type="date"
-                        className="input__add-date"
-                        placeholder="До __ __ ______г."
-                        onChange={handleData}
-                    />
-                </div>
-                <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
+
+                {
+                    Array.from(Array(counter)).map((id, index) => {
+                        return (
+                            <AddPromo
+                                key={id}
+                                handlePromocode={handlePromocode}
+                                handleData={handleData} />
+                        );
+                    })
+                }
+
+
+                <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
+
                 <input
                     type="text"
                     className="input__add-link"
