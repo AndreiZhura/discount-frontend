@@ -11,36 +11,38 @@ function DiscountAdd(props) {
     const [name, setName] = useState('');
     const [image, setImage] = useState(null);
     const [description, setDescription] = useState('');
-    const [promocode, setPromocode] = useState('');
     const [link, setLink] = useState('');
     const [barcode, setBarcode] = useState('');
-    const [date, setDate] = useState(null);
+    const [promocode, setPromocode] = useState('');
+    const [date, setDate] = useState('');
     const [counter, setCounter] = useState(0);
     const [save, setSave] = useState(false);
+
 
     function SaveCArd() {
         setSave(!save)
     }
 
+    function handleClick() {
+        setCounter(!counter)
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(counter)
         if (save && counter === 0) {
             props.handleAddDiscount(name, image, description, link, barcode, props.categoryID);
         }
         if (save && counter !== 0) {
-            console.log(name, image, description, link, barcode, promocode, date, props.categoryID)
-            props.handleAddDiscount(name, image, description, link, barcode, promocode, date, props.categoryID);
+            console.log(promocode, date,)
+            props.handleAddDiscount(name, image, description, link, barcode, props.categoryID);
+            props.handlePromo(promocode, date,)
         }
         else {
             console.log('проверка')
         }
 
     }
-
-    const handleClick = () => {
-        setCounter(counter + 1);
-        console.log(counter);
-    };
 
     function handleName(e) {
         setName(e.target.value)
@@ -57,10 +59,14 @@ function DiscountAdd(props) {
     }
 
     function handlePromocode(e) {
-        console.log(e.target.value)
+
         setPromocode(e.target.value);
     }
 
+    function handleData(e) {
+
+        setDate(e.target.value);
+    }
 
     function handleLink(e) {
 
@@ -71,13 +77,6 @@ function DiscountAdd(props) {
         setBarcode(e.target.files[0]);
 
     }
-
-
-    function handleData(e) {
-
-        setDate(e.target.value);
-    }
-
 
 
     return (
@@ -111,21 +110,22 @@ function DiscountAdd(props) {
                     placeholder="Описание данного сервиса..."
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
-
                 {
                     Array.from(Array(counter)).map((id, index) => {
                         return (
                             <AddPromo
-                                key={id}
+
                                 handlePromocode={handlePromocode}
                                 handleData={handleData} />
                         );
                     })
                 }
 
-
-                <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
-
+                {
+                    counter === 0 ?
+                        <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
+                        : <></>
+                }
                 <input
                     type="text"
                     className="input__add-link"

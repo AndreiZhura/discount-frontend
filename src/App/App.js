@@ -96,41 +96,28 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, link, barcode, category, promocode, date) {
-		if (promocode, date) {
-			api.addNewDiscount(name, image, description, link, barcode, category)
-				.then((result) => {
-					console.log(result)
-					api.addNewPromo(promocode, date, result.data._id)
-						.then((result) => {
-							console.log(result);
-							GetDiscount();
-							history("/");
-						})
-						.catch((error) => {
-							console.log(error)
-						})
-
-				})
-				.catch((error) => {
-					console.log(error)
-				})
-		}
-		else {
-			api.addNewDiscount(name, image, description, link, barcode, category)
-				.then((result) => {
-					GetDiscount();
-					history("/");
-				})
-				.catch((error) => {
-					console.log(error)
-				})
-		}
-
+	function handleAddDiscount(name, image, description, link, barcode, category,) {
+		api.addNewDiscount(name, image, description, link, barcode, category)
+			.then((result) => {
+				setPositionID(result.data._id)
+				GetDiscount();
+				history("/");
+			})
+			.catch((error) => {
+				console.log(error)
+			})
 	}
 
-	function handlePromo() {
-
+	function handlePromo(promocode, date) {
+		const promo = positionID
+		
+		api.addNewPromo(promocode, date, promo)
+			.then((result) => {
+				console.log(result)
+			})
+			.catch((error) => {
+				console.log(error)
+			})
 	}
 
 	useEffect(() => {
@@ -161,6 +148,7 @@ const App = () => {
 					categoryID={categoryID}
 					positionID={positionID}
 					handleAddDiscount={handleAddDiscount}
+					handlePromo = {handlePromo}
 				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
