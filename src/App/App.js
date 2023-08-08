@@ -88,16 +88,14 @@ const App = () => {
 	}
 
 	const handleDeletePromo = (promoDelete) => {
-		console.log('123')
-		console.log(promoDelete)
-		console.log(promoDelete._id)
 		api.deletePromocode(promoDelete._id)
-		 try{
+		.then((res) => {
+			console.log(res)
 			GetPromocode();
-		 }
-		 catch{
-			console.log('ошибка')
-		 }
+		})
+		.catch((err) => {
+			console.log(err)
+		})
 	}
 
 
