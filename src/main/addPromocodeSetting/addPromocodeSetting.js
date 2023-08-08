@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import '../../settingsDiscount/settingsDiscount'
 
-function AddPromo(props) {
+function AddPromoSetting(props) {
 
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
@@ -46,4 +46,4 @@ function AddPromo(props) {
     );
 }
 
-export default AddPromo;
+export default AddPromoSetting;

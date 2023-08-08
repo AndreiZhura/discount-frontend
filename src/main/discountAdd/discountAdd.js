@@ -3,7 +3,7 @@ import '../../settingsDiscount/settingsDiscount'
 import settingLogo from '../../img/setting.svg'
 import addPictures from '../../img/add-pictyres.svg'
 import plusAdd from '../../img/plusAdd.svg'
-import AddPromo from "../addPromocode/addPromocode";
+import AddPromo from "../addPromo/addPromo";
 
 
 function DiscountAdd(props) {

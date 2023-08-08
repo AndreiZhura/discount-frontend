@@ -5,7 +5,7 @@ import addPictures from '../img/add-pictyres.svg'
 import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
 import GetPromocode from "../main/getPromocode/getPromocode";
-import AddPromo from "../main/addPromocode/addPromocode";
+import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
 
 
 function SettingsDiscount(props) {
@@ -76,7 +76,7 @@ function SettingsDiscount(props) {
                 {
                     Array.from(Array(counter)).map((id, index) => {
                         return (
-                            <AddPromo
+                            <AddPromoSetting
                                 infoDiscount = {props.infoDiscount}
                                 setCounter={setCounter}
                                 handlePromo={props.handlePromo}
