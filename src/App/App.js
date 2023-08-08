@@ -123,7 +123,7 @@ const App = () => {
 	}
 
 	function handlePromo(promocode, date ,position) {
-	
+	console.log(promocode)
 		api.addNewPromo(promocode, date, position)
 			.then((result) => {
 				console.log(result)

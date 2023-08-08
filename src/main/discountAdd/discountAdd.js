@@ -15,7 +15,7 @@ function DiscountAdd(props) {
     const [barcode, setBarcode] = useState('');
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
-    const [counter, setCounter] = useState(0);
+    
     const [save, setSave] = useState(false);
 
 
@@ -23,24 +23,13 @@ function DiscountAdd(props) {
         setSave(!save)
     }
 
-    function handleClick() {
-        setCounter(!counter)
-    }
+ 
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(counter)
-        if (save && counter === 0) {
-            props.handleAddDiscount(name, image, description, link, barcode, props.categoryID);
-        }
-        if (save && counter !== 0) {
-            console.log(promocode, date,)
-            props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
-            //  props.handlePromo(promocode, date,)
-        }
-        else {
-            console.log('проверка')
-        }
+        console.log(promocode)
+        props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
+       
 
     }
 
@@ -64,7 +53,7 @@ function DiscountAdd(props) {
     }
 
     function handleData(e) {
-        console.log(e.target.value)
+        //console.log(e.target.value)
         setDate(e.target.value);
     }
 
@@ -138,7 +127,7 @@ function DiscountAdd(props) {
                     <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
                 </div>
                 <div className="setting__buttons setting__buttons_add-discount">
-                    <button className="setting__button" onClick={SaveCArd}>СОХРАНИТЬ</button>
+                    <button className="setting__button" >СОХРАНИТЬ</button>
                 </div>
             </form>
         </div>

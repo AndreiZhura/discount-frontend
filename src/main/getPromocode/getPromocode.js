@@ -2,12 +2,12 @@ import React from "react";
 import '../../settingsDiscount/settingsDiscount.css'
 
 function GetPromocode(props) {
-   
+
 
     //const base = `http://localhost:3001/`;
 
-    const date = new Date(props.value.promocode)
-
+    const date = new Date(props.value.date)
+    console.log(props.value)
 
     return (
         <>
