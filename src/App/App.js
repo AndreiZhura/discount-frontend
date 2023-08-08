@@ -112,7 +112,6 @@ const App = () => {
 	function handleAddDiscount(name, image, description, link, barcode, category,promocode, date,) {
 		api.addNewDiscount(name, image, description, link, barcode, category)
 			.then((result) => {
-				console.log(result.data._id);
 			    handlePromo(promocode, date,result.data._id);
 				GetDiscount();
 				history("/");
@@ -123,7 +122,7 @@ const App = () => {
 	}
 
 	function handlePromo(promocode, date ,position) {
-	console.log(promocode)
+	
 		api.addNewPromo(promocode, date, position)
 			.then((result) => {
 				console.log(result)
