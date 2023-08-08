@@ -104,7 +104,7 @@ export const deleteDiscount = (id) => {
     })
 }
 
-export const deletePromo = (id) => {
+export const deletePromocode = (id) => {
   fetch(`${BASE_URL}/promocode/${id}`, {
     method: 'DELETE',
     headers: {

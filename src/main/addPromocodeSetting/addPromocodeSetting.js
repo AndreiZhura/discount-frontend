@@ -14,12 +14,11 @@ function AddPromoSetting(props) {
     }
 
     function handlePromocode(e) {
-        console.log(e.target.value)
         setPromocode(e.target.value);
     }
 
     function handleData(e) {
-        //console.log(e.target.value)
+
         setDate(e.target.value);
     }
 

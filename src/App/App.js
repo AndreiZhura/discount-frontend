@@ -87,6 +87,16 @@ const App = () => {
 			})
 	}
 
+	const handleDeletePromo = (promoDelete) => {
+		api.deletePromocode(promoDelete)
+			.then((res) => {
+				console.log(res)
+				GetPromocode();
+			})
+			.catch((err) => {
+				console.log(err)
+			})
+	}
 
 
 
@@ -111,10 +121,10 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, link, barcode, category,promocode, date,) {
+	function handleAddDiscount(name, image, description, link, barcode, category, promocode, date,) {
 		api.addNewDiscount(name, image, description, link, barcode, category)
 			.then((result) => {
-			    handlePromo(promocode, date,result.data._id);
+				handlePromo(promocode, date, result.data._id);
 				GetDiscount();
 				GetPromocode();
 				history("/");
@@ -124,8 +134,8 @@ const App = () => {
 			})
 	}
 
-	function handlePromo(promocode, date ,position) {
-	
+	function handlePromo(promocode, date, position) {
+
 		api.addNewPromo(promocode, date, position)
 			.then((result) => {
 				GetPromocode();
@@ -134,17 +144,6 @@ const App = () => {
 				console.log(error)
 			})
 	}
-
-	function handleDeletePromo(promoDelete){
-		api.deletePromo(promoDelete)
-		.then((result) => {
-			GetPromocode();
-		})
-		.catch((error) => {
-			console.log(error)
-		})
-	}
-
 
 	useEffect(() => {
 		GetCategories();
@@ -171,7 +170,7 @@ const App = () => {
 					infoDiscount={infoDiscount}
 					onCardDelete={DeleteDiscount}
 					handlePromo={handlePromo}
-					handleDeletePromo ={handleDeletePromo}
+					handleDeletePromo={handleDeletePromo}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
