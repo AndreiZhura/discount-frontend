@@ -87,16 +87,6 @@ const App = () => {
 			})
 	}
 
-	function handleDeletePromo(promoDelete){
-		api.deletePromo(promoDelete)
-		.then((result) => {
-			console.log(result)
-			GetPromocode();
-		})
-		.catch((err) => {
-			console.error(err);
-		})
-	}
 
 
 
@@ -145,6 +135,16 @@ const App = () => {
 			})
 	}
 
+	function handleDeletePromo(promoDelete){
+		api.deletePromo(promoDelete)
+		.then((result) => {
+			GetPromocode();
+		})
+		.catch((error) => {
+			console.log(error)
+		})
+	}
+
 
 	useEffect(() => {
 		GetCategories();
@@ -167,11 +167,11 @@ const App = () => {
 					handleAddDiscount={handleAddDiscount}
 				/>} />
 				<Route path="/setting" element={<SettingsDiscount
+					promocode={promocode}
 					infoDiscount={infoDiscount}
 					onCardDelete={DeleteDiscount}
 					handlePromo={handlePromo}
-					onPromoDelete ={handleDeletePromo}
-					promocode={promocode}
+					handleDeletePromo ={handleDeletePromo}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd

@@ -10,7 +10,7 @@ function GetPromocode(props) {
 
     function handlePromoDelete(){
         console.log(props.value._id)
-        props.onPromoDelete(props.value._id)
+        props.handleDeletePromo(props.value._id)
      }
 
     return (

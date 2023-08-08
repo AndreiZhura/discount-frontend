@@ -68,7 +68,7 @@ function SettingsDiscount(props) {
                                     <GetPromocode
                                         key={key}
                                         value={value}
-                                        onPromoDelete = {props.onPromoDelete}
+                                        handleDeletePromo = {props.handleDeletePromo}
                                     /> : <></>
                             );
                         })
