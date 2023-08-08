@@ -27,7 +27,7 @@ export const register = (email, password, name) => {
     })
 }
 
-export const addNewDiscount = (name, image, description, link, barcode,  category) => {
+export const addNewDiscount = (name, image, description, link, barcode, category) => {
 
   const data = new FormData()
   data.append('name', name)
@@ -46,18 +46,32 @@ export const addNewDiscount = (name, image, description, link, barcode,  categor
     })
 }
 
-export const addNewPromo = (promocode,date,position) => {
+export const addNewPromo = (promocode, date, position) => {
   return fetch(`${BASE_URL}/promocode`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ promocode,date, position })
+    body: JSON.stringify({ promocode, date, position })
   })
     .then((res) => {
       return getResponse(res)
     })
+}
+
+export const getPromo = () => {
+  return fetch(`${BASE_URL}/promocode`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    }
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+
 }
 
 //добавление карточки

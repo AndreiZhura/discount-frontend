@@ -1,25 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import './settingsDiscount.css'
 import settingLogo from '../img/setting.svg';
 import addPictures from '../img/add-pictyres.svg'
 import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
+import GetPromocode from "../main/getPromocode/getPromocode";
 
 
 function SettingsDiscount(props) {
-
     const base = `http://localhost:3001/`;
 
-    const date = new Date(props.infoDiscount.date)
 
-    
     function handleDiscountDelete() {
         props.onCardDelete(props.infoDiscount._id);
     }
 
+
     const handleSubmit = (e) => {
-        e.preventDefault()
-        
+        e.preventDefault();
     }
 
 
@@ -47,10 +45,23 @@ function SettingsDiscount(props) {
                 }
                 <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..." >{props.infoDiscount.description}</textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
-                <div className="input__promocode">
-                    <input type="text" placeholder="Промокод" value={props.infoDiscount.link} className="input__add-promocode" />
-                    <input type="text" className="input__add-date" placeholder="До __ __ ______г." value={date.toLocaleDateString()} />
-                </div>
+                {
+                    props.promocode.length === 0 ? <></> :
+                        props.promocode.map((value, key) => {
+                            return (
+                                props.infoDiscount._id === value.position ?
+                                    <GetPromocode
+                                        key={key}
+                                        value={value}
+                                    /> : <></>
+                            );
+                        })
+
+
+
+
+
+                }
                 <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
                 <input type="text" className="input__add-link" placeholder="Добавить ссылку" />
                 {

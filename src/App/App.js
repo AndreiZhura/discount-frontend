@@ -33,6 +33,8 @@ const App = () => {
 	const [positionID, setPositionID] = useState([])
 	//загрузка скидок
 	const [discount, setDiscount] = useState([]);
+	//загрузка промокодов
+	const [promocode, setPromocode] = useState([]);
 	//инфо о скидке
 	const [infoDiscount, setInfoDiscount] = useState([]);
 
@@ -43,11 +45,31 @@ const App = () => {
 		setSearch(value);
 	}
 
+	function GetCategories() {
+		api.getCategories()
+			.then((result) => {
+				setCategory(result.data);
+			})
+			.catch((err) => {
+				console.error(err);
+			})
+	}
+
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
 				//console.log(result.data)
 				setDiscount(result.data);
+			})
+			.catch((err) => {
+				console.error(err);
+			})
+	}
+
+	function GetPromocode() {
+		api.getPromo()
+			.then((result) => {
+				setPromocode(result.data)
 			})
 			.catch((err) => {
 				console.error(err);
@@ -66,15 +88,6 @@ const App = () => {
 	}
 
 
-	function GetCategories() {
-		api.getCategories()
-			.then((result) => {
-				setCategory(result.data);
-			})
-			.catch((err) => {
-				console.error(err);
-			})
-	}
 
 	//Поднятие стейта 
 	const dataDiscount = (data) => {
@@ -96,10 +109,11 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, link, barcode, category,) {
+	function handleAddDiscount(name, image, description, link, barcode, category,promocode, date,) {
 		api.addNewDiscount(name, image, description, link, barcode, category)
 			.then((result) => {
-				setPositionID(result.data._id)
+				console.log(result.data._id);
+			    handlePromo(promocode, date,result.data._id);
 				GetDiscount();
 				history("/");
 			})
@@ -108,10 +122,9 @@ const App = () => {
 			})
 	}
 
-	function handlePromo(promocode, date) {
-		const promo = positionID
-		
-		api.addNewPromo(promocode, date, promo)
+	function handlePromo(promocode, date ,position) {
+	
+		api.addNewPromo(promocode, date, position)
 			.then((result) => {
 				console.log(result)
 			})
@@ -123,6 +136,7 @@ const App = () => {
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
+		GetPromocode()
 	}, []);
 
 
@@ -142,13 +156,14 @@ const App = () => {
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
 					onCardDelete={DeleteDiscount}
+					promocode={promocode}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
 				<Route path='/add-discount' element={<DiscountAdd
 					categoryID={categoryID}
 					positionID={positionID}
 					handleAddDiscount={handleAddDiscount}
-					handlePromo = {handlePromo}
+					handlePromo={handlePromo}
 				/>} />
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />

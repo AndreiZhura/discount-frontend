@@ -35,8 +35,8 @@ function DiscountAdd(props) {
         }
         if (save && counter !== 0) {
             console.log(promocode, date,)
-            props.handleAddDiscount(name, image, description, link, barcode, props.categoryID);
-            props.handlePromo(promocode, date,)
+            props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
+            //  props.handlePromo(promocode, date,)
         }
         else {
             console.log('проверка')
@@ -59,12 +59,12 @@ function DiscountAdd(props) {
     }
 
     function handlePromocode(e) {
-
+        console.log(e.target.value)
         setPromocode(e.target.value);
     }
 
     function handleData(e) {
-
+        console.log(e.target.value)
         setDate(e.target.value);
     }
 
@@ -111,21 +111,13 @@ function DiscountAdd(props) {
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
-                    Array.from(Array(counter)).map((id, index) => {
-                        return (
-                            <AddPromo
 
-                                handlePromocode={handlePromocode}
-                                handleData={handleData} />
-                        );
-                    })
+                    <AddPromo
+                        handlePromocode={handlePromocode}
+                        handleData={handleData} />
+
                 }
 
-                {
-                    counter === 0 ?
-                        <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
-                        : <></>
-                }
                 <input
                     type="text"
                     className="input__add-link"
