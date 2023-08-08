@@ -9,8 +9,8 @@ function GetPromocode(props) {
     const date = new Date(props.value.date)
 
     function handlePromoDelete(){
-        console.log(props.value._id)
-        props.handleDeletePromo(props.value._id)
+        console.log(props.value)
+       props.handleDeletePromo(props.value)
      }
 
     return (
