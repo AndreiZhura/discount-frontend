@@ -114,6 +114,7 @@ const App = () => {
 			.then((result) => {
 			    handlePromo(promocode, date,result.data._id);
 				GetDiscount();
+				GetPromocode();
 				history("/");
 			})
 			.catch((error) => {

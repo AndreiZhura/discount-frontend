@@ -10,7 +10,6 @@ import GetPromocode from "../main/getPromocode/getPromocode";
 function SettingsDiscount(props) {
     const base = `http://localhost:3001/`;
 
-
     function handleDiscountDelete() {
         props.onCardDelete(props.infoDiscount._id);
     }
