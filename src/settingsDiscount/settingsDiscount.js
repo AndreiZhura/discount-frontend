@@ -5,19 +5,33 @@ import addPictures from '../img/add-pictyres.svg'
 import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
 import GetPromocode from "../main/getPromocode/getPromocode";
+import AddPromo from "../main/addPromocode/addPromocode";
 
 
 function SettingsDiscount(props) {
     const base = `http://localhost:3001/`;
 
+    const [counter, setCounter] = useState(0);
+    const [update, setUpdate] = useState(false);
+
+
+
+
+    function Update() {
+        setUpdate(!update);
+    }
+    function handleClick() {
+        setCounter(!counter)
+    }
+
     function handleDiscountDelete() {
         props.onCardDelete(props.infoDiscount._id);
     }
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
     }
+  
 
 
 
@@ -55,13 +69,23 @@ function SettingsDiscount(props) {
                                     /> : <></>
                             );
                         })
-
-
-
-
-
                 }
-                <button className="input__button-promocode" for='add-text'>Добавить промокод</button>
+                {
+                    Array.from(Array(counter)).map((id, index) => {
+                        return (
+                            <AddPromo
+                                infoDiscount = {props.infoDiscount}
+                                setCounter={setCounter}
+                                handlePromo={props.handlePromo}
+                            />
+                        );
+                    })
+                }
+                {
+                    counter === 0 ?
+                        <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
+                        : <></>
+                }
                 <input type="text" className="input__add-link" placeholder="Добавить ссылку" />
                 {
                     props.infoDiscount.barcode ?
@@ -76,7 +100,7 @@ function SettingsDiscount(props) {
                         </div>
                 }
                 <div className="setting__buttons">
-                    <button className="setting__button">СОХРАНИТЬ</button>
+                    <button className="setting__button" onClick={Update} >СОХРАНИТЬ</button>
                     <Link to='/'>
                         <button className="setting__button" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
                     </Link>

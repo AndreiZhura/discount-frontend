@@ -126,7 +126,7 @@ const App = () => {
 	
 		api.addNewPromo(promocode, date, position)
 			.then((result) => {
-				console.log(result)
+				GetPromocode();
 			})
 			.catch((error) => {
 				console.log(error)
@@ -136,7 +136,7 @@ const App = () => {
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
-		GetPromocode()
+		GetPromocode();
 	}, []);
 
 
@@ -156,6 +156,7 @@ const App = () => {
 				<Route path="/setting" element={<SettingsDiscount
 					infoDiscount={infoDiscount}
 					onCardDelete={DeleteDiscount}
+					handlePromo={handlePromo}
 					promocode={promocode}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />

@@ -1,5 +1,5 @@
 :root {
-    --width745: 745px;
+    --width745: 780px;
     --width700: 700px;
     --width650: 650px;
     --width600: 600px;
@@ -181,6 +181,20 @@
     padding-left: 32px;
 }
 
+.bascet-delete{
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    background-image: url(../img/basket.png);
+    background-repeat: no-repeat;
+    background-position: center;
+	background-size: 30px auto;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+  
+ }
+
 .input__button-promocode {
     height: 31px;
     width: 100%;
@@ -248,10 +262,6 @@
     overflow: hidden;
 }
 
-.input__barcode-add {
- 
-}
-
 .input__file-barcode {
     position: absolute;
     top: 27px;
@@ -278,6 +288,7 @@
 .setting__buttons_add-discount{
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .setting__button {
@@ -652,6 +663,8 @@
         padding-left: 10px;
         font-size: 15px;
     }
+
+ 
 
     .input__add-link {
         width: var(--width300);
