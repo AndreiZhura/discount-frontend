@@ -28,6 +28,8 @@ function SettingsDiscount(props) {
         props.onCardDelete(props.infoDiscount._id);
     }
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
     }
@@ -66,6 +68,7 @@ function SettingsDiscount(props) {
                                     <GetPromocode
                                         key={key}
                                         value={value}
+                                        onPromoDelete = {props.onPromoDelete}
                                     /> : <></>
                             );
                         })

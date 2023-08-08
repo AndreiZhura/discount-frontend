@@ -92,7 +92,6 @@ export const getDiscount = () => {
 //удаление карточки
 
 export const deleteDiscount = (id) => {
-  console.log(`api ${id}`)
   return fetch(`${BASE_URL}/positions/${id}`, {
     method: 'DELETE',
     headers: {
@@ -104,6 +103,20 @@ export const deleteDiscount = (id) => {
       return getResponse(res)
     })
 }
+
+export const deletePromo = (id) => {
+  fetch(`${BASE_URL}/promocode/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
 
 
 // Категории
@@ -136,4 +149,5 @@ export const addNewCategories = (categoryName) => {
       return getResponse(res)
     })
 }
+
 

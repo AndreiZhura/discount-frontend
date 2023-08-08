@@ -87,6 +87,18 @@ const App = () => {
 			})
 	}
 
+	function handleDeletePromo(promoDelete){
+		api.deletePromo(promoDelete)
+		.then((result) => {
+			console.log(result)
+			GetPromocode();
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
+
 
 
 	//Поднятие стейта 
@@ -133,6 +145,7 @@ const App = () => {
 			})
 	}
 
+
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
@@ -157,6 +170,7 @@ const App = () => {
 					infoDiscount={infoDiscount}
 					onCardDelete={DeleteDiscount}
 					handlePromo={handlePromo}
+					onPromoDelete ={handleDeletePromo}
 					promocode={promocode}
 				/>} />
 				<Route path='/discount' element={<LookDiscount />} />
