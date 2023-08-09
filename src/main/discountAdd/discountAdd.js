@@ -27,10 +27,8 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(promocode)
         props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
        
-
     }
 
     function handleName(e) {
@@ -48,7 +46,6 @@ function DiscountAdd(props) {
     }
 
     function handlePromocode(e) {
-        console.log(e.target.value)
         setPromocode(e.target.value);
     }
 

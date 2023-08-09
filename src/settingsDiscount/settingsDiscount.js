@@ -10,11 +10,17 @@ import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
 
 function SettingsDiscount(props) {
     const base = `http://localhost:3001/`;
-
+    console.log(props.infoDiscount._id)
     const [counter, setCounter] = useState(0);
-    const [update, setUpdate] = useState(false);
     const [newImage, setNewImage] = useState(true);
     const [newBarcode, setNewBarcode] = useState(true);
+
+    const [name, setName] = useState(props.infoDiscount.name);
+    const [image, setImage] = useState('');
+    const [description, setDescription] = useState(props.infoDiscount.description);
+    const [link, setLink] = useState(props.infoDiscount.link);
+    const [barcode, setBarcode] = useState('');
+
 
 
     function HandleImageFile(){
@@ -27,9 +33,6 @@ function SettingsDiscount(props) {
     }
 
 
-    function Update() {
-        setUpdate(!update);
-    }
     function handleClick() {
         setCounter(!counter)
     }
@@ -40,8 +43,32 @@ function SettingsDiscount(props) {
 
 
 
-    const handleSubmit = (e) => {
+    function handleSubmit(e) {
         e.preventDefault();
+        props.handleUpdateDiscountText(name,  description, link,  props.infoDiscount.category,props.infoDiscount._id);
+       
+    }
+
+    function handleName(e) {
+        setName(e.target.value)
+    }
+
+    function handleImage(e) {
+        setImage(e.target.files[0])
+    }
+
+    function handleDescription(e) {
+        setDescription(e.target.value);
+    }
+
+
+    function handleLink(e) {
+        setLink(e.target.value);
+    }
+
+    function handleBarcode(e) {
+        setBarcode(e.target.files[0]);
+
     }
   
 
@@ -54,7 +81,12 @@ function SettingsDiscount(props) {
                     <img src={settingLogo} />
                     <p className="setting__text">НАСТРОЙКИ</p>
                 </div>
-                <input className="setting__name-discount" type="text" placeholder="Название скидки" value={props.infoDiscount.name} />
+                <input 
+                className="setting__name-discount" 
+                type="text" 
+                value={name} 
+                onChange={handleName}
+                />
                 {
                     props.infoDiscount.image && newImage  ?
                         <div className="input__file-container" >
@@ -63,12 +95,25 @@ function SettingsDiscount(props) {
                         </div>
                         :
                         <div className="input__file">
-                            <input type="file" className="input__file-add" placeholder="Добавить картинку" name="add-file" id="add-file" />
+                            <input 
+                            type="file" 
+                            className="input__file-add" 
+                            placeholder="Добавить картинку" 
+                            name="add-file" id="add-file"
+                            onChange={handleImage}
+                            />
                             <img className="input-file-img" src={addPictures} />
                             <label for="add-file" className="input__file-label">Добавить картинку</label>
                         </div>
                 }
-                <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..." >{props.infoDiscount.description}</textarea>
+                <textarea 
+                className="input__text" 
+                id="add-text" 
+                name="add-text" 
+                value={description} 
+                onChange={handleDescription}
+                >
+                </textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
                     props.promocode.length === 0 ? <></> :
@@ -99,7 +144,12 @@ function SettingsDiscount(props) {
                         <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
                         : <></>
                 }
-                <input type="text" className="input__add-link" placeholder="Добавить ссылку" value={props.infoDiscount.link} />
+                <input 
+                type="text" 
+                className="input__add-link" 
+                value={link}
+                onChange={handleLink}
+                />
                 {
                     props.infoDiscount.barcode && newBarcode  ?
                         <div className="input__barcode-container">
@@ -108,13 +158,20 @@ function SettingsDiscount(props) {
                         </div>
                         :
                         <div className="input__barcode">
-                            <input type="file" className="input__barcode-add" placeholder="Добавить штрихкоде" name="add-barcode" id="add-barcode" />
+                            <input 
+                            type="file" 
+                            className="input__barcode-add" 
+                            placeholder="Добавить штрихкоде" 
+                            name="add-barcode" 
+                            id="add-barcode"
+                            onChange={handleBarcode}
+                            />
                             <img className="input-barcode-img" src={plusAdd} />
                             <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
                         </div>
                 }
                 <div className="setting__buttons">
-                    <button className="setting__button" onClick={Update} >СОХРАНИТЬ</button>
+                    <button className="setting__button" onClick={handleSubmit} >СОХРАНИТЬ</button>
                     <Link to='/'>
                         <button className="setting__button" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
                     </Link>

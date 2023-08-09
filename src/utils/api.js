@@ -46,6 +46,21 @@ export const addNewDiscount = (name, image, description, link, barcode, category
     })
 }
 
+export const UpdateDiscountText = (name,  description, link,  category, id) => {
+
+  return fetch(`${BASE_URL}/positions/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ name, description, link })
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
 export const addNewPromo = (promocode, date, position) => {
   return fetch(`${BASE_URL}/promocode`, {
     method: 'POST',

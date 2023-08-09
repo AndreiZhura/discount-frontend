@@ -134,6 +134,18 @@ const App = () => {
 			})
 	}
 
+	function handleUpdateDiscountText(name,  description, link,  category,id) {
+		console.log(name, description, link, category,id)
+		api.UpdateDiscountText(name,  description, link,  category,id)
+			.then((result) => {
+				GetDiscount();
+				history("/");
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	}
+
 	function handlePromo(promocode, date, position) {
 
 		api.addNewPromo(promocode, date, position)
@@ -171,6 +183,7 @@ const App = () => {
 					onCardDelete={DeleteDiscount}
 					handlePromo={handlePromo}
 					handleDeletePromo={handleDeletePromo}
+					handleUpdateDiscountText = {handleUpdateDiscountText}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}
