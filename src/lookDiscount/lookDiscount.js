@@ -16,17 +16,12 @@ function LookDiscount(props) {
                 <input className="setting__name-discount" type="text" placeholder="Название скидки" defaultValue={props.infoDiscount.name} />
                 {
                     props.infoDiscount.image ?
-                        <div className="input__file-container" >
-                            <button className="input__file-delete">X</button>
-                            <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
-                        </div>
-                        :
-                        <div className="input__file">
-                            <input type="file" className="input__file-add" placeholder="Добавить картинку" name="add-file" id="add-file" />
-                            <img className="input-file-img" src={addPictures} />
-                            <label for="add-file" className="input__file-label">Добавить картинку</label>
-                        </div>
+                        <div className="look__file-container" >
+                            <img className="look__file-container" src={`${base}` + `${props.infoDiscount.image}`} />
+                        </div> : <></>
                 }
+
+
                 <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..." >{props.infoDiscount.description}</textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
@@ -47,18 +42,16 @@ function LookDiscount(props) {
                         Перейти на страницу акции
                     </a>
                 </button>
-          
-                
+
+
                 {
                     props.infoDiscount.barcode ?
-                        <div className="input__barcode-container">
-                            <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
+                        <div className="look__file-container">
+                            <img className="look__file-container" src={`${base}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
-                        <div className="input__barcode">
-                            <input type="file" className="input__barcode-add" placeholder="Добавить штрихкоде" name="add-barcode" id="add-barcode" />
-                            <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
-                        </div>
+                        <>
+                        </>
                 }
                 <div className="setting__buttons">
                     <Link to='/'>
