@@ -89,7 +89,7 @@ function SettingsDiscount(props) {
                         <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
                         : <></>
                 }
-                <input type="text" className="input__add-link" placeholder="Добавить ссылку" />
+                <input type="text" className="input__add-link" placeholder="Добавить ссылку" value={props.infoDiscount.link} />
                 {
                     props.infoDiscount.barcode ?
                         <div className="input__barcode-container">

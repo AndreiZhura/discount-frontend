@@ -25,7 +25,7 @@ function AddPromoSetting(props) {
 
     return (
         <>
-            <form>
+            <div>
                 <div className="input__promocode">
                     <input type="text"
                         placeholder="Промокод"
@@ -39,7 +39,7 @@ function AddPromoSetting(props) {
                     />
                 </div>
                 <button className="setting__button setting__buttons_add-discount" onClick={handleSubmitPromo}  >СОХРАНИТЬ</button>
-            </form>
+            </div>
 
         </>
     );

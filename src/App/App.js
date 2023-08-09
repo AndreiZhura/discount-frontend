@@ -89,13 +89,13 @@ const App = () => {
 
 	const handleDeletePromo = (promoDelete) => {
 		api.deletePromocode(promoDelete._id)
-		.then((res) => {
-			console.log(res)
-			GetPromocode();
-		})
-		.catch((err) => {
-			console.log(err)
-		})
+			.then((res) => {
+				console.log(res)
+				GetPromocode();
+			})
+			.catch((err) => {
+				console.log(err)
+			})
 	}
 
 
@@ -172,7 +172,10 @@ const App = () => {
 					handlePromo={handlePromo}
 					handleDeletePromo={handleDeletePromo}
 				/>} />
-				<Route path='/discount' element={<LookDiscount />} />
+				<Route path='/discount' element={<LookDiscount
+					promocode={promocode}
+					infoDiscount={infoDiscount}
+				/>} />
 				<Route path='/add-discount' element={<DiscountAdd
 					categoryID={categoryID}
 					positionID={positionID}

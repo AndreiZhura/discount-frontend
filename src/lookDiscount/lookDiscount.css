@@ -1,0 +1,19 @@
+.button__link{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 460.8038024902344px;
+    height: 91.34877014160156px;
+    border-radius: 10.149864196777344px;
+    background-color: #F1F2F6;
+    cursor: pointer;
+}
+
+.button__text{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-decoration: none;
+    color: black;
+}
