@@ -5,7 +5,8 @@ function GetPromocode(props) {
 
     const date = new Date(props.value.date)
 
-    function handlePromoDelete(){
+    function handlePromoDelete(e){
+        e.preventDefault();
        props.handleDeletePromo(props.value)
      }
 
