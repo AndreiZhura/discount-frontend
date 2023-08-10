@@ -13,7 +13,6 @@ import Main from '../main/main';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
 import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
-import Favorites from '../favorites/favorites';
 import Profile from '../auth/Profile/Profile.js';
 import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
@@ -26,7 +25,7 @@ import * as api from '../utils/api';
 const App = () => {
 	//Хуки
 	//Поиск
-	const [search, setSearch] = useState('');
+	
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
 	const [categoryID, setCategoryID] = useState([]);
@@ -43,6 +42,7 @@ const App = () => {
 	//Функции
 	function AddSearch(value) {
 		setSearch(value);
+		console.log(value)
 	}
 
 	function GetCategories() {
@@ -168,8 +168,7 @@ const App = () => {
 		<>
 			<Routes>
 				<Route path="/" element={<Main
-					search={search}
-					onInputHandler={AddSearch}
+					
 					category={category}
 					discount={discount}
 					dataDiscount={dataDiscount}
@@ -198,7 +197,6 @@ const App = () => {
 				<Route path="/signup" element={<Register />} />
 				<Route path="/signin" element={<Login />} />
 				<Route path="/profile" element={<Profile />} />
-				<Route path="/favorites" element={<Favorites />} />
 			</Routes>
 		</>
 

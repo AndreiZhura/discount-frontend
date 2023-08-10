@@ -12,25 +12,16 @@ function SettingsDiscount(props) {
     const base = `http://localhost:3001/`;
     console.log(props.infoDiscount._id)
     const [counter, setCounter] = useState(0);
-    const [newImage, setNewImage] = useState(true);
-    const [newBarcode, setNewBarcode] = useState(true);
-
     const [name, setName] = useState(props.infoDiscount.name);
-    const [image, setImage] = useState('');
     const [description, setDescription] = useState(props.infoDiscount.description);
     const [link, setLink] = useState(props.infoDiscount.link);
-    const [barcode, setBarcode] = useState('');
 
 
 
-    function HandleImageFile(){
-        setNewImage(!newImage);
-    }
+
+  
 
 
-    function HandleImageBarcode(){
-        setNewBarcode(!newBarcode);
-    }
 
 
     function handleClick() {
@@ -53,9 +44,7 @@ function SettingsDiscount(props) {
         setName(e.target.value)
     }
 
-    function handleImage(e) {
-        setImage(e.target.files[0])
-    }
+  
 
     function handleDescription(e) {
         setDescription(e.target.value);
@@ -66,10 +55,6 @@ function SettingsDiscount(props) {
         setLink(e.target.value);
     }
 
-    function handleBarcode(e) {
-        setBarcode(e.target.files[0]);
-
-    }
   
 
 
@@ -90,7 +75,7 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.image && newImage  ?
                         <div className="input__file-container" >
-                            <button className="input__file-delete" onClick={HandleImageFile}>X</button>
+                         
                             <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
                         </div>
                         :
@@ -100,7 +85,7 @@ function SettingsDiscount(props) {
                             className="input__file-add" 
                             placeholder="Добавить картинку" 
                             name="add-file" id="add-file"
-                            onChange={handleImage}
+                        
                             />
                             <img className="input-file-img" src={addPictures} />
                             <label for="add-file" className="input__file-label">Добавить картинку</label>
@@ -153,7 +138,7 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.barcode && newBarcode  ?
                         <div className="input__barcode-container">
-                            <button className="input__file-delete" onClick={HandleImageBarcode} >X</button>
+                      
                             <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
@@ -164,7 +149,6 @@ function SettingsDiscount(props) {
                             placeholder="Добавить штрихкоде" 
                             name="add-barcode" 
                             id="add-barcode"
-                            onChange={handleBarcode}
                             />
                             <img className="input-barcode-img" src={plusAdd} />
                             <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
