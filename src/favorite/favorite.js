@@ -1,23 +1,40 @@
 import React from "react";
 import './favorite.css';
 import Discount from "../main/discount/discount";
-import arrowsDown from '../img/arrow_to_down.svg'
+
 
 function Favorite(props) {
 
-    console.log("ghjdthrf")
+
+    console.log(props.search)
+
+    const filterArrayDiscount = props.discount.filter((filter) => {
+        return filter.name.trim().toLowerCase().includes(props.search.toLowerCase())
+    })
+
 
     return (
         <div className="favorites">
             <div className="favorites__container">
-                {
-                    props.filterArrayDiscount.map((value) => {
-                        <Discount
-                            discount={value}
-                        />
+                {props.search === "" ?
+                    props.discount.map((value, id) => {
+                        return (
+                            <Discount
+                                key={id}
+                                discount={value}
+                            />
+                        );
+                    }) :
+                    filterArrayDiscount.map((value, id) => {
+                        return (
+                            <Discount
+                                key={id}
+                                discount={value}
+                            />
+                        );
                     })
-
                 }
+
 
             </div>
         </div>

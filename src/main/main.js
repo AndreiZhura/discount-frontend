@@ -29,12 +29,6 @@ function Main(props) {
 
     }
 
-    const filterArrayDiscount = props.discount.filter((filter)=>{
-        return filter.name.trim().toLowerCase().includes(search.toLowerCase())
-     })
-
-
-
     return (
         <>
             <main className="main">
@@ -48,7 +42,7 @@ function Main(props) {
                 
                     <Favorite
                     search={search}
-                    filterArrayDiscount={filterArrayDiscount}
+                    discount={props.discount}
                     /> 
                 :
                     props.category.length === 0 ? <></> :
