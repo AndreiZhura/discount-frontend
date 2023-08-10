@@ -29,6 +29,10 @@ function Main(props) {
 
     }
 
+    const filterArrayDiscount = props.discount.filter((filter)=>{
+        return filter.name.trim().toLowerCase().includes(search.toLowerCase())
+     })
+
 
 
     return (
@@ -41,12 +45,12 @@ function Main(props) {
                 />
 
                 {click === true ?
-                props.discount.map((value)=>{
+                
                     <Favorite
                     search={search}
-                    discount={value}
+                    filterArrayDiscount={filterArrayDiscount}
                     /> 
-                }):
+                :
                     props.category.length === 0 ? <></> :
                         props.category.map((category, id) => {
                             return (

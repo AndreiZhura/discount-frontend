@@ -4,25 +4,24 @@ import Discount from "../main/discount/discount";
 import arrowsDown from '../img/arrow_to_down.svg'
 
 function Favorite(props) {
-    console.log('search')
-    console.log(props.search)
-    console.log('favorite')
-    console.log(props.discount)
+
+    console.log("ghjdthrf")
 
     return (
         <div className="favorites">
-            <div className="categories__container ">
+            <div className="favorites__container">
+                {
+                    props.filterArrayDiscount.map((value) => {
+                        <Discount
+                            discount={value}
+                        />
+                    })
 
-                <div className="favorites__container">
-                    {
+                }
 
-
-
-
-                    }
-                </div>
             </div>
         </div>
+
 
     );
 }

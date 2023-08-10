@@ -40,10 +40,7 @@ const App = () => {
 	const history = useNavigate();
 
 	//Функции
-	function AddSearch(value) {
-		setSearch(value);
-		console.log(value)
-	}
+
 
 	function GetCategories() {
 		api.getCategories()
@@ -168,7 +165,7 @@ const App = () => {
 		<>
 			<Routes>
 				<Route path="/" element={<Main
-					
+					getDiscount = {GetDiscount}
 					category={category}
 					discount={discount}
 					dataDiscount={dataDiscount}
