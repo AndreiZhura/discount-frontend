@@ -17,13 +17,6 @@ function SettingsDiscount(props) {
     const [link, setLink] = useState(props.infoDiscount.link);
 
 
-
-
-  
-
-
-
-
     function handleClick() {
         setCounter(!counter)
     }
@@ -73,7 +66,7 @@ function SettingsDiscount(props) {
                 onChange={handleName}
                 />
                 {
-                    props.infoDiscount.image && newImage  ?
+                    props.infoDiscount.image ?
                         <div className="input__file-container" >
                          
                             <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
@@ -117,6 +110,8 @@ function SettingsDiscount(props) {
                     Array.from(Array(counter)).map((id, index) => {
                         return (
                             <AddPromoSetting
+                                key = {id}
+                                index = {index}
                                 infoDiscount = {props.infoDiscount}
                                 setCounter={setCounter}
                                 handlePromo={props.handlePromo}
@@ -136,7 +131,7 @@ function SettingsDiscount(props) {
                 onChange={handleLink}
                 />
                 {
-                    props.infoDiscount.barcode && newBarcode  ?
+                    props.infoDiscount.barcode ?
                         <div className="input__barcode-container">
                       
                             <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />

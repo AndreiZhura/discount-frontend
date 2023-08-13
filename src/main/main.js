@@ -43,6 +43,7 @@ function Main(props) {
                     <Favorite
                     search={search}
                     discount={props.discount}
+                    dataDiscount={props.dataDiscount}
                     /> 
                 :
                     props.category.length === 0 ? <></> :

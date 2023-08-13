@@ -15,7 +15,7 @@ function Discounts(props) {
                         return (
                             props.category._id === discount.category ?
                                 <Discount
-                                    key={id}
+                                    key={discount._id}
                                     discount={discount}
                                     dataDiscount={props.dataDiscount}
                                   

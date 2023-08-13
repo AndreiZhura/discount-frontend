@@ -22,6 +22,7 @@ function Favorite(props) {
                             <Discount
                                 key={id}
                                 discount={value}
+                                dataDiscount={props.dataDiscount}
                             />
                         );
                     }) :
@@ -30,6 +31,7 @@ function Favorite(props) {
                             <Discount
                                 key={id}
                                 discount={value}
+                                dataDiscount={props.dataDiscount}
                             />
                         );
                     })

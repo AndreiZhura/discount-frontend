@@ -13,24 +13,33 @@ function LookDiscount(props) {
         <div className="settings">
             <div className="setting" >
 
-                <input className="setting__name-discount" type="text" placeholder="Название скидки" defaultValue={props.infoDiscount.name} />
+                <input 
+                className="setting__name-discount" 
+                type="text" placeholder="Название скидки" 
+                defaultValue={props.infoDiscount.name} />
                 {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
-                            <img className="look__file-container" src={`${base}` + `${props.infoDiscount.image}`} />
+                            <img className="look__file-container" 
+                            src={`${base}` + `${props.infoDiscount.image}`} />
                         </div> : <></>
                 }
 
 
-                <textarea className="input__text" id="add-text" name="add-text" placeholder="Описание данного сервиса..." >{props.infoDiscount.description}</textarea>
+                <textarea 
+                className="input__text" 
+                id="add-text" 
+                name="add-text" 
+                placeholder="Описание данного сервиса..." 
+                defaultValue = {props.infoDiscount.description} ></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
                     props.promocode.length === 0 ? <></> :
-                        props.promocode.map((value, key) => {
+                        props.promocode.map((value) => {
                             return (
                                 props.infoDiscount._id === value.position ?
                                     <GetPromocode
-                                        key={key}
+                                        key={value._id}
                                         value={value}
                                         handleDeletePromo={props.handleDeletePromo}
                                     /> : <></>
