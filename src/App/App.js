@@ -18,7 +18,8 @@ import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
 import PageNotFound from '../PageNotFound/PageNotFound'
 //////////////////////////////////////////////////
-
+import CurrentUserContext from "../contexts/CurrentUserContext";
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 
 //Подключаем Api
 import * as api from '../utils/api';
@@ -44,17 +45,30 @@ const App = () => {
 	const historyIsLoggedIn = Boolean(localStorage.getItem('isLoggedIn'));
 	const [loggedIn, setloggedIn] = useState(historyLoggedIn);
 	const [isLoggedIn, setisLoggedIn] = useState(historyIsLoggedIn);
+
 	const [nameError, setNameError] = useState(true);
 	const [EmailError, setEmailError] = useState(true);
 	const [PasswordError, setPasswordError] = useState(true);
 	const [buttonError, setButtonError] = useState(true);
+	// const [userData, setUserData] = useState({});
+	const [currentUser, setCurrentUser] = useState({});
+	// проверяем авторизован пользователь или нет
+	// Фильмы 
+
 	const [registerError, setRegisterError] = useState(true)
 	const [redisterMessage, setRegisterMessage] = useState('')
 	const [loginError, setLoginError] = useState(true)
 	const [loginMessage, setLoginMessage] = useState('');
+	const [errorEmailUpdate, setErrorEmailUpdate] = useState(true)
+	const [errorUpdateUser, setErrorUpdateUser] = useState('');
+	const [successfulUpdateProfile, setSuccessfulUpdateProfile] = useState(false);
+	const [successfulUpdateProfileText, setSuccessfulUpdateProfileText] = useState('');
 	const [successfulRegistration, setSuccessfulRegistration] = useState(false);
 	const [successfulRegistrationText, setSuccessfulRegistrationText] = useState('');
 	const [blockButton, setBlockButton] = useState(true);
+	const [email, setEmail] = useState('');
+	const [name, setName] = useState('')
+
 
 	const history = useNavigate();
 
@@ -66,12 +80,22 @@ const App = () => {
 		}
 	}, []);
 
+	function userInformation() {
+		api.userInfo()
+			.then((res) => {
+				setloggedIn(true);
+				setCurrentUser(res.data);
+				setEmail(res.data.email);
+				setName(res.data.name);
+			})
+			.catch((err) => {
+				console.error(err);
+
+			});
+	}
 
 
-	useEffect(() => {
-		if (!isLoggedIn) return;
-		userInformation()
-	}, [isLoggedIn])
+
 
 
 	//Функции
@@ -86,7 +110,8 @@ const App = () => {
 					localStorage.setItem("loggedIn", true);
 					localStorage.setItem("isLoggedIn", true);
 					setCurrentUser(res.data);
-					moviesInform();
+					console.log(res.data)
+
 				}
 			})
 			.catch((err) => {
@@ -94,6 +119,12 @@ const App = () => {
 			});
 
 	};
+
+	useEffect(() => {
+		if (!isLoggedIn) return;
+		userInformation()
+	}, [isLoggedIn])
+
 
 	function handleLogin(email, password) {
 		api
@@ -104,10 +135,10 @@ const App = () => {
 				setPasswordError(true);
 				setButtonError(true);
 				setBlockButton(false);
-				history("/movies");
+				history("/");
 				localStorage.setItem("token", res.token);
 				userInformation()
-				moviesInform();
+
 			})
 			.catch((err) => {
 				console.log(err);
@@ -144,6 +175,25 @@ const App = () => {
 				setRegisterError(false);
 				setBlockButton(true);
 				setRegisterMessage(err)
+			});
+	}
+
+	function handleUpdateUser(User) {
+		/*Редактирование профиля
+		  Отредактированные данные профиля должны сохраняться на сервере.  */
+		api
+			.updateUserInfo(User)
+			.then((result) => {
+				setCurrentUser(result.data);
+				setErrorEmailUpdate(true);
+				setSuccessfulUpdateProfile(false)
+				setSuccessfulUpdateProfileText('Данные пользователя успешно изменены!')
+			})
+			.catch((err) => {
+				console.error(err);
+				setErrorEmailUpdate(false)
+				setSuccessfulUpdateProfile(true)
+				setErrorUpdateUser('Данный Email уже занят!')
 			});
 	}
 
@@ -264,10 +314,21 @@ const App = () => {
 	}, []);
 
 
+	function signOut() {
+		localStorage.removeItem('token');
+		localStorage.removeItem('search');
+		localStorage.removeItem('shortMovie');
+		localStorage.removeItem('loggedIn');
+		localStorage.removeItem('isLoggedIn');
+		setisLoggedIn(false);
+	}
+
 	return (
-		<>
+
+		<CurrentUserContext.Provider value={currentUser}>
 			<Routes>
 				<Route path="/" element={<Main
+					loggedIn={loggedIn}
 					getDiscount={GetDiscount}
 					category={category}
 					discount={discount}
@@ -276,23 +337,9 @@ const App = () => {
 					handleNewCategory={handleNewCategory}
 					handleAddDiscount={handleAddDiscount}
 				/>} />
-				<Route path="/setting" element={<SettingsDiscount
-					promocode={promocode}
-					infoDiscount={infoDiscount}
-					onCardDelete={DeleteDiscount}
-					handlePromo={handlePromo}
-					handleDeletePromo={handleDeletePromo}
-					handleUpdateDiscountText={handleUpdateDiscountText}
-				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}
 					infoDiscount={infoDiscount}
-				/>} />
-				<Route path='/add-discount' element={<DiscountAdd
-					categoryID={categoryID}
-					positionID={positionID}
-					handleAddDiscount={handleAddDiscount}
-					handlePromo={handlePromo}
 				/>} />
 				<Route path="/signup" element={<Register
 					handleRegistration={handleRegistration}
@@ -314,12 +361,52 @@ const App = () => {
 					loginMessage={loginMessage}
 					blockButton={blockButton}
 				/>} />
-				<Route path="/profile" element={<Profile />} />
+
 				<Route path="*" element={
 					<PageNotFound />} />
-			</Routes>
 
-		</>
+				<Route path="/setting" element={
+					<ProtectedRoute loggedIn={loggedIn}>
+						<SettingsDiscount
+							promocode={promocode}
+							infoDiscount={infoDiscount}
+							onCardDelete={DeleteDiscount}
+							handlePromo={handlePromo}
+							handleDeletePromo={handleDeletePromo}
+							handleUpdateDiscountText={handleUpdateDiscountText}
+						/>
+					</ProtectedRoute>
+				} />
+
+				<Route path="/add-discount" element={
+					<ProtectedRoute loggedIn={loggedIn}>
+						<DiscountAdd
+							categoryID={categoryID}
+							positionID={positionID}
+							handleAddDiscount={handleAddDiscount}
+							handlePromo={handlePromo}
+						/>
+					</ProtectedRoute>
+				} />
+				<Route path="/profile" element={
+					<ProtectedRoute loggedIn={loggedIn}>
+						<Profile
+							email={email}
+							name={name}
+							signOut={signOut}
+							handleUpdateUser={handleUpdateUser}
+							errorEmailUpdate={errorEmailUpdate}
+							errorUpdateUser={errorUpdateUser}
+							successfulUpdateProfile={successfulUpdateProfile}
+							successfulUpdateProfileText={successfulUpdateProfileText}
+						/>
+					</ProtectedRoute>
+				} />
+
+			</Routes>
+		</CurrentUserContext.Provider>
+
+
 
 	);
 }

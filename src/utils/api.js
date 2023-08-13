@@ -43,13 +43,44 @@ export const authorize = (email, password) => {
 
 
 export const checkToken = (token) => {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${BASE_URL}/admin/me`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     }
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+
+export const userInfo = () => {
+  return fetch(`${BASE_URL}/admin/me`, {
+    method: 'GET',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+export const updateUserInfo = ({ email, name }) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'PATCH',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email,
+      name,
+    })
   })
     .then((res) => {
       return getResponse(res)
