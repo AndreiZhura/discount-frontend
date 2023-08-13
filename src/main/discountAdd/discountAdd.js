@@ -50,7 +50,6 @@ function DiscountAdd(props) {
     }
 
     function handleData(e) {
-        //console.log(e.target.value)
         setDate(e.target.value);
     }
 

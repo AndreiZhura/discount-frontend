@@ -6,8 +6,6 @@ import Discount from "../main/discount/discount";
 function Favorite(props) {
 
 
-    console.log(props.search)
-
     const filterArrayDiscount = props.discount.filter((filter) => {
         return filter.name.trim().toLowerCase().includes(props.search.toLowerCase())
     })

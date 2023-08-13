@@ -55,7 +55,6 @@ const App = () => {
 	function GetDiscount() {
 		api.getDiscount()
 			.then((result) => {
-				//console.log(result.data)
 				setDiscount(result.data);
 			})
 			.catch((err) => {
@@ -76,7 +75,6 @@ const App = () => {
 	function DeleteDiscount(discountID) {
 		api.deleteDiscount(discountID)
 			.then((result) => {
-				//console.log(result)
 				GetDiscount();
 			})
 			.catch((err) => {
@@ -87,7 +85,6 @@ const App = () => {
 	const handleDeletePromo = (promoDelete) => {
 		api.deletePromocode(promoDelete._id)
 			.then((res) => {
-				console.log(res)
 				GetPromocode();
 			})
 			.catch((err) => {
@@ -111,7 +108,7 @@ const App = () => {
 		api.addNewCategories(categoryName)
 			.then((categoryName) => {
 				GetCategories();
-				console.log(categoryName)
+			
 			})
 			.catch((error) => {
 				console.log(error)
@@ -132,7 +129,6 @@ const App = () => {
 	}
 
 	function handleUpdateDiscountText(name,  description, link,  category,id) {
-		console.log(name, description, link, category,id)
 		api.UpdateDiscountText(name,  description, link,  category,id)
 			.then((result) => {
 				GetDiscount();

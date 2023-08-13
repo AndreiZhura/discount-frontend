@@ -10,7 +10,6 @@ import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
 
 function SettingsDiscount(props) {
     const base = `http://localhost:3001/`;
-    console.log(props.infoDiscount._id)
     const [counter, setCounter] = useState(0);
     const [name, setName] = useState(props.infoDiscount.name);
     const [description, setDescription] = useState(props.infoDiscount.description);
