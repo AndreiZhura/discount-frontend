@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import '../search/search.css';
 import lupa from "../../img/lupa.svg";
 import { Link } from 'react-router-dom';
-import enter from "../../img/enter.svg"
+
 
 function Search(props) {
  
@@ -15,6 +15,9 @@ function Search(props) {
 
     return (
         <div className="search-form">
+            <Link className="button-to-login"
+            to="/signin"
+            ></Link>
             <form className="search-form__forma" >
                 <img className="lupa" alt="поиск" src={lupa} />
                 <div className="seach-form__search">

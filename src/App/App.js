@@ -39,6 +39,11 @@ const App = () => {
 	//инфо о скидке
 	const [infoDiscount, setInfoDiscount] = useState([]);
 
+
+	const historyLoggedIn = Boolean(localStorage.getItem('loggedIn'));
+	const historyIsLoggedIn = Boolean(localStorage.getItem('isLoggedIn'));
+	const [loggedIn, setloggedIn] = useState(historyLoggedIn);
+	const [isLoggedIn, setisLoggedIn] = useState(historyIsLoggedIn);
 	const [nameError, setNameError] = useState(true);
 	const [EmailError, setEmailError] = useState(true);
 	const [PasswordError, setPasswordError] = useState(true);
@@ -52,6 +57,22 @@ const App = () => {
 	const [blockButton, setBlockButton] = useState(true);
 
 	const history = useNavigate();
+
+	useEffect(() => {
+		const token = localStorage.getItem("token");
+		if (token) {
+			console.log(token)
+			newAuth(token);
+		}
+	}, []);
+
+
+
+	useEffect(() => {
+		if (!isLoggedIn) return;
+		userInformation()
+	}, [isLoggedIn])
+
 
 	//Функции
 
@@ -274,24 +295,24 @@ const App = () => {
 					handlePromo={handlePromo}
 				/>} />
 				<Route path="/signup" element={<Register
-				     handleRegistration={handleRegistration}
-					 successfulRegistration={successfulRegistration}
-					 successfulRegistrationText={successfulRegistrationText}
-					 nameError={nameError}
-					 EmailError={EmailError}
-					 PasswordError={PasswordError}
-					 registerError={registerError}
-					 redisterMessage={redisterMessage}
-					 blockButton={blockButton}
+					handleRegistration={handleRegistration}
+					successfulRegistration={successfulRegistration}
+					successfulRegistrationText={successfulRegistrationText}
+					nameError={nameError}
+					EmailError={EmailError}
+					PasswordError={PasswordError}
+					registerError={registerError}
+					redisterMessage={redisterMessage}
+					blockButton={blockButton}
 				/>} />
 				<Route path="/signin" element={<Login
-				      handleLogin={handleLogin}
-					  EmailError={EmailError}
-					  PasswordError={PasswordError}
-					  buttonError={buttonError}
-					  loginError={loginError}
-					  loginMessage={loginMessage}
-					  blockButton={blockButton}
+					handleLogin={handleLogin}
+					EmailError={EmailError}
+					PasswordError={PasswordError}
+					buttonError={buttonError}
+					loginError={loginError}
+					loginMessage={loginMessage}
+					blockButton={blockButton}
 				/>} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="*" element={

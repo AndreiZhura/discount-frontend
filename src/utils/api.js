@@ -56,6 +56,49 @@ export const checkToken = (token) => {
     })
 }
 
+export const getCategories = () => {
+  return fetch(`${BASE_URL}/categories`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+//добавление карточки
+export const getDiscount = () => {
+  return fetch(`${BASE_URL}/positions`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+export const getPromo = () => {
+  return fetch(`${BASE_URL}/promocode`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+
+}
+
 export const addNewDiscount = (name, image, description, link, barcode, category) => {
 
   const data = new FormData()
@@ -106,36 +149,6 @@ export const addNewPromo = (promocode, date, position) => {
       return getResponse(res)
     })
 }
-
-export const getPromo = () => {
-  return fetch(`${BASE_URL}/promocode`, {
-    method: 'GET',
-    headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json',
-    }
-  })
-    .then((res) => {
-      return getResponse(res)
-    })
-
-}
-
-//добавление карточки
-export const getDiscount = () => {
-  return fetch(`${BASE_URL}/positions`, {
-    method: 'GET',
-    headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json',
-    }
-  })
-
-    .then((res) => {
-      return getResponse(res)
-    })
-}
-
 //удаление карточки
 
 export const deleteDiscount = (id) => {
@@ -168,20 +181,8 @@ export const deletePromocode = (id) => {
 
 // Категории
 
-//Добавление категории
-export const getCategories = () => {
-  return fetch(`${BASE_URL}/categories`, {
-    method: 'GET',
-    headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
-    }
-  })
 
-    .then((res) => {
-      return getResponse(res)
-    })
-}
+
 
 export const addNewCategories = (categoryName) => {
   return fetch(`${BASE_URL}/categories`, {
