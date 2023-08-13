@@ -48,7 +48,7 @@ function LookDiscount(props) {
                         })
                 }
                 <button className="button__link">
-                    <a href={props.infoDiscount.link} target="_blan" className="button__text">
+                    <a href={props.infoDiscount.link} target="_blank" className="button__text">
                         Перейти на страницу акции
                     </a>
                 </button>

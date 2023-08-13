@@ -16,7 +16,6 @@ import Login from '../auth/Login/Login.js'
 import Profile from '../auth/Profile/Profile.js';
 import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
-import PageNotFound from '../PageNotFound/PageNotFound'
 //////////////////////////////////////////////////
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
@@ -78,6 +77,9 @@ const App = () => {
 			console.log(token)
 			newAuth(token);
 		}
+		else{
+			console.log("нет токена")
+		}
 	}, []);
 
 	function userInformation() {
@@ -85,6 +87,7 @@ const App = () => {
 			.then((res) => {
 				setloggedIn(true);
 				setCurrentUser(res.data);
+				console.log(res.data)
 				setEmail(res.data.email);
 				setName(res.data.name);
 			})
@@ -316,11 +319,9 @@ const App = () => {
 
 	function signOut() {
 		localStorage.removeItem('token');
-		localStorage.removeItem('search');
-		localStorage.removeItem('shortMovie');
 		localStorage.removeItem('loggedIn');
 		localStorage.removeItem('isLoggedIn');
-		setisLoggedIn(false);
+		setloggedIn(false);
 	}
 
 	return (
@@ -363,8 +364,6 @@ const App = () => {
 					blockButton={blockButton}
 				/>} />
 
-				<Route path="*" element={
-					<PageNotFound />} />
 
 				<Route path="/setting" element={
 					<ProtectedRoute loggedIn={loggedIn}>

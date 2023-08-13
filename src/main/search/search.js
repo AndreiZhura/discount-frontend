@@ -11,13 +11,16 @@ function Search(props) {
     function handleChange(e){
         props.onInputHandler(e.target.value)
     }
-   
+
 
     return (
         <div className="search-form">
-            <Link className="button-to-login"
-            to="/signin"
-            ></Link>
+            {
+              props.loggedIn ? <Link className="search-form__link-to-admin" to="/profile">Админ</Link> :
+              <Link className="button-to-login"
+              to="/signin"
+              ></Link>
+            }
             <form className="search-form__forma" >
                 <img className="lupa" alt="поиск" src={lupa} />
                 <div className="seach-form__search">

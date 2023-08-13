@@ -43,6 +43,7 @@ export const authorize = (email, password) => {
 
 
 export const checkToken = (token) => {
+  console.log(token)
   return fetch(`${BASE_URL}/admin/me`, {
     method: 'GET',
     headers: {

@@ -36,6 +36,7 @@ function Main(props) {
                     search={search}
                     onInputHandler={onInputHandler}
                     SearchClick={SearchClick}
+                    loggedIn = {props.loggedIn}
                 />
 
                 {click === true ?
