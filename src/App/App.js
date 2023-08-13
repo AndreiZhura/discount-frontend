@@ -16,7 +16,9 @@ import Login from '../auth/Login/Login.js'
 import Profile from '../auth/Profile/Profile.js';
 import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
+import PageNotFound from '../PageNotFound/PageNotFound'
 //////////////////////////////////////////////////
+
 
 //Подключаем Api
 import * as api from '../utils/api';
@@ -25,7 +27,7 @@ import * as api from '../utils/api';
 const App = () => {
 	//Хуки
 	//Поиск
-	
+
 	//загрузка категорий
 	const [category, setCategory] = useState([]);
 	const [categoryID, setCategoryID] = useState([]);
@@ -37,9 +39,93 @@ const App = () => {
 	//инфо о скидке
 	const [infoDiscount, setInfoDiscount] = useState([]);
 
+	const [nameError, setNameError] = useState(true);
+	const [EmailError, setEmailError] = useState(true);
+	const [PasswordError, setPasswordError] = useState(true);
+	const [buttonError, setButtonError] = useState(true);
+	const [registerError, setRegisterError] = useState(true)
+	const [redisterMessage, setRegisterMessage] = useState('')
+	const [loginError, setLoginError] = useState(true)
+	const [loginMessage, setLoginMessage] = useState('');
+	const [successfulRegistration, setSuccessfulRegistration] = useState(false);
+	const [successfulRegistrationText, setSuccessfulRegistrationText] = useState('');
+	const [blockButton, setBlockButton] = useState(true);
+
 	const history = useNavigate();
 
 	//Функции
+
+	const newAuth = (token) => {
+		return api
+			.checkToken(token)
+			.then((res) => {
+				if (res) {
+					setisLoggedIn(true);
+					setloggedIn(true);
+					localStorage.setItem("loggedIn", true);
+					localStorage.setItem("isLoggedIn", true);
+					setCurrentUser(res.data);
+					moviesInform();
+				}
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+
+	};
+
+	function handleLogin(email, password) {
+		api
+			.authorize(email, password)
+			.then((res) => {
+				setloggedIn(true);
+				setEmailError(true);
+				setPasswordError(true);
+				setButtonError(true);
+				setBlockButton(false);
+				history("/movies");
+				localStorage.setItem("token", res.token);
+				userInformation()
+				moviesInform();
+			})
+			.catch((err) => {
+				console.log(err);
+				setEmailError(false);
+				setPasswordError(false);
+				setButtonError(false);
+				setLoginError(false);
+				setBlockButton(true);
+				setLoginMessage(err)
+			});
+
+	}
+
+	function handleRegistration(email, password, name) {
+		const dataEmail = email;
+		const dataPassword = password;
+		api
+			.register(email, password, name)
+			.then((email, password, name) => {
+				setSuccessfulRegistration(true);
+				setSuccessfulRegistrationText(`Пользователь: ${dataEmail}, зарегестрирован успешно `)
+				handleLogin(dataEmail, dataPassword);
+				setNameError(true);
+				setEmailError(true);
+				setPasswordError(true);
+				setBlockButton(false);
+			})
+			.catch((err) => {
+				console.log(err);
+				setSuccessfulRegistration(false);
+				setNameError(false);
+				setEmailError(false);
+				setPasswordError(false);
+				setRegisterError(false);
+				setBlockButton(true);
+				setRegisterMessage(err)
+			});
+	}
+
 
 
 	function GetCategories() {
@@ -108,7 +194,7 @@ const App = () => {
 		api.addNewCategories(categoryName)
 			.then((categoryName) => {
 				GetCategories();
-			
+
 			})
 			.catch((error) => {
 				console.log(error)
@@ -128,8 +214,8 @@ const App = () => {
 			})
 	}
 
-	function handleUpdateDiscountText(name,  description, link,  category,id) {
-		api.UpdateDiscountText(name,  description, link,  category,id)
+	function handleUpdateDiscountText(name, description, link, category, id) {
+		api.UpdateDiscountText(name, description, link, category, id)
 			.then((result) => {
 				GetDiscount();
 				history("/");
@@ -161,7 +247,7 @@ const App = () => {
 		<>
 			<Routes>
 				<Route path="/" element={<Main
-					getDiscount = {GetDiscount}
+					getDiscount={GetDiscount}
 					category={category}
 					discount={discount}
 					dataDiscount={dataDiscount}
@@ -175,7 +261,7 @@ const App = () => {
 					onCardDelete={DeleteDiscount}
 					handlePromo={handlePromo}
 					handleDeletePromo={handleDeletePromo}
-					handleUpdateDiscountText = {handleUpdateDiscountText}
+					handleUpdateDiscountText={handleUpdateDiscountText}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}
@@ -187,10 +273,31 @@ const App = () => {
 					handleAddDiscount={handleAddDiscount}
 					handlePromo={handlePromo}
 				/>} />
-				<Route path="/signup" element={<Register />} />
-				<Route path="/signin" element={<Login />} />
+				<Route path="/signup" element={<Register
+				     handleRegistration={handleRegistration}
+					 successfulRegistration={successfulRegistration}
+					 successfulRegistrationText={successfulRegistrationText}
+					 nameError={nameError}
+					 EmailError={EmailError}
+					 PasswordError={PasswordError}
+					 registerError={registerError}
+					 redisterMessage={redisterMessage}
+					 blockButton={blockButton}
+				/>} />
+				<Route path="/signin" element={<Login
+				      handleLogin={handleLogin}
+					  EmailError={EmailError}
+					  PasswordError={PasswordError}
+					  buttonError={buttonError}
+					  loginError={loginError}
+					  loginMessage={loginMessage}
+					  blockButton={blockButton}
+				/>} />
 				<Route path="/profile" element={<Profile />} />
+				<Route path="*" element={
+					<PageNotFound />} />
 			</Routes>
+
 		</>
 
 	);

@@ -27,6 +27,35 @@ export const register = (email, password, name) => {
     })
 }
 
+export const authorize = (email, password) => {
+  return fetch(`${BASE_URL}/signin`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, password })
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+};
+
+
+export const checkToken = (token) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    }
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
 export const addNewDiscount = (name, image, description, link, barcode, category) => {
 
   const data = new FormData()
@@ -39,6 +68,9 @@ export const addNewDiscount = (name, image, description, link, barcode, category
 
   return fetch(`${BASE_URL}/positions`, {
     method: 'POST',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
     body: data
   })
     .then((res) => {
@@ -51,7 +83,7 @@ export const UpdateDiscountText = (name,  description, link,  category, id) => {
   return fetch(`${BASE_URL}/positions/${id}`, {
     method: 'PATCH',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ name, description, link })
@@ -65,7 +97,7 @@ export const addNewPromo = (promocode, date, position) => {
   return fetch(`${BASE_URL}/promocode`, {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ promocode, date, position })
@@ -79,7 +111,7 @@ export const getPromo = () => {
   return fetch(`${BASE_URL}/promocode`, {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     }
   })
@@ -94,7 +126,7 @@ export const getDiscount = () => {
   return fetch(`${BASE_URL}/positions`, {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     }
   })
@@ -110,7 +142,7 @@ export const deleteDiscount = (id) => {
   return fetch(`${BASE_URL}/positions/${id}`, {
     method: 'DELETE',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     }
   })
@@ -123,7 +155,7 @@ export const deletePromocode = (id) => {
   return fetch(`${BASE_URL}/promocode/${id}`, {
     method: 'DELETE',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     }
   })
@@ -141,7 +173,7 @@ export const getCategories = () => {
   return fetch(`${BASE_URL}/categories`, {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     }
   })
@@ -155,7 +187,7 @@ export const addNewCategories = (categoryName) => {
   return fetch(`${BASE_URL}/categories`, {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
+      authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ categories: categoryName })
