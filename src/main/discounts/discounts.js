@@ -18,7 +18,7 @@ function Discounts(props) {
                                     key={discount._id}
                                     discount={discount}
                                     dataDiscount={props.dataDiscount}
-                                  
+                                    loggedIn = {props.loggedIn}
                                 /> : <></>
                         );
                     })
@@ -27,6 +27,7 @@ function Discounts(props) {
               handleAddDiscount = {props.handleAddDiscount}
               category = {props.category}
               infoCategoryID = {props.infoCategoryID}
+              loggedIn = {props.loggedIn}
             />
         </div>
     );

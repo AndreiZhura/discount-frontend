@@ -22,10 +22,13 @@ function Discount(props) {
                 onClick={DataDiscount}>
 
                 <div className="discount__main">
-                    <Link
-                        to="/setting"
-                        className="discount__setting"
-                        onClick={DataDiscount} ></Link>
+                    {
+                        props.loggedIn ?
+                            <Link
+                                to="/setting"
+                                className="discount__setting"
+                                onClick={DataDiscount} ></Link> : <></>
+                    }
                     {
                         < img className="discount__image" src={`${base}` + `${props.discount.image}`} />
                     }

@@ -21,6 +21,7 @@ function Favorite(props) {
                                 key={id}
                                 discount={value}
                                 dataDiscount={props.dataDiscount}
+                                loggedIn = {props.loggedIn}
                             />
                         );
                     }) :

@@ -13,13 +13,13 @@ function Categories(props) {
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">{props.category.categories}</p>
                 </div>
-
                     <Discounts
                         category={props.category}
                         discount={props.discount}
                         dataDiscount={props.dataDiscount}
                         infoCategoryID = {props.infoCategoryID}
                         handleAddDiscount = {props.handleAddDiscount}
+                        loggedIn = {props.loggedIn}
                     />
                 
             </div>

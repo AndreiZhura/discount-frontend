@@ -23,20 +23,25 @@ function AddCategories(props) {
 
     return (
         <>
-            <div className='add-categoriesies'>
-                <div className='categories__container'>
-                    <div className='categories__name'>
-                        <button className='categories__button' onClick={handleChange}>
-                            <img className='categories__name-arrows categories__name-plus' src={AddCategory} />
-                        </button>
-                        <p className='categories__name-title'>Добавить новую категорию</p>
+            {
+                props.loggedIn ?
+                    <div className='add-categoriesies'>
+                        <div className='categories__container'>
+                            <div className='categories__name'>
+                                <button className='categories__button' onClick={handleChange}>
+                                    <img className='categories__name-arrows categories__name-plus' src={AddCategory} />
+                                </button>
+                                <p className='categories__name-title'>Добавить новую категорию</p>
+                            </div>
+                            <form className={newCategory ? "add-categoriesy__form" : "add-categiries__none"} onSubmit={handleSubmit} >
+                                <input className='add-categoriesy__text' type='text' placeholder='Добавьте категорию' onChange={handleCategory} />
+                                <button className='add-categiries__data' onClick={handleChange}>Добавить</button>
+                            </form>
+                        </div>
                     </div>
-                    <form className={newCategory ? "add-categoriesy__form" : "add-categiries__none"} onSubmit={handleSubmit} >
-                        <input className='add-categoriesy__text' type='text' placeholder='Добавьте категорию' onChange={handleCategory}/>
-                        <button className='add-categiries__data' onClick={handleChange}>Добавить</button>
-                    </form>
-                </div>
-            </div>
+                    :
+                    <></>
+            }
         </>
     );
 };

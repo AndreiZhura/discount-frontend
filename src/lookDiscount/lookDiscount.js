@@ -42,6 +42,7 @@ function LookDiscount(props) {
                                         key={value._id}
                                         value={value}
                                         handleDeletePromo={props.handleDeletePromo}
+                                        loggedIn={props.loggedIn}
                                     /> : <></>
                             );
                         })

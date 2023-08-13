@@ -12,7 +12,7 @@ function Main(props) {
 
     const [search, setSearch] = useState('');
     const [click, setClick] = useState(false);
-
+    console.log(props.loggedIn)
 
     function onInputHandler(value) {
         setSearch(value);
@@ -44,6 +44,7 @@ function Main(props) {
                     search={search}
                     discount={props.discount}
                     dataDiscount={props.dataDiscount}
+                    loggedIn = {props.loggedIn}
                     /> 
                 :
                     props.category.length === 0 ? <></> :
@@ -56,6 +57,7 @@ function Main(props) {
                                     onChange={props.onChange}
                                     dataDiscount={props.dataDiscount}
                                     infoCategoryID={props.infoCategoryID}
+                                    loggedIn = {props.loggedIn}
                                 />
                             )
                         })}
@@ -63,6 +65,7 @@ function Main(props) {
 
                 <AddCategories
                     handleNewCategory={props.handleNewCategory}
+                    loggedIn = {props.loggedIn}
                 />
             </main>
             <Footer />

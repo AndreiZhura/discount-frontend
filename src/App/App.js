@@ -340,6 +340,7 @@ const App = () => {
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}
 					infoDiscount={infoDiscount}
+					loggedIn={loggedIn}
 				/>} />
 				<Route path="/signup" element={<Register
 					handleRegistration={handleRegistration}
