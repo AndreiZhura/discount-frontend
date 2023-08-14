@@ -98,7 +98,7 @@ function SettingsDiscount(props) {
                                     <GetPromocode
                                         key={key}
                                         value={value}
-                                        handleDeletePromo = {props.handleDeletePromo}
+                                        DeletePromo = {props.DeletePromo}
                                         loggedIn={props.loggedIn}
                                     /> : <></>
                             );
@@ -131,6 +131,7 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.barcode ?
                         <div className="input__barcode-container">
+
                             <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :

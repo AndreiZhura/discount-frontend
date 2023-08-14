@@ -7,7 +7,7 @@ function GetPromocode(props) {
 
     function handlePromoDelete(e) {
         e.preventDefault();
-        props.handleDeletePromo(props.value)
+        props.DeletePromo(props.value._id)
     }
 
 

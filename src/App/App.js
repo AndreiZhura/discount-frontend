@@ -248,8 +248,9 @@ const App = () => {
 			})
 	}
 
-	const handleDeletePromo = (promoDelete) => {
-		api.deletePromocode(promoDelete._id)
+	const DeletePromo = (promoDelete) => {
+		
+		api.deletePromocode(promoDelete)
 			.then((res) => {
 				GetPromocode();
 			})
@@ -384,7 +385,7 @@ const App = () => {
 							infoDiscount={infoDiscount}
 							onCardDelete={DeleteDiscount}
 							handlePromo={handlePromo}
-							handleDeletePromo={handleDeletePromo}
+							DeletePromo={DeletePromo}
 							handleUpdateDiscountText={handleUpdateDiscountText}
 						/>
 					</ProtectedRoute>
