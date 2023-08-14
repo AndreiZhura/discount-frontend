@@ -13,7 +13,9 @@ function Main(props) {
 
     const [search, setSearch] = useState('');
     const [click, setClick] = useState(false);
-    console.log(props.loggedIn)
+
+    const [popupInform, setPopupInform] = useState('');
+    const [popupClose, setPopupClose] = useState(true);
 
     function onInputHandler(value) {
         setSearch(value);
@@ -27,29 +29,42 @@ function Main(props) {
             setClick(true)
         }
 
+    }
 
+    function handlePopup(text) {
+        if(text){
+            setPopupInform(text)
+            setPopupClose(!popupClose)
+        }
+        else{
+            setPopupClose(!popupClose)
+        }
     }
 
     return (
         <>
             <main className="main">
-            <PopupDeleteCategories/>
+                <PopupDeleteCategories
+                    popupInform = {popupInform}
+                    popupClose = {popupClose}
+                    handlePopup = {handlePopup}
+                />
                 <Search
                     search={search}
                     onInputHandler={onInputHandler}
                     SearchClick={SearchClick}
-                    loggedIn = {props.loggedIn}
+                    loggedIn={props.loggedIn}
                 />
 
                 {click === true ?
-                
+
                     <Favorite
-                    search={search}
-                    discount={props.discount}
-                    dataDiscount={props.dataDiscount}
-                    loggedIn = {props.loggedIn}
-                    /> 
-                :
+                        search={search}
+                        discount={props.discount}
+                        dataDiscount={props.dataDiscount}
+                        loggedIn={props.loggedIn}
+                    />
+                    :
                     props.category.length === 0 ? <></> :
                         props.category.map((category, id) => {
                             return (
@@ -60,7 +75,8 @@ function Main(props) {
                                     onChange={props.onChange}
                                     dataDiscount={props.dataDiscount}
                                     infoCategoryID={props.infoCategoryID}
-                                    loggedIn = {props.loggedIn}
+                                    loggedIn={props.loggedIn}
+                                    handlePopup={handlePopup}
                                 />
                             )
                         })}
@@ -68,7 +84,7 @@ function Main(props) {
 
                 <AddCategories
                     handleNewCategory={props.handleNewCategory}
-                    loggedIn = {props.loggedIn}
+                    loggedIn={props.loggedIn}
                 />
             </main>
             <Footer />

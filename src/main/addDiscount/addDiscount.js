@@ -6,7 +6,7 @@ import addDiscount from '../../img/addDiscount.svg'
 
 function AddDiscount(props) {
 
-    console.log(props.category._id)
+
 
     function categoriesID() {
         props.infoCategoryID(props.category._id)

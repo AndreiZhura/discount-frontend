@@ -7,20 +7,24 @@ import '../../settingsDiscount/settingsDiscount.css'
 
 function Categories(props) {
 
-    function onClickButton(){
-       const positionCategory =  props.discount.map((value)=>{
+    function onClickButton() {
+        const positionCategory = props.discount.map((value) => {
             return value.category === props.category._id
         })
 
-        const filterCategory = positionCategory.filter((filter)=>{
+        const filterCategory = positionCategory.filter((filter) => {
             return filter === true
         })
-        if(filterCategory.length !== 0 ){
-          console.log('данную категорию нельзя удалять пока не удаленны все карточки')
+        if (filterCategory.length !== 0) {
+            const notDelete = 'данную категорию нельзя удалять пока не удаленны все карточки';
+            props.handlePopup(notDelete)
+        } else {
+            const deleteCategory = 'вы уверенны что хотите удалить данную категорию';
+            props.handlePopup(deleteCategory)
         }
-       
 
-        
+
+
     }
 
     return (
@@ -31,15 +35,15 @@ function Categories(props) {
                     <p className="categories__name-title">{props.category.categories}</p>
                     <button className="bascet-delete bascet-delete_category" onClick={onClickButton}></button>
                 </div>
-                    <Discounts
-                        category={props.category}
-                        discount={props.discount}
-                        dataDiscount={props.dataDiscount}
-                        infoCategoryID = {props.infoCategoryID}
-                        handleAddDiscount = {props.handleAddDiscount}
-                        loggedIn = {props.loggedIn}
-                    />
-                
+                <Discounts
+                    category={props.category}
+                    discount={props.discount}
+                    dataDiscount={props.dataDiscount}
+                    infoCategoryID={props.infoCategoryID}
+                    handleAddDiscount={props.handleAddDiscount}
+                    loggedIn={props.loggedIn}
+                />
+
             </div>
 
         </div>
