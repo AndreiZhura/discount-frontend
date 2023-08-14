@@ -4,6 +4,7 @@ import Search from "./search/search";
 import Categories from "./categories/categories";
 import AddCategories from "./addCategories/addCategories";
 import Favorite from '../favorite/favorite'
+import PopupDeleteCategories from './popupDeleteCategory/popupDeleteCategory'
 import Footer from "./footer/footer";
 
 
@@ -32,6 +33,7 @@ function Main(props) {
     return (
         <>
             <main className="main">
+            <PopupDeleteCategories/>
                 <Search
                     search={search}
                     onInputHandler={onInputHandler}

@@ -111,8 +111,6 @@ const App = () => {
 					localStorage.setItem("loggedIn", true);
 					localStorage.setItem("isLoggedIn", true);
 					setCurrentUser(res.data);
-					console.log(res.data)
-
 				}
 			})
 			.catch((err) => {
