@@ -67,7 +67,6 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.image ?
                         <div className="input__file-container" >
-                         
                             <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
                         </div>
                         :
@@ -77,7 +76,6 @@ function SettingsDiscount(props) {
                             className="input__file-add" 
                             placeholder="Добавить картинку" 
                             name="add-file" id="add-file"
-                        
                             />
                             <img className="input-file-img" src={addPictures} />
                             <label for="add-file" className="input__file-label">Добавить картинку</label>
@@ -133,7 +131,6 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.barcode ?
                         <div className="input__barcode-container">
-                      
                             <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :

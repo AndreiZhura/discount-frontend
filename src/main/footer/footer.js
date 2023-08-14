@@ -1,17 +1,13 @@
 import React from "react";
 import './footer.css';
-import { Link } from "react-router-dom";
+
 
 function Footer(){
     return(
         <footer className="footer">
          <div className="footer__container">
-            <Link to="/favorites" className="footer__favorite-like"></Link>
-            <button className="footer__group">Название группы</button>
-            <button className="footer__connect">ОБРАТНАЯ СВЯЗЬ</button>
-         </div>
-         <div className="secret-button">
-           <Link to="/signin" className="secret-button__link">Войти</Link>
+            <a className="footer__group" href="https://vk.com/travel_skidki" target="_blank">Название группы</a>
+            <a className="footer__connect" href="https://t.me/stasi_split" target="_blank">ОБРАТНАЯ СВЯЗЬ</a>
          </div>
         </footer>
     );

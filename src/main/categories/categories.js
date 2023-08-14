@@ -28,7 +28,6 @@ function Categories(props) {
 
 
     }
-    console.log(props.loggedIn)
 
     return (
         <div className="categories">
