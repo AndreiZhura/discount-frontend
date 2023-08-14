@@ -28,6 +28,7 @@ function Categories(props) {
 
 
     }
+    console.log(props.loggedIn)
 
     return (
         <div className="categories">
@@ -35,7 +36,10 @@ function Categories(props) {
                 <div className="categories__name">
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">{props.category.categories}</p>
-                    <button className="bascet-delete bascet-delete_category" onClick={onClickButton}></button>
+                    {
+                        props.loggedIn ?
+                        <button className="bascet-delete bascet-delete_category" onClick={onClickButton}></button>:<></>
+                    }
                 </div>
                 <Discounts
                     category={props.category}

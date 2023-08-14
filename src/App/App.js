@@ -263,7 +263,7 @@ const App = () => {
 
 	//Поднятие стейта 
 	const dataDiscount = (data) => {
-		setInfoDiscount(data); // LOGS DATA FROM CHILD (My name is Dean Winchester... &)
+		setInfoDiscount(data);
 	}
 	const infoCategoryID = (id) => {
 		setCategoryID(id)
@@ -331,6 +331,8 @@ const App = () => {
 		localStorage.removeItem('isLoggedIn');
 		setloggedIn(false);
 	}
+
+
 
 	return (
 

@@ -10,7 +10,7 @@ function Favorite(props) {
         return filter.name.trim().toLowerCase().includes(props.search.toLowerCase())
     })
 
-
+    console.log(props.loggedIn)
     return (
         <div className="favorites">
             <div className="favorites__container">
@@ -31,6 +31,7 @@ function Favorite(props) {
                                 key={id}
                                 discount={value}
                                 dataDiscount={props.dataDiscount}
+                                loggedIn = {props.loggedIn}
                             />
                         );
                     })
