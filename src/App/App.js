@@ -74,10 +74,9 @@ const App = () => {
 	useEffect(() => {
 		const token = localStorage.getItem("token");
 		if (token) {
-			console.log(token)
 			newAuth(token);
 		}
-		else{
+		else {
 			console.log("нет токена")
 		}
 	}, []);
@@ -87,7 +86,6 @@ const App = () => {
 			.then((res) => {
 				setloggedIn(true);
 				setCurrentUser(res.data);
-				console.log(res.data)
 				setEmail(res.data.email);
 				setName(res.data.name);
 			})
@@ -368,6 +366,7 @@ const App = () => {
 				<Route path="/setting" element={
 					<ProtectedRoute loggedIn={loggedIn}>
 						<SettingsDiscount
+							loggedIn={loggedIn}
 							promocode={promocode}
 							infoDiscount={infoDiscount}
 							onCardDelete={DeleteDiscount}

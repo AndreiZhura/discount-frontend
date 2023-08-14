@@ -10,6 +10,7 @@ function GetPromocode(props) {
         props.handleDeletePromo(props.value)
     }
 
+
     return (
         <>
             <div className="input__promocode">

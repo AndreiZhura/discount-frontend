@@ -101,6 +101,7 @@ function SettingsDiscount(props) {
                                         key={key}
                                         value={value}
                                         handleDeletePromo = {props.handleDeletePromo}
+                                        loggedIn={props.loggedIn}
                                     /> : <></>
                             );
                         })
