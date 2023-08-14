@@ -152,7 +152,7 @@ export const addNewDiscount = (name, image, description, link, barcode, category
     })
 }
 
-export const UpdateDiscountText = (name,  description, link,  category, id) => {
+export const UpdateDiscountText = (name, description, link, category, id) => {
 
   return fetch(`${BASE_URL}/positions/${id}`, {
     method: 'PATCH',
@@ -211,10 +211,6 @@ export const deletePromocode = (id) => {
 
 
 // Категории
-
-
-
-
 export const addNewCategories = (categoryName) => {
   return fetch(`${BASE_URL}/categories`, {
     method: 'POST',
@@ -223,6 +219,19 @@ export const addNewCategories = (categoryName) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({ categories: categoryName })
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
+export const deleteCategory = (id) => {
+  return fetch(`${BASE_URL}/categories/${id}`, {
+    method: 'DELETE',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    }
   })
     .then((res) => {
       return getResponse(res)

@@ -17,10 +17,12 @@ function Categories(props) {
         })
         if (filterCategory.length !== 0) {
             const notDelete = 'данную категорию нельзя удалять пока не удаленны все карточки';
-            props.handlePopup(notDelete)
+            props.handlePopup(notDelete, false);
+            props.setCAtegoryId(props.category._id);
         } else {
             const deleteCategory = 'вы уверенны что хотите удалить данную категорию';
-            props.handlePopup(deleteCategory)
+            props.handlePopup(deleteCategory, true);
+            props.setCAtegoryId(props.category._id);
         }
 
 

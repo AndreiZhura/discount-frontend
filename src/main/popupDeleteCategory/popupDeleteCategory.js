@@ -1,5 +1,5 @@
 
-import React, {useState} from "react";
+import React from "react";
 import './popupDeleteCategory.css'
 
 
@@ -9,13 +9,14 @@ function PopupDeleteCategories(props) {
 
     return (
         <section className={props.popupClose ? 'popup' : 'popup_none'}>
-        <div className="popup__main">
-            <button className="popup__button" onClick={props.handlePopup}>X</button>
-                 <p className="popup__text">Вы не можете удалить категорию пока не удалите все скидки</p>
-                <button className="popup__close" onClick={props.handlePopup} >Закрыть</button>
-            
-        </div>
-    </section>
+            <div className="popup__main">
+                <button className="popup__button" onClick={props.handlePopup}>X</button>
+                <p className="popup__text">{props.popupInform}</p>
+                
+                <button className={props.popupDelete ? 'popup__close' : 'popup_none'} onClick={props.handleDeleteCategory} >Удалить</button>
+
+            </div>
+        </section>
     );
 
 }

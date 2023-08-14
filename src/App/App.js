@@ -228,6 +228,16 @@ const App = () => {
 			})
 	}
 
+	function DeleteCategory(id){
+		api.deleteCategory(id)
+		.then((result) => {
+			GetCategories();
+		})
+		.catch((err) => {
+			console.error(err);
+		})
+	}
+
 	function DeleteDiscount(discountID) {
 		api.deleteDiscount(discountID)
 			.then((result) => {
@@ -306,6 +316,8 @@ const App = () => {
 			})
 	}
 
+
+
 	useEffect(() => {
 		GetCategories();
 		GetDiscount();
@@ -333,6 +345,7 @@ const App = () => {
 					infoCategoryID={infoCategoryID}
 					handleNewCategory={handleNewCategory}
 					handleAddDiscount={handleAddDiscount}
+					DeleteCategory = {DeleteCategory}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}

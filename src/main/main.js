@@ -15,7 +15,9 @@ function Main(props) {
     const [click, setClick] = useState(false);
 
     const [popupInform, setPopupInform] = useState('');
-    const [popupClose, setPopupClose] = useState(true);
+    const [popupClose, setPopupClose] = useState(false);
+    const [popupDelete, setPopupDelete] = useState(false);
+    const [categoryId, setCAtegoryId] = useState('')
 
     function onInputHandler(value) {
         setSearch(value);
@@ -31,23 +33,38 @@ function Main(props) {
 
     }
 
-    function handlePopup(text) {
-        if(text){
-            setPopupInform(text)
-            setPopupClose(!popupClose)
+
+
+    function handlePopup(text, bool) {
+        if (text, bool) {
+            setPopupInform(text);
+            setPopupDelete(bool);
+            setPopupClose(!popupClose);
         }
-        else{
-            setPopupClose(!popupClose)
+        else if (text, bool === false) {
+            setPopupInform(text);
+            setPopupDelete(bool);
+            setPopupClose(!popupClose);
         }
+        else {
+            setPopupClose(!popupClose);
+        }
+    }
+
+    function handleDeleteCategory() {
+        props.DeleteCategory(categoryId);
+        setPopupClose(!popupClose);
     }
 
     return (
         <>
             <main className="main">
                 <PopupDeleteCategories
-                    popupInform = {popupInform}
-                    popupClose = {popupClose}
-                    handlePopup = {handlePopup}
+                    popupInform={popupInform}
+                    popupClose={popupClose}
+                    handlePopup={handlePopup}
+                    popupDelete={popupDelete}
+                    handleDeleteCategory={handleDeleteCategory}
                 />
                 <Search
                     search={search}
@@ -77,6 +94,7 @@ function Main(props) {
                                     infoCategoryID={props.infoCategoryID}
                                     loggedIn={props.loggedIn}
                                     handlePopup={handlePopup}
+                                    setCAtegoryId={setCAtegoryId}
                                 />
                             )
                         })}
