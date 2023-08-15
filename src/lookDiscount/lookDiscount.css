@@ -11,7 +11,11 @@
     --width300: 300px;
 }
 
-.button__link{
+.look__text-padding {
+    padding-top: 30px;
+}
+
+.button__link {
     margin-top: 50px;
     margin-bottom: 50px;
     width: 460.8038024902344px;
@@ -21,7 +25,7 @@
     cursor: pointer;
 }
 
-.button__text{
+.button__text {
     font-family: Inter;
     font-size: 24px;
     font-weight: 400;
@@ -31,7 +35,7 @@
     color: black;
 }
 
-.look__file-container{
+.look__file-container {
     margin-top: 0;
     width: var(--width780);
     height: 450px;
@@ -39,13 +43,19 @@
     background-color: #F1F2F6;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
     margin-bottom: 25px;
-    object-fit: unset;
+
 }
 
+.look__file-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10.149864196777344px;
+}
+
+
 @media screen and (max-width:807px) {
-    .look__file-container{
+    .look__file-container {
         width: var(--width700);
-        height: 450px;
     }
 
 }
@@ -53,45 +63,58 @@
 
 
 @media screen and (max-width:730px) {
-   .look__file-container{
-        width: var(--width6500);
-        height: 450px;
-        object-fit: unset;
+    .look__file-container {
+        width: var(--width650);
     }
 
 }
 
 @media screen and (max-width:692px) {
- 
+    .look__file-container {
+        width: var(--width600);
+    }
 
 }
 
 @media screen and (max-width:635px) {
-
+    .look__file-container {
+        width: var(--width550);
+    }
 }
 
 @media screen and (max-width:585px) {
- 
+    .look__file-container {
+        width: var(--width500);
+    }
 
 }
 
 @media screen and (max-width:539px) {
-
+    .look__file-container {
+        width: var(--width450);
+    }
 
 
 }
 
 @media screen and (max-width:487px) {
-
+    .look__file-container {
+        width: var(--width400);
+        height: 350px;
+    }
 
 }
 
 
 @media screen and (max-width:425px) {
-
+    .look__file-container {
+        width: var(--width350);
+    }
 }
 
 
 @media screen and (max-width:373px) {
-
+    .look__file-container {
+        width: var(--width300);
     }
+}

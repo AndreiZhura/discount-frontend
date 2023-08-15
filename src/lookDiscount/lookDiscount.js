@@ -1,9 +1,8 @@
 import React from "react";
 import '../settingsDiscount/settingsDiscount.css'
 import './lookDiscount.css'
-import GetPromocode from "../main/getPromocode/getPromocode";
+import GetPromocodePeople from "../main/getPromocodePeople/getPromocodePeople";
 import { Link } from "react-router-dom";
-import addPictures from '../img/add-pictyres.svg'
 
 function LookDiscount(props) {
 
@@ -13,36 +12,27 @@ function LookDiscount(props) {
         <div className="settings">
             <div className="setting" >
 
-                <input 
-                className="setting__name-discount" 
-                type="text" placeholder="Название скидки" 
-                defaultValue={props.infoDiscount.name} />
+                <p className="setting__name-discount look__text-padding " >{props.infoDiscount.name}</p>
                 {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
-                            <img className="look__file-container" 
+                            <img className="look__file-image" 
                             src={`${base}` + `${props.infoDiscount.image}`} />
                         </div> : <></>
                 }
 
 
-                <textarea 
-                className="input__text" 
-                id="add-text" 
-                name="add-text" 
-                placeholder="Описание данного сервиса..." 
-                defaultValue = {props.infoDiscount.description} ></textarea>
+                <p
+                className="input__text">{props.infoDiscount.description}</p>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
                     props.promocode.length === 0 ? <></> :
                         props.promocode.map((value) => {
                             return (
                                 props.infoDiscount._id === value.position ?
-                                    <GetPromocode
+                                    <GetPromocodePeople
                                         key={value._id}
                                         value={value}
-                                        handleDeletePromo={props.handleDeletePromo}
-                                        loggedIn={props.loggedIn}
                                     /> : <></>
                             );
                         })
