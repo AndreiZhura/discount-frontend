@@ -3,10 +3,10 @@ import { useState, useEffect, } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 ;
-/*
+
 import bridge from '@vkontakte/vk-bridge';
 import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';*/
+import '@vkontakte/vkui/dist/vkui.css';
 
 // Компоненты
 import Main from '../main/main';
