@@ -99,11 +99,13 @@ function Main(props) {
                             )
                         })}
 
-
-                <AddCategories
-                    handleNewCategory={props.handleNewCategory}
-                    loggedIn={props.loggedIn}
-                />
+                {
+                    click === true ? <></> :
+                        <AddCategories
+                            handleNewCategory={props.handleNewCategory}
+                            loggedIn={props.loggedIn}
+                        />
+                }
             </main>
             <Footer />
         </>
