@@ -32,9 +32,12 @@ function Categories(props) {
     return (
         <div className="categories">
             <div className="categories__container">
+                <div className="categories__name-and-delete">
+
                 <div className="categories__name">
                     <img className="categories__name-arrows" src={arrowsDown} />
                     <p className="categories__name-title">{props.category.categories}</p>
+                </div>
                     {
                         props.loggedIn ?
                         <button className="bascet-delete bascet-delete_category" onClick={onClickButton}></button>:<></>
