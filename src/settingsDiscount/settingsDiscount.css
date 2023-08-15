@@ -312,16 +312,19 @@
 
 @media screen and (max-width:807px) {
     .setting {
-        width: var(--width90);
+        width: var(--width700);
     }
 
     .setting__logo {
-        width: var(--width90);
+        width: var(--width700);
+    }
 
+    .setting__name-discount {
+        width: var(--width700);
     }
 
     .input__file {
-        width: var(--width90);
+        width: var(--width700);
     }
 
     .input__text {
@@ -330,18 +333,20 @@
     }
 
     .input__add-link {
-        width: var(--width90);
+        width: var(--width700);
 
     }
 
     .input__barcode {
         width: 100%;
     }
+    .input__barcode-container{
+        width: var(--width700);
+    }
 
 }
 
 @media screen and (max-width:737px) {
-
     .input__add-link {
         width: 100%;
 
@@ -362,10 +367,22 @@
     .input__file {
         width: var(--width650);
     }
+    .setting__name-discount {
+        width: var(--width650);
+    }
 
     .input__text {
         width: 100%;
 
+    }
+    .input__promocode{
+        width: var(--width650);
+        border: 1px solid green;
+    }
+ 
+
+    .input__add-promocode{
+       width: 350px;
     }
 
     .input__add-link {
@@ -375,6 +392,10 @@
 
     .input__barcode {
         width: 100%;
+    }
+
+    .input__barcode-container{
+        width: var(--width650);
     }
 
 }
@@ -392,14 +413,21 @@
     .input__file {
         width: var(--width600);
     }
+    .setting__name-discount {
+        width: var(--width600);
+    }
+
 
     .input__text {
         width: 100%;
     }
 
-    .input__add-promocode {
-        width: 400px;
-        margin-right: 10px;
+    .input__promocode{
+        width: var(--width600);
+        border: 1px solid green;
+    }
+    .input__add-promocode{
+       width: 320px;
     }
 
     .input__add-date {
@@ -414,6 +442,10 @@
 
     .input__barcode {
         width: 100%;
+    }
+
+    .input__barcode-container{
+        width: var(--width600);
     }
 
 }
@@ -431,35 +463,33 @@
     .input__file {
         width: var(--width550);
     }
+    .setting__name-discount {
+        width: var(--width550);
+    }
 
     .input__text {
         width: 100%;
-        margin-bottom: 50px;
-    }
 
-    .input__add-text {
-        margin-bottom: 50px;
     }
-
-    .input__add-promocode {
-        width: 300px;
-        margin-right: 10px;
+    .input__promocode{
+        width: var(--width550);
+        border: 1px solid green;
+    }
+    .input__add-promocode{
+       width: 300px;
     }
 
     .input__add-date {
-        width: 200px;
-        padding-left: 10px;
+        width: 150px;
     }
 
     .input__add-link {
         width: var(--width550);
-
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width550);
     }
-
 }
 
 @media screen and (max-width:585px) {
@@ -475,19 +505,25 @@
     .input__file {
         width: var(--width500);
     }
-
-    .input__text {
-        width: 100%;
+    .setting__name-discount {
+        width: var(--width500);
     }
 
-    .input__add-promocode {
-        width: 300px;
-        margin-right: 10px;
+    .input__text {
+        width: var(--width500);
+
+    }
+    .input__promocode{
+        width: var(--width500);
+        border: 1px solid green;
+    }
+  
+    .input__add-promocode{
+       width: 280px;
     }
 
     .input__add-date {
-        width: 200px;
-        padding-left: 10px;
+        width: 150px;
     }
 
     .input__add-link {
@@ -495,8 +531,12 @@
 
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width500);
+    }
+
+    .setting__button{
+        width: 250px;
     }
 
 }
@@ -514,20 +554,25 @@
     .input__file {
         width: var(--width450);
     }
-
-    .input__text {
-        width: 100%;
+    .setting__name-discount {
+        width: var(--width450);
     }
 
-    .input__add-promocode {
-        width: 250px;
-        margin-right: 10px;
-        font-size: 20px;
+    .input__text {
+        width: var(--width450);
+
+    }
+    .input__promocode{
+        width: var(--width450);
+        border: 1px solid green;
+    }
+  
+    .input__add-promocode{
+       width: 240px;
     }
 
     .input__add-date {
-        width: 200px;
-        padding-left: 10px;
+        width: 130px;
         font-size: 20px;
     }
 
@@ -536,9 +581,15 @@
 
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width450);
     }
+
+
+    .setting__button{
+        width: 250px;
+    }
+
 
 }
 
@@ -555,21 +606,26 @@
     .input__file {
         width: var(--width400);
     }
-
-    .input__text {
-        width: 100%;
+    .setting__name-discount {
+        width: var(--width400);
     }
 
-    .input__add-promocode {
-        width: 220px;
-        margin-right: 10px;
-        font-size: 20px;
+    .input__text {
+        width: var(--width400);
+
+    }
+    .input__promocode{
+        width: var(--width400);
+        border: 1px solid green;
+    }
+  
+    .input__add-promocode{
+       width: 240px;
     }
 
     .input__add-date {
-        width: 150px;
-        padding-left: 10px;
-        font-size: 15px;
+        width: 130px;
+        font-size: 20px;
     }
 
     .input__add-link {
@@ -577,8 +633,13 @@
 
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width400);
+    }
+
+
+    .setting__button{
+        width: 200px;
     }
 
 }
@@ -597,20 +658,26 @@
     .input__file {
         width: var(--width350);
     }
-
-    .input__text {
-        width: 100%;
+    .setting__name-discount {
+        width: var(--width350);
     }
 
-    .input__add-promocode {
-        width: 200px;
-        margin-right: 10px;
-        font-size: 20px;
+    .input__text {
+        width: var(--width350);
+
+    }
+    .input__promocode{
+        width: var(--width350);
+        border: 1px solid green;
+    }
+  
+    .input__add-promocode{
+       width: 220px;
+       font-size: 15px;
     }
 
     .input__add-date {
-        width: 130px;
-        padding-left: 10px;
+        width: 100px;
         font-size: 15px;
     }
 
@@ -619,16 +686,19 @@
 
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width350);
     }
 
-    .setting__button {
-        width: 173px;
-        height: 31px;
-        border-radius: 3px;
-        font-size: 12px;
-        line-height: 15px;
+
+    .setting__button{
+        width: 160px;
+        font-size: 15px;
+    }
+
+    .setting__button:first-child{
+        margin-left: 0px;
+        margin-right: 15px;
     }
 
 }
@@ -647,40 +717,51 @@
     .input__file {
         width: var(--width300);
     }
-
-    .input__text {
-        width: 100%;
+    .setting__name-discount {
+        width: var(--width300);
     }
 
-    .input__add-promocode {
-        width: 150px;
-        margin-right: 10px;
-        font-size: 12px;
+    .input__text {
+        width: var(--width300);
+
+    }
+    .input__promocode{
+        width: var(--width300);
+        border: 1px solid green;
+    }
+  
+    .input__add-promocode{
+       width: 160px;
+       font-size: 15px;
     }
 
     .input__add-date {
-        width: 130px;
-        padding-left: 10px;
+        width: 100px;
         font-size: 15px;
     }
 
- 
+    .bascet-delete {
+      margin-left: 8px;
+    }
 
     .input__add-link {
         width: var(--width300);
 
     }
 
-    .input__barcode {
-        width: 100%;
+    .input__barcode-container{
+        width: var(--width300);
     }
 
-    .setting__button {
-        width: 173px;
-        height: 31px;
-        border-radius: 3px;
-        font-size: 12px;
-        line-height: 15px;
+
+    .setting__button{
+        width: 160px;
+        font-size: 15px;
+    }
+
+    .setting__button:first-child{
+        margin-left: 0px;
+        margin-right: 15px;
     }
 
 }

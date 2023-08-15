@@ -29,7 +29,6 @@
 
 .button-to-login {
     width: 10%;
-    border: 1px solid green;
 }
 
 .seach-form__search {
@@ -87,8 +86,6 @@
     }
 
     .search-form__link-to-admin {
-        font-size: 12px;
-        line-height: 32px;
         margin-left: 19px;
     }
 
