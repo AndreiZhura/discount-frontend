@@ -29,6 +29,7 @@
 
 .button-to-login {
     width: 10%;
+    border: 1px solid green;
 }
 
 .seach-form__search {
@@ -99,6 +100,9 @@
     .seach-form__search {
         width: 80%;
     }
+    .button-to-login {
+        width: 25%;   
+    }
 
 }
 
@@ -135,5 +139,9 @@
 
     .seach-form__search {
         width: 80%;
+    }
+    .button-to-login {
+        width: 25%;   
+        height: 25px;
     }
 }
