@@ -23,8 +23,8 @@ function LookDiscount(props) {
 
 
                 <p
-                className="input__text">{props.infoDiscount.description}</p>
-                <p className="input__add-text" for='add-text'>Описание промокода</p>
+                className="input__text look__text-padding">{props.infoDiscount.description}</p>
+                
                 {
                     props.promocode.length === 0 ? <></> :
                         props.promocode.map((value) => {

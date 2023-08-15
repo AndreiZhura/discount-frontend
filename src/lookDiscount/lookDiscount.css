@@ -80,6 +80,12 @@
     .look__file-container {
         width: var(--width550);
     }
+    .look__text-padding{
+        font-size: 20px;
+    }
+    .look__add-date{
+        width: 200px;
+    }
 }
 
 @media screen and (max-width:585px) {
@@ -103,12 +109,34 @@
         height: 350px;
     }
 
+    .button__link {
+        width: var(--width400);
+    }
+
+    .look__text-padding{
+        font-size: 20px;
+    }
+    .look__add-date{
+        width: 155px;
+    }
+
 }
 
 
 @media screen and (max-width:425px) {
     .look__file-container {
         width: var(--width350);
+        height: 300px;
+    }
+    .button__link {
+        width: var(--width350);
+    }
+
+    .look__text-padding{
+        font-size: 15px;
+    }
+    .look__add-date{
+        width: 120px;
     }
 }
 
@@ -116,5 +144,19 @@
 @media screen and (max-width:373px) {
     .look__file-container {
         width: var(--width300);
+    }
+    .button__link {
+        width: var(--width300);
+    }
+    .button__text {
+        font-size: 18px;
+ 
+    }
+
+    .look__text-padding{
+        font-size: 12px;
+    }
+    .look__add-date{
+        width: 100px;
     }
 }
