@@ -377,7 +377,6 @@
     }
     .input__promocode{
         width: var(--width650);
-        border: 1px solid green;
     }
  
 
@@ -424,7 +423,6 @@
 
     .input__promocode{
         width: var(--width600);
-        border: 1px solid green;
     }
     .input__add-promocode{
        width: 320px;
@@ -473,7 +471,6 @@
     }
     .input__promocode{
         width: var(--width550);
-        border: 1px solid green;
     }
     .input__add-promocode{
        width: 300px;
@@ -515,7 +512,7 @@
     }
     .input__promocode{
         width: var(--width500);
-        border: 1px solid green;
+
     }
   
     .input__add-promocode{
@@ -564,7 +561,6 @@
     }
     .input__promocode{
         width: var(--width450);
-        border: 1px solid green;
     }
   
     .input__add-promocode{
@@ -616,7 +612,6 @@
     }
     .input__promocode{
         width: var(--width400);
-        border: 1px solid green;
     }
   
     .input__add-promocode{
@@ -668,7 +663,6 @@
     }
     .input__promocode{
         width: var(--width350);
-        border: 1px solid green;
     }
   
     .input__add-promocode{
@@ -727,7 +721,6 @@
     }
     .input__promocode{
         width: var(--width300);
-        border: 1px solid green;
     }
   
     .input__add-promocode{

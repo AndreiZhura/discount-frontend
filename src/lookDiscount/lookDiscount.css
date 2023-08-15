@@ -1,3 +1,16 @@
+:root {
+    --width780: 780px;
+    --width700: 700px;
+    --width650: 650px;
+    --width600: 600px;
+    --width550: 550px;
+    --width500: 500px;
+    --width450: 450px;
+    --width400: 400px;
+    --width350: 350px;
+    --width300: 300px;
+}
+
 .button__link{
     margin-top: 50px;
     margin-bottom: 50px;
@@ -20,7 +33,7 @@
 
 .look__file-container{
     margin-top: 0;
-    width: 780px;
+    width: var(--width780);
     height: 450px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
@@ -29,3 +42,56 @@
     object-fit: unset;
 }
 
+@media screen and (max-width:807px) {
+    .look__file-container{
+        width: var(--width700);
+        height: 450px;
+    }
+
+}
+
+
+
+@media screen and (max-width:730px) {
+   .look__file-container{
+        width: var(--width6500);
+        height: 450px;
+        object-fit: unset;
+    }
+
+}
+
+@media screen and (max-width:692px) {
+ 
+
+}
+
+@media screen and (max-width:635px) {
+
+}
+
+@media screen and (max-width:585px) {
+ 
+
+}
+
+@media screen and (max-width:539px) {
+
+
+
+}
+
+@media screen and (max-width:487px) {
+
+
+}
+
+
+@media screen and (max-width:425px) {
+
+}
+
+
+@media screen and (max-width:373px) {
+
+    }
