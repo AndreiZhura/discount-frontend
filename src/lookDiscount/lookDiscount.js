@@ -47,7 +47,7 @@ function LookDiscount(props) {
                 {
                     props.infoDiscount.barcode ?
                         <div className="look__file-container">
-                            <img className="look__file-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
+                            <img className="look__file-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
                         <>
