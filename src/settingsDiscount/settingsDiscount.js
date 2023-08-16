@@ -9,7 +9,7 @@ import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
 
 
 function SettingsDiscount(props) {
-    const BASE_URL = 'https://api.andreizhura.nomoredomains.club';
+    const BASE_URL = 'https://api.andreizhura.nomoredomains.club/';
     const [counter, setCounter] = useState(0);
     const [name, setName] = useState(props.infoDiscount.name);
     const [description, setDescription] = useState(props.infoDiscount.description);

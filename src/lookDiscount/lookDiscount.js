@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function LookDiscount(props) {
 
-    const base = `http://localhost:3001/`;
+    const BASE_URL = 'https://api.andreizhura.nomoredomains.club/';
 
     return (
         <div className="settings">
@@ -17,7 +17,7 @@ function LookDiscount(props) {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
                             <img className="look__file-image" 
-                            src={`${base}` + `${props.infoDiscount.image}`} />
+                            src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
                         </div> : <></>
                 }
 
