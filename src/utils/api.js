@@ -1,5 +1,5 @@
 
-export const BASE_URL = 'http://api.andreizhura.nomoredomains.club';
+export const BASE_URL = 'https://api.andreizhura.nomoredomains.club';
 
 //обработка ошибок
 function getResponse(res) {

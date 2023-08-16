@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function Discount(props) {
 
-    const BASE_URL = 'http://api.andreizhura.nomoredomains.club';
+    const BASE_URL = 'https://api.andreizhura.nomoredomains.club';
 
     function DataDiscount() {
 
