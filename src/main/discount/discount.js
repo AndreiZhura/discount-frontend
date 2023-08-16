@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 function Discount(props) {
 
-    const base = `http://localhost:3001/`;
+    const BASE_URL = 'http://api.andreizhura.nomoredomains.club';
 
     function DataDiscount() {
 
@@ -30,7 +30,7 @@ function Discount(props) {
                                 onClick={DataDiscount} ></Link> : <></>
                     }
                     {
-                        < img className="discount__image" src={`${base}` + `${props.discount.image}`} />
+                        < img className="discount__image" src={`${BASE_URL}` + `${props.discount.image}`} />
                     }
                 </div>
             </Link>

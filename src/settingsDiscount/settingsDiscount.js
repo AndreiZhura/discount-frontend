@@ -9,7 +9,7 @@ import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
 
 
 function SettingsDiscount(props) {
-    const base = `http://localhost:3001/`;
+    const BASE_URL = 'http://api.andreizhura.nomoredomains.club';
     const [counter, setCounter] = useState(0);
     const [name, setName] = useState(props.infoDiscount.name);
     const [description, setDescription] = useState(props.infoDiscount.description);
@@ -67,7 +67,7 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.image ?
                         <div className="input__file-container" >
-                            <img className="input__file input__file_pull" src={`${base}` + `${props.infoDiscount.image}`} />
+                            <img className="input__file input__file_pull" src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
                         </div>
                         :
                         <div className="input__file">
@@ -132,7 +132,7 @@ function SettingsDiscount(props) {
                     props.infoDiscount.barcode ?
                         <div className="input__barcode-container">
 
-                            <img className="input__barcode-image" src={`${base}` + `${props.infoDiscount.barcode}`} />
+                            <img className="input__barcode-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
                         <div className="input__barcode">
