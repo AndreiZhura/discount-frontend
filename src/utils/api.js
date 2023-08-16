@@ -1,5 +1,5 @@
 
-export const BASE_URL = 'https://api.andreizhura.nomoredomains.club';
+import { BASE_URL } from "../constants/constants";
 
 //обработка ошибок
 function getResponse(res) {

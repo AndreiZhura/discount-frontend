@@ -3,11 +3,11 @@ import './discount';
 import SettingsDiscount from "../../settingsDiscount/settingsDiscount";
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-
+import { BASE_URL } from "../../constants/constants";
 
 function Discount(props) {
 
-    const BASE_URL = 'https://api.andreizhura.nomoredomains.club/';
+  
 
     function DataDiscount() {
 

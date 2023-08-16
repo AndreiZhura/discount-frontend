@@ -6,10 +6,10 @@ import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
 import GetPromocode from "../main/getPromocode/getPromocode";
 import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
+import { BASE_URL } from "../constants/constants";
 
 
 function SettingsDiscount(props) {
-    const BASE_URL = 'https://api.andreizhura.nomoredomains.club/';
     const [counter, setCounter] = useState(0);
     const [name, setName] = useState(props.infoDiscount.name);
     const [description, setDescription] = useState(props.infoDiscount.description);

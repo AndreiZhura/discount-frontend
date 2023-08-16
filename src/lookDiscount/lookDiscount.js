@@ -3,10 +3,11 @@ import '../settingsDiscount/settingsDiscount.css'
 import './lookDiscount.css'
 import GetPromocodePeople from "../main/getPromocodePeople/getPromocodePeople";
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
-    const BASE_URL = 'https://api.andreizhura.nomoredomains.club/';
+ 
 
     return (
         <div className="settings">
