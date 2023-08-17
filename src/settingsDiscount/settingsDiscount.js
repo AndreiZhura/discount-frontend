@@ -73,6 +73,7 @@ function SettingsDiscount(props) {
                         <div className="input__file">
                             <input 
                             type="file" 
+                            accept="image/*"
                             className="input__file-add" 
                             placeholder="Добавить картинку" 
                             name="add-file" id="add-file"
@@ -138,6 +139,7 @@ function SettingsDiscount(props) {
                         <div className="input__barcode">
                             <input 
                             type="file" 
+                            accept="image/*"
                             className="input__barcode-add" 
                             placeholder="Добавить штрихкоде" 
                             name="add-barcode" 
