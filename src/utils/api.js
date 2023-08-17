@@ -13,7 +13,7 @@ function getResponse(res) {
 //авторизоция
 export const register = (email, password, name) => {
 
-  return fetch(`${BASE_URL}/signup`, {
+  return fetch(`${BASE_URL}signup`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -28,7 +28,7 @@ export const register = (email, password, name) => {
 }
 
 export const authorize = (email, password) => {
-  return fetch(`${BASE_URL}/signin`, {
+  return fetch(`${BASE_URL}signin`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -43,7 +43,7 @@ export const authorize = (email, password) => {
 
 
 export const checkToken = (token) => {
-  return fetch(`${BASE_URL}/admin/me`, {
+  return fetch(`${BASE_URL}admin/me`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -58,7 +58,7 @@ export const checkToken = (token) => {
 
 
 export const userInfo = () => {
-  return fetch(`${BASE_URL}/admin/me`, {
+  return fetch(`${BASE_URL}admin/me`, {
     method: 'GET',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -71,7 +71,7 @@ export const userInfo = () => {
 }
 
 export const updateUserInfo = ({ email, name }) => {
-  return fetch(`${BASE_URL}/users/me`, {
+  return fetch(`${BASE_URL}users/me`, {
     method: 'PATCH',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -88,7 +88,7 @@ export const updateUserInfo = ({ email, name }) => {
 }
 
 export const getCategories = () => {
-  return fetch(`${BASE_URL}/categories`, {
+  return fetch(`${BASE_URL}categories`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -103,7 +103,7 @@ export const getCategories = () => {
 
 //добавление карточки
 export const getDiscount = () => {
-  return fetch(`${BASE_URL}/positions`, {
+  return fetch(`${BASE_URL}positions`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -117,7 +117,7 @@ export const getDiscount = () => {
 }
 
 export const getPromo = () => {
-  return fetch(`${BASE_URL}/promocode`, {
+  return fetch(`${BASE_URL}promocode`, {
     method: 'GET',
     headers: {
       'Accept': 'application/json',
@@ -140,7 +140,7 @@ export const addNewDiscount = (name, image, description, link, barcode, category
   data.append('barcode', barcode)
   data.append('category', category)
 
-  return fetch(`${BASE_URL}/positions`, {
+  return fetch(`${BASE_URL}positions`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -154,7 +154,7 @@ export const addNewDiscount = (name, image, description, link, barcode, category
 
 export const UpdateDiscountText = (name, description, link, category, id) => {
 
-  return fetch(`${BASE_URL}/positions/${id}`, {
+  return fetch(`${BASE_URL}positions/${id}`, {
     method: 'PATCH',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -168,7 +168,7 @@ export const UpdateDiscountText = (name, description, link, category, id) => {
 }
 
 export const addNewPromo = (promocode, date, position) => {
-  return fetch(`${BASE_URL}/promocode`, {
+  return fetch(`${BASE_URL}promocode`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -183,7 +183,7 @@ export const addNewPromo = (promocode, date, position) => {
 //удаление карточки
 
 export const deleteDiscount = (id) => {
-  return fetch(`${BASE_URL}/positions/${id}`, {
+  return fetch(`${BASE_URL}positions/${id}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -196,7 +196,7 @@ export const deleteDiscount = (id) => {
 }
 
 export const deletePromocode = (id) => {
-  return fetch(`${BASE_URL}/promocode/${id}`, {
+  return fetch(`${BASE_URL}promocode/${id}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -212,7 +212,7 @@ export const deletePromocode = (id) => {
 
 // Категории
 export const addNewCategories = (categoryName) => {
-  return fetch(`${BASE_URL}/categories`, {
+  return fetch(`${BASE_URL}categories`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -226,7 +226,7 @@ export const addNewCategories = (categoryName) => {
 }
 
 export const deleteCategory = (id) => {
-  return fetch(`${BASE_URL}/categories/${id}`, {
+  return fetch(`${BASE_URL}categories/${id}`, {
     method: 'DELETE',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
