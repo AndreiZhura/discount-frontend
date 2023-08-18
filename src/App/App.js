@@ -72,6 +72,7 @@ const App = () => {
 	const history = useNavigate();
 
 	useEffect(() => {
+		//signOut()
 		const token = localStorage.getItem("token");
 		if (token) {
 			newAuth(token);

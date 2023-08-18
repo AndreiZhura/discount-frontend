@@ -48,9 +48,6 @@ function SettingsDiscount(props) {
     }
 
   
-
-
-
     return (
         <div className="settings">
             <form className="setting" onSubmit={handleSubmit}>
@@ -125,6 +122,7 @@ function SettingsDiscount(props) {
                 <input 
                 type="text" 
                 className="input__add-link" 
+                placeholder="Добавить ссылку"
                 value={link}
                 onChange={handleLink}
                 />
@@ -135,16 +133,8 @@ function SettingsDiscount(props) {
                             <img className="input__barcode-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
-                        <div className="input__barcode">
-                            <input 
-                            type="file" 
-                            className="input__barcode-add" 
-                            placeholder="Добавить штрихкоде" 
-                            name="add-barcode" 
-                            id="add-barcode"
-                            />
-                            <img className="input-barcode-img" src={plusAdd} />
-                            <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
+                        <div className="input__barcode-container">
+
                         </div>
                 }
                 <div className="setting__buttons">
