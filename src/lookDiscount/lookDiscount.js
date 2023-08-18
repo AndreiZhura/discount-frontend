@@ -23,9 +23,7 @@ function LookDiscount(props) {
                         </div> : <></>
                 }
 
-
-                <p
-                    className="input__text look__text-padding">{props.infoDiscount.description}</p>
+                <p className="input__text look__text-padding">{props.infoDiscount.description}</p>
 
                 {
                     props.promocode.length === 0 ? <></> :
@@ -40,12 +38,12 @@ function LookDiscount(props) {
                         })
                 }
                 {
-                    props.infoDiscount.link  ? 
+                    props.infoDiscount.link ?
                         <button className="button__link">
                             <a href={props.infoDiscount.link} target="_blank" className="button__text">
                                 Перейти на страницу акции
                             </a>
-                        </button>:<></>
+                        </button> : <></>
                 }
 
 

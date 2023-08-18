@@ -13,6 +13,7 @@ function DiscountAdd(props) {
     const [description, setDescription] = useState('');
     const [link, setLink] = useState('');
     const [barcode, setBarcode] = useState('');
+    const [promocodeDescription , setPromocodeDescription ] = useState('')
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
 
@@ -101,11 +102,12 @@ function DiscountAdd(props) {
                     placeholder="Описание данного сервиса..."
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
+             
                 {
-                counter ? <></>:
-                    <AddPromo
-                        handlePromocode={handlePromocode}
-                        handleData={handleData} />
+                    counter ? <></> :
+                        <AddPromo
+                            handlePromocode={handlePromocode}
+                            handleData={handleData} />
 
                 }
                 {
