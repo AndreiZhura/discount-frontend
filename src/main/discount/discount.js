@@ -14,6 +14,10 @@ function Discount(props) {
         props.dataDiscount(props.discount)
     }
 
+    props.discount.image.map((value)=>{
+        console.log( `${BASE_URL}` + `${value.path}`)
+    })
+
     return (
         <div className="discount">
             <Link
@@ -30,7 +34,9 @@ function Discount(props) {
                                 onClick={DataDiscount} ></Link> : <></>
                     }
                     {
-                        < img className="discount__image" src={`${BASE_URL}` + `${props.discount.image}`} />
+                        props.discount.image.map((value) =>{
+                            < img className="discount__image" src={`${BASE_URL}` + `${value.path}`} />
+                        })
                     }
                 </div>
             </Link>
