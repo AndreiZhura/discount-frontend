@@ -167,14 +167,14 @@ export const UpdateDiscountText = (name, description, link, category, id) => {
     })
 }
 
-export const addNewPromo = (promocodeDescription,promocode, date, position) => {
+export const addNewPromo = (description,promocode, date, position) => {
   return fetch(`${BASE_URL}promocode`, {
     method: 'POST',
     headers: {
       authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({promocodeDescription, promocode, date, position })
+    body: JSON.stringify({description, promocode, date, position })
   })
     .then((res) => {
       return getResponse(res)

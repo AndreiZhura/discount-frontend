@@ -288,6 +288,7 @@ const App = () => {
 		if (date) {
 			api.addNewDiscount(name, image, description, link, barcode, category)
 				.then((result) => {
+					console.log(result)
 					console.log(promocodeDescription,promocode, date, result.data._id)
 					handlePromo(promocodeDescription,promocode, date, result.data._id);
 					GetDiscount();
@@ -322,10 +323,11 @@ const App = () => {
 			})
 	}
 
-	function handlePromo(promocode, date, position) {
-
-		api.addNewPromo(promocode, date, position)
+	function handlePromo(description,promocode, date, position) {
+        console.log(description,promocode, date, position)
+		api.addNewPromo(description,promocode, date, position)
 			.then((result) => {
+				console.log(result)
 				GetPromocode();
 			})
 			.catch((error) => {

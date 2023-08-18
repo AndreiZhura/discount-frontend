@@ -32,6 +32,7 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
+        console.log(promocodeDescription, promocode, date)
         props.handleAddDiscount(name, image, description, link, barcode, props.categoryID,promocodeDescription, promocode, date,);
 
     }
@@ -56,11 +57,12 @@ function DiscountAdd(props) {
     }
 
     function handlePromocode(e) {
+        console.log(e.target.value)
         setPromocode(e.target.value);
     }
 
     function handleData(e) {
-        
+        console.log(e.target.value)
         setDate(e.target.value);
     }
 
