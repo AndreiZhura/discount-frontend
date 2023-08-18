@@ -14,6 +14,7 @@ function AddPromo(props) {
                     id="add-text"
                     name="add-text"
                     placeholder="описание промокода"
+                    onChange={props.handlePromocodeDescription}
                 >
                 </textarea>
                 <input type="text"

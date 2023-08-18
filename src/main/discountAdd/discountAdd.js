@@ -13,7 +13,7 @@ function DiscountAdd(props) {
     const [description, setDescription] = useState('');
     const [link, setLink] = useState('');
     const [barcode, setBarcode] = useState('');
-    const [promocodeDescription , setPromocodeDescription ] = useState('')
+    const [promocodeDescription, setPromocodeDescription] = useState('')
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
 
@@ -32,7 +32,7 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
+        props.handleAddDiscount(name, image, description, link, barcode, props.categoryID,promocodeDescription, promocode, date,);
 
     }
 
@@ -50,12 +50,17 @@ function DiscountAdd(props) {
         setDescription(e.target.value);
     }
 
+    function handlePromocodeDescription(e) {
+        console.log(e.target.value)
+        setPromocodeDescription(e.target.value)
+    }
+
     function handlePromocode(e) {
         setPromocode(e.target.value);
     }
 
     function handleData(e) {
-        console.log(e.target.value)
+        
         setDate(e.target.value);
     }
 
@@ -102,12 +107,15 @@ function DiscountAdd(props) {
                     placeholder="Описание данного сервиса..."
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
-             
+
                 {
                     counter ? <></> :
                         <AddPromo
+                            handlePromocodeDescription={handlePromocodeDescription}
                             handlePromocode={handlePromocode}
-                            handleData={handleData} />
+                            handleData={handleData}
+
+                        />
 
                 }
                 {

@@ -283,11 +283,13 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, link, barcode, category, promocode, date,) {
+	function handleAddDiscount(name, image, description, link, barcode, category,promocodeDescription, promocode, date,) {
+		
 		if (date) {
 			api.addNewDiscount(name, image, description, link, barcode, category)
 				.then((result) => {
-					handlePromo(promocode, date, result.data._id);
+					console.log(promocodeDescription,promocode, date, result.data._id)
+					handlePromo(promocodeDescription,promocode, date, result.data._id);
 					GetDiscount();
 					GetPromocode();
 					history("/");
