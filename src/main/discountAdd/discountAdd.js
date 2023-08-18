@@ -83,7 +83,8 @@ function DiscountAdd(props) {
                         className="input__file-add"
                         placeholder="Добавить картинку"
                         name="add-file"
-                        accept="uploads/*"
+                        multiple
+                        accept="image/png, image/jpeg" 
                         id="add-file" />
                     <img className="input-file-img" src={addPictures} />
                     <label for="add-file" className="input__file-label">Добавить картинку</label>
@@ -115,7 +116,8 @@ function DiscountAdd(props) {
                         className="input__barcode-add"
                         placeholder="Добавить штрихкоде"
                         name="add-barcode"
-                        accept="uploads/*"
+                        multiple
+                        accept="image/png, image/jpeg" 
                         id="add-barcode"
                         onChange={handleBarcode}
                     />
