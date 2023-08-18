@@ -1,5 +1,5 @@
 import Discounts from "../discounts/discounts";
-import arrowsDown from '../../img/arrow_to_down.svg'
+import arrowsDown from '../../img/arrowsDown.svg'
 import '../../settingsDiscount/settingsDiscount.css'
 
 

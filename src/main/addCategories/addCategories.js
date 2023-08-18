@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../addCategories/addCategories.css'
 import '../categories/categories.css'
-import AddCategory from '../../img/addCategory.svg';
+import AddCategory from '../../img/plus.svg';
 
 function AddCategories(props) {
 

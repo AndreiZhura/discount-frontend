@@ -31,6 +31,7 @@
 
 .footer__group {
     cursor: pointer;
+    text-decoration: none;
     background-color: white;
     font-family: Inter;
     font-size: 30px;
@@ -51,14 +52,14 @@
     width: 251.58221435546875px;
     height: 66.65853118896484px;
     border-radius: 10.751376152038574px;
-    background-color: yellowgreen;
+    background-color: #EAD6BD;
     font-family: Inter;
     font-size: 26px;
     font-weight: 400;
     line-height: 31px;
     letter-spacing: 0em;
     text-align: center;    
-    color: white;
+    color: #726666;
     border: none;
     margin-top: 0px;
     margin-left: 8px;
