@@ -229,14 +229,14 @@ const App = () => {
 			})
 	}
 
-	function DeleteCategory(id){
+	function DeleteCategory(id) {
 		api.deleteCategory(id)
-		.then((result) => {
-			GetCategories();
-		})
-		.catch((err) => {
-			console.error(err);
-		})
+			.then((result) => {
+				GetCategories();
+			})
+			.catch((err) => {
+				console.error(err);
+			})
 	}
 
 	function DeleteDiscount(discountID) {
@@ -250,7 +250,7 @@ const App = () => {
 	}
 
 	const DeletePromo = (promoDelete) => {
-		
+
 		api.deletePromocode(promoDelete)
 			.then((res) => {
 				GetPromocode();
@@ -284,16 +284,29 @@ const App = () => {
 	}
 
 	function handleAddDiscount(name, image, description, link, barcode, category, promocode, date,) {
-		api.addNewDiscountBarcode(name, image, description, link, barcode, category)
-			.then((result) => {
-				handlePromo(promocode, date, result.data._id);
-				GetDiscount();
-				GetPromocode();
-				history("/");
-			})
-			.catch((error) => {
-				console.log(error)
-			})
+		if (date) {
+			api.addNewDiscount(name, image, description, link, barcode, category)
+				.then((result) => {
+					handlePromo(promocode, date, result.data._id);
+					GetDiscount();
+					GetPromocode();
+					history("/");
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		}
+		else {
+			api.addNewDiscount(name, image, description, link, barcode, category)
+				.then((result) => {
+					GetDiscount();
+					GetPromocode();
+					history("/");
+				})
+				.catch((error) => {
+					console.log(error)
+				})
+		}
 	}
 
 	function handleUpdateDiscountText(name, description, link, category, id) {
@@ -349,7 +362,7 @@ const App = () => {
 					infoCategoryID={infoCategoryID}
 					handleNewCategory={handleNewCategory}
 					handleAddDiscount={handleAddDiscount}
-					DeleteCategory = {DeleteCategory}
+					DeleteCategory={DeleteCategory}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}

@@ -7,7 +7,7 @@ import AddPromo from "../addPromo/addPromo";
 
 
 function DiscountAdd(props) {
-
+    const [counter, setCounter] = useState(true);
     const [name, setName] = useState('');
     const [image, setImage] = useState(null);
     const [description, setDescription] = useState('');
@@ -15,7 +15,7 @@ function DiscountAdd(props) {
     const [barcode, setBarcode] = useState('');
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
-    
+
     const [save, setSave] = useState(false);
 
 
@@ -23,12 +23,16 @@ function DiscountAdd(props) {
         setSave(!save)
     }
 
- 
+    function handleClick() {
+        setCounter(!counter)
+    }
+
+
 
     function handleSubmit(e) {
         e.preventDefault();
         props.handleAddDiscount(name, image, description, link, barcode, props.categoryID, promocode, date,);
-       
+
     }
 
     function handleName(e) {
@@ -50,6 +54,7 @@ function DiscountAdd(props) {
     }
 
     function handleData(e) {
+        console.log(e.target.value)
         setDate(e.target.value);
     }
 
@@ -84,7 +89,7 @@ function DiscountAdd(props) {
                         placeholder="Добавить картинку"
                         name="add-file"
                         multiple
-                        accept="image/png, image/jpeg" 
+                        accept="image/png, image/jpeg"
                         id="add-file" />
                     <img className="input-file-img" src={addPictures} />
                     <label for="add-file" className="input__file-label">Добавить картинку</label>
@@ -97,11 +102,16 @@ function DiscountAdd(props) {
                     onChange={handleDescription}></textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
                 {
-
+                counter ? <></>:
                     <AddPromo
                         handlePromocode={handlePromocode}
                         handleData={handleData} />
 
+                }
+                {
+                    counter ?
+                        <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
+                        : <></>
                 }
 
                 <input
@@ -117,7 +127,7 @@ function DiscountAdd(props) {
                         placeholder="Добавить штрихкоде"
                         name="add-barcode"
                         multiple
-                        accept="image/png, image/jpeg" 
+                        accept="image/png, image/jpeg"
                         id="add-barcode"
                         onChange={handleBarcode}
                     />

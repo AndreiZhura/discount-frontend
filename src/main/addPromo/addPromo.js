@@ -3,7 +3,7 @@ import '../../settingsDiscount/settingsDiscount'
 
 function AddPromo(props){
 
-
+console.log(props.handleData)
 
     return(
         <>

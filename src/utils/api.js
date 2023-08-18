@@ -130,7 +130,7 @@ export const getPromo = () => {
 
 }
 
-export const addNewDiscountBarcode = (name, image, description, link, barcode, category) => {
+export const addNewDiscount = (name, image, description, link, barcode, category) => {
 
   const data = new FormData()
   data.append('name', name)
