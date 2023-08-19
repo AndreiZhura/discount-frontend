@@ -164,6 +164,16 @@
     margin-bottom: 20px;
 }
 
+.input__text_small {
+    height: 180px;
+}
+
+.input__text_big {
+    height: 280px;
+}
+
+
+
 .input__add-promocode {
     grid-area: promo;
     width: 460.8038024902344px;

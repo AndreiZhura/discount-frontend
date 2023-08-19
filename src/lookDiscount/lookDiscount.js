@@ -13,8 +13,6 @@ function LookDiscount(props) {
     return (
         <div className="settings">
             <div className="setting" >
-
-                <p className="setting__name-discount look__text-padding " >{props.infoDiscount.name}</p>
                 {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
@@ -22,8 +20,12 @@ function LookDiscount(props) {
                                 src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
                         </div> : <></>
                 }
-
+                 {
+                 props.infoDiscount.description ?
                 <p className="input__text look__text-padding">{props.infoDiscount.description}</p>
+                :
+                <></>
+                 }
 
                 {
                     props.promocode.length === 0 ? <></> :
