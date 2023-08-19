@@ -2,17 +2,24 @@ import React from "react";
 import '../settingsDiscount/settingsDiscount.css'
 import './lookDiscount.css'
 import GetPromocodePeople from "../main/getPromocodePeople/getPromocodePeople";
+import Footer from "../main/footer/footer";
 import { Link } from "react-router-dom";
 import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
 
-    console.log(props.infoDiscount.link)
+    console.log(props.infoDiscount)
 
     return (
         <div className="settings">
             <div className="setting" >
+            <div className="setting__buttons">
+                    <Link to='/'>
+                        <button className="setting__button">Назад</button>
+                    </Link>
+                </div>
+
                 {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
@@ -58,11 +65,8 @@ function LookDiscount(props) {
                         <>
                         </>
                 }
-                <div className="setting__buttons">
-                    <Link to='/'>
-                        <button className="setting__button">Назад</button>
-                    </Link>
-                </div>
+             
+            <Footer/>
             </div>
         </div>
     );
