@@ -15,10 +15,12 @@ function Footer(props) {
             {
                 props.fullTerms ?
                     <div className="full-terms">
-                        <button className="full-terms__buttons" onClick={handleFullTermsText}>Полные условия</button>
+                        <button className="full-terms__buttons" onClick={handleFullTermsText}>
+                            <p className="full-terms__buttons-text">Полные условия</p>
+                            </button>
                         {
                             fullTermsText ?
-                                <p className="full-terms__text">{ props.fullTerms}</p>
+                                <p className="full-terms__text">{props.fullTerms}</p>
                                 :
                                 <></>
                         }
