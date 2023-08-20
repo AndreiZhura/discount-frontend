@@ -209,9 +209,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50px auto;
-    border: none;
     background-color: white;
     cursor: pointer;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
 
 }
 

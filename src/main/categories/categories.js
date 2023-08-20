@@ -33,10 +33,10 @@ function Categories(props) {
     function onClickButtonUpdate() {
         setUpdateCategory(!updateCategory)
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        props.handleUpdateCategory(updateCategoryText,props.category._id)
+        props.handleUpdateCategory(updateCategoryText, props.category._id)
         setUpdateCategory(!updateCategory)
     }
 
@@ -54,7 +54,7 @@ function Categories(props) {
                         <img className="categories__name-arrows" src={arrowsDown} />
                         <p className="categories__name-title">{props.category.categories}</p>
                         {props.loggedIn ?
-                            <button onClick={onClickButtonUpdate}></button> : <></>
+                            <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button> : <></>
                         }
 
                     </div>
@@ -66,14 +66,14 @@ function Categories(props) {
                 {
                     updateCategory ?
                         <form className="add-categoriesy__form"
-                        onSubmit={handleSubmit}
-                             >
+                            onSubmit={handleSubmit}
+                        >
                             <input className='add-categoriesy__text'
                                 type='text'
                                 placeholder='обновите категорию'
                                 onChange={handleCategory} />
-                            <button 
-                            className='add-categiries__data'
+                            <button
+                                className='add-categiries__data'
                             >Обновить</button>
                         </form>
                         :

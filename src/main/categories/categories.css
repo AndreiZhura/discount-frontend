@@ -58,6 +58,23 @@
     line-height: 32.17px;
 }
 
+.categories__buttons-update{
+    width: 80px;
+    margin-left: 22%;
+    border: none;
+    background-image: url(../../img/updateCategory.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px auto;
+    background-color: white;
+    cursor: pointer;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+
 .bascet-delete_category {
     margin-top: 22px;
     position: relative;
