@@ -123,6 +123,7 @@
     background-color: #F1F2F6;
     padding-top: 21px;
     padding-left: 33px;
+    padding-right: 33px;
     font-family: Inter;
     font-size: 24px;
     font-weight: 400;
@@ -296,6 +297,17 @@
 
 .input-barcode-img {
     margin-top: 0px;
+}
+
+.full-terms-add {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+.full-terms-add-title {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
 }
 
 

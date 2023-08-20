@@ -16,6 +16,7 @@ function DiscountAdd(props) {
     const [promocodeDescription, setPromocodeDescription] = useState('')
     const [promocode, setPromocode] = useState('');
     const [date, setDate] = useState('');
+    const [fullTerms, setFullTerms] = useState('');
 
     const [save, setSave] = useState(false);
 
@@ -32,8 +33,8 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(promocodeDescription, promocode, date)
-        props.handleAddDiscount(name, image, description, link, barcode, props.categoryID,promocodeDescription, promocode, date,);
+        console.log(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date)
+        props.handleAddDiscount(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date);
 
     }
 
@@ -52,28 +53,28 @@ function DiscountAdd(props) {
     }
 
     function handlePromocodeDescription(e) {
-        console.log(e.target.value)
         setPromocodeDescription(e.target.value)
     }
 
     function handlePromocode(e) {
-        console.log(e.target.value)
         setPromocode(e.target.value);
     }
 
     function handleData(e) {
-        console.log(e.target.value)
         setDate(e.target.value);
     }
 
     function handleLink(e) {
-
         setLink(e.target.value);
     }
 
     function handleBarcode(e) {
         setBarcode(e.target.files[0]);
 
+    }
+    
+    function handleFullTerms(e){
+        setFullTerms(e.target.value)
     }
 
 
@@ -145,6 +146,15 @@ function DiscountAdd(props) {
                     />
                     <img className="input-barcode-img" src={plusAdd} />
                     <label for="add-barcode" className="input__file-barcode">Добавить штрихкод</label>
+                </div>
+                <div className="full-terms-add">
+                    <label className="full-terms-add-title input__add-text">Добавить полные условия</label>
+                    <textarea
+                        type="text"
+                        className="full-terms-add-input input__text input__text_description-promocode"
+                        placeholder="Добавить полные условия"
+                        onChange={handleFullTerms}
+                    ></textarea>
                 </div>
                 <div className="setting__buttons setting__buttons_add-discount">
                     <button className="setting__button" >СОХРАНИТЬ</button>

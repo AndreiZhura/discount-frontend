@@ -130,7 +130,7 @@ export const getPromo = () => {
 
 }
 
-export const addNewDiscount = (name, image, description, link, barcode, category) => {
+export const addNewDiscount = (name, image, description, link, barcode,fullTerms, category) => {
 
   const data = new FormData()
   data.append('name', name)
@@ -138,6 +138,7 @@ export const addNewDiscount = (name, image, description, link, barcode, category
   data.append('description', description)
   data.append('link', link)
   data.append('barcode', barcode)
+  data.append('fullTerms', fullTerms)
   data.append('category', category)
 
   return fetch(`${BASE_URL}positions`, {

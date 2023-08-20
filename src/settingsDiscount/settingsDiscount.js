@@ -6,6 +6,7 @@ import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
 import GetPromocode from "../main/getPromocode/getPromocode";
 import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
+//import Footer from "../main/footer/footer"
 import { BASE_URL } from "../constants/constants";
 
 
@@ -28,15 +29,15 @@ function SettingsDiscount(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.handleUpdateDiscountText(name,  description, link,  props.infoDiscount.category,props.infoDiscount._id);
-       
+        props.handleUpdateDiscountText(name, description, link, props.infoDiscount.category, props.infoDiscount._id);
+
     }
 
     function handleName(e) {
         setName(e.target.value)
     }
 
-  
+
 
     function handleDescription(e) {
         setDescription(e.target.value);
@@ -47,7 +48,7 @@ function SettingsDiscount(props) {
         setLink(e.target.value);
     }
 
-  
+
     return (
         <div className="settings">
             <form className="setting" onSubmit={handleSubmit}>
@@ -55,11 +56,11 @@ function SettingsDiscount(props) {
                     <img src={settingLogo} />
                     <p className="setting__text">НАСТРОЙКИ</p>
                 </div>
-                <input 
-                className="setting__name-discount" 
-                type="text" 
-                value={name} 
-                onChange={handleName}
+                <input
+                    className="setting__name-discount"
+                    type="text"
+                    value={name}
+                    onChange={handleName}
                 />
                 {
                     props.infoDiscount.image ?
@@ -68,22 +69,22 @@ function SettingsDiscount(props) {
                         </div>
                         :
                         <div className="input__file">
-                            <input 
-                            type="file" 
-                            className="input__file-add" 
-                            placeholder="Добавить картинку" 
-                            name="add-file" id="add-file"
+                            <input
+                                type="file"
+                                className="input__file-add"
+                                placeholder="Добавить картинку"
+                                name="add-file" id="add-file"
                             />
                             <img className="input-file-img" src={addPictures} />
                             <label for="add-file" className="input__file-label">Добавить картинку</label>
                         </div>
                 }
-                <textarea 
-                className="input__text" 
-                id="add-text" 
-                name="add-text" 
-                value={description} 
-                onChange={handleDescription}
+                <textarea
+                    className="input__text"
+                    id="add-text"
+                    name="add-text"
+                    value={description}
+                    onChange={handleDescription}
                 >
                 </textarea>
                 <p className="input__add-text" for='add-text'>Описание промокода</p>
@@ -95,7 +96,7 @@ function SettingsDiscount(props) {
                                     <GetPromocode
                                         key={key}
                                         value={value}
-                                        DeletePromo = {props.DeletePromo}
+                                        DeletePromo={props.DeletePromo}
                                         loggedIn={props.loggedIn}
                                     /> : <></>
                             );
@@ -105,9 +106,9 @@ function SettingsDiscount(props) {
                     Array.from(Array(counter)).map((id, index) => {
                         return (
                             <AddPromoSetting
-                                key = {id}
-                                index = {index}
-                                infoDiscount = {props.infoDiscount}
+                                key={id}
+                                index={index}
+                                infoDiscount={props.infoDiscount}
                                 setCounter={setCounter}
                                 handlePromo={props.handlePromo}
                             />
@@ -119,12 +120,12 @@ function SettingsDiscount(props) {
                         <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
                         : <></>
                 }
-                <input 
-                type="text" 
-                className="input__add-link" 
-                placeholder="Добавить ссылку"
-                value={link}
-                onChange={handleLink}
+                <input
+                    type="text"
+                    className="input__add-link"
+                    placeholder="Добавить ссылку"
+                    value={link}
+                    onChange={handleLink}
                 />
                 {
                     props.infoDiscount.barcode ?
@@ -137,6 +138,7 @@ function SettingsDiscount(props) {
 
                         </div>
                 }
+                
                 <div className="setting__buttons">
                     <button className="setting__button" onClick={handleSubmit} >СОХРАНИТЬ</button>
                     <Link to='/'>

@@ -6,13 +6,27 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    border: 1px solid green;
+}
+
+
+.footer_no-full-terms{
     justify-content: flex-end;
+}
+
+.footer_full-terms{
+    justify-content: space-between;
 }
 
 .footer__container {
     display: flex;
     flex-direction: column;
     gap: 15.71px;
+    border: 1px solid green;
+}
+
+.full-terms {
+    border: 1px solid red;
 }
 
 .footer__favorite-like {
@@ -76,4 +90,10 @@
 }
 .secret-button__link {
     color: white;
+}
+
+
+@media screen and (max-width:425px) {
+
+
 }

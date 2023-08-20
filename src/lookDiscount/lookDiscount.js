@@ -8,13 +8,12 @@ import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
-
     console.log(props.infoDiscount)
 
     return (
         <div className="settings">
             <div className="setting" >
-            <div className="setting__buttons">
+                <div className="setting__buttons">
                     <Link to='/'>
                         <button className="setting__button">Назад</button>
                     </Link>
@@ -27,12 +26,12 @@ function LookDiscount(props) {
                                 src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
                         </div> : <></>
                 }
-                 {
-                 props.infoDiscount.description ?
-                <p className="input__text look__text-padding">{props.infoDiscount.description}</p>
-                :
-                <></>
-                 }
+                {
+                    props.infoDiscount.description ?
+                        <p className="input__text look__text-padding">{props.infoDiscount.description}</p>
+                        :
+                        <></>
+                }
 
                 {
                     props.promocode.length === 0 ? <></> :
@@ -65,8 +64,10 @@ function LookDiscount(props) {
                         <>
                         </>
                 }
-             
-            <Footer/>
+
+                <Footer
+                    infoDiscount={props.infoDiscount}
+                />
             </div>
         </div>
     );
