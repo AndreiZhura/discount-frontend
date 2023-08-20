@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
-
-    console.log(props.infoDiscount)
+    console.log('look')
+    console.log(props.infoDiscount.fullTerms)
 
     return (
         <div className="settings">
@@ -66,7 +66,7 @@ function LookDiscount(props) {
                 }
 
                 <Footer
-                    infoDiscount={props.infoDiscount}
+                    fullTerms = {props.infoDiscount.fullTerms}
                 />
             </div>
         </div>

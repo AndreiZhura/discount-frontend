@@ -284,10 +284,11 @@ const App = () => {
 	}
 
 	function handleAddDiscount(name, image, description, link, barcode, fullTerms, category,promocodeDescription, promocode, date,) {
-		
+		console.log(name, image, description, link, barcode, fullTerms, category,promocodeDescription, promocode, date,)
 		if (date) {
 			api.addNewDiscount(name, image, description, link, barcode,fullTerms, category)
 				.then((result) => {
+					console.log(result)
 					handlePromo(promocodeDescription,promocode, date, result.data._id);
 					GetDiscount();
 					GetPromocode();
@@ -300,6 +301,7 @@ const App = () => {
 		else {
 			api.addNewDiscount(name, image, description, link, barcode,fullTerms, category)
 				.then((result) => {
+					console.log(result)
 					GetDiscount();
 					GetPromocode();
 					history("/");
@@ -310,8 +312,8 @@ const App = () => {
 		}
 	}
 
-	function handleUpdateDiscountText(name, description, link, category, id) {
-		api.UpdateDiscountText(name, description, link, category, id)
+	function handleUpdateDiscountText(name, description, link,fullTerms, category, id) {
+		api.UpdateDiscountText(name, description, link, fullTerms, category, id)
 			.then((result) => {
 				GetDiscount();
 				history("/");

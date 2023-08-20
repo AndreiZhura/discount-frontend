@@ -131,7 +131,8 @@ export const getPromo = () => {
 }
 
 export const addNewDiscount = (name, image, description, link, barcode,fullTerms, category) => {
-
+console.log('api')
+console.log(name, image, description, link, barcode,fullTerms, category)
   const data = new FormData()
   data.append('name', name)
   data.append('image', image)
@@ -153,7 +154,7 @@ export const addNewDiscount = (name, image, description, link, barcode,fullTerms
     })
 }
 
-export const UpdateDiscountText = (name, description, link, category, id) => {
+export const UpdateDiscountText = (name, description, link,fullTerms, category, id) => {
 
   return fetch(`${BASE_URL}positions/${id}`, {
     method: 'PATCH',
@@ -161,7 +162,7 @@ export const UpdateDiscountText = (name, description, link, category, id) => {
       authorization: `Bearer ${localStorage.getItem('token')}`,
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ name, description, link })
+    body: JSON.stringify({ name, description, link, fullTerms })
   })
     .then((res) => {
       return getResponse(res)

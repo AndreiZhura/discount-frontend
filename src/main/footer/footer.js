@@ -9,16 +9,16 @@ function Footer(props) {
     function handleFullTermsText() {
         setFullTermsText(!fullTermsText);
     }
-//footer footer_no-full-terms
+
     return (
-        <footer className={props.infoDiscount ? "footer footer_full-terms" : "footer footer_no-full-terms"}>
+        <footer className={props.fullTerms ? "footer footer_full-terms" : "footer footer_no-full-terms"}>
             {
-                props.infoDiscount ?
+                props.fullTerms ?
                     <div className="full-terms">
                         <button className="full-terms__buttons" onClick={handleFullTermsText}>Полные условия</button>
                         {
                             fullTermsText ?
-                                <p className="full-terms__text"> здесь будет текст полных условий</p>
+                                <p className="full-terms__text">{ props.fullTerms}</p>
                                 :
                                 <></>
                         }

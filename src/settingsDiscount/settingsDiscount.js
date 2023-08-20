@@ -15,6 +15,7 @@ function SettingsDiscount(props) {
     const [name, setName] = useState(props.infoDiscount.name);
     const [description, setDescription] = useState(props.infoDiscount.description);
     const [link, setLink] = useState(props.infoDiscount.link);
+    const [fullTerms, setFullTerms] = useState(props.infoDiscount.fullTerms);
 
 
     function handleClick() {
@@ -29,7 +30,7 @@ function SettingsDiscount(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.handleUpdateDiscountText(name, description, link, props.infoDiscount.category, props.infoDiscount._id);
+        props.handleUpdateDiscountText(name, description, link, fullTerms, props.infoDiscount.category, props.infoDiscount._id);
 
     }
 
@@ -46,6 +47,11 @@ function SettingsDiscount(props) {
 
     function handleLink(e) {
         setLink(e.target.value);
+    }
+
+
+    function handleFullTerms(e) {
+        setFullTerms(e.target.value)
     }
 
 
@@ -138,7 +144,30 @@ function SettingsDiscount(props) {
 
                         </div>
                 }
-                
+                {
+                    props.infoDiscount.fullTerms ?
+                        <div className="full-terms-add">
+                            <label className="full-terms-add-title input__add-text">Добавить полные условия</label>
+                            <textarea
+                                type="text"
+                                className="full-terms-add-input input__text input__text_description-promocode"
+                                placeholder="Добавить полные условия"
+                                value={fullTerms}
+                                onChange={handleFullTerms}
+                            ></textarea>
+                        </div>
+                        :
+                        <div className="full-terms-add">
+                            <label className="full-terms-add-title input__add-text">Добавить полные условия</label>
+                            <textarea
+                                type="text"
+                                className="full-terms-add-input input__text input__text_description-promocode"
+                                placeholder="Добавить полные условия"
+                                onChange={handleFullTerms}
+                            ></textarea>
+                        </div>
+                }
+
                 <div className="setting__buttons">
                     <button className="setting__button" onClick={handleSubmit} >СОХРАНИТЬ</button>
                     <Link to='/'>
