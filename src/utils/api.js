@@ -227,6 +227,20 @@ export const addNewCategories = (categoryName) => {
     })
 }
 
+export const updateCategory = (categories,id) =>{
+  return fetch(`${BASE_URL}categories/${id}`, {
+    method: 'PATCH',
+    headers: {
+      authorization: `Bearer ${localStorage.getItem('token')}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ categories })
+  })
+    .then((res) => {
+      return getResponse(res)
+    })
+}
+
 export const deleteCategory = (id) => {
   return fetch(`${BASE_URL}categories/${id}`, {
     method: 'DELETE',

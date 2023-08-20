@@ -283,13 +283,13 @@ const App = () => {
 			})
 	}
 
-	function handleAddDiscount(name, image, description, link, barcode, fullTerms, category,promocodeDescription, promocode, date,) {
-		console.log(name, image, description, link, barcode, fullTerms, category,promocodeDescription, promocode, date,)
+	function handleAddDiscount(name, image, description, link, barcode, fullTerms, category, promocodeDescription, promocode, date,) {
+
 		if (date) {
-			api.addNewDiscount(name, image, description, link, barcode,fullTerms, category)
+			api.addNewDiscount(name, image, description, link, barcode, fullTerms, category)
 				.then((result) => {
-					console.log(result)
-					handlePromo(promocodeDescription,promocode, date, result.data._id);
+
+					handlePromo(promocodeDescription, promocode, date, result.data._id);
 					GetDiscount();
 					GetPromocode();
 					history("/");
@@ -299,9 +299,9 @@ const App = () => {
 				})
 		}
 		else {
-			api.addNewDiscount(name, image, description, link, barcode,fullTerms, category)
+			api.addNewDiscount(name, image, description, link, barcode, fullTerms, category)
 				.then((result) => {
-					console.log(result)
+
 					GetDiscount();
 					GetPromocode();
 					history("/");
@@ -312,7 +312,7 @@ const App = () => {
 		}
 	}
 
-	function handleUpdateDiscountText(name, description, link,fullTerms, category, id) {
+	function handleUpdateDiscountText(name, description, link, fullTerms, category, id) {
 		api.UpdateDiscountText(name, description, link, fullTerms, category, id)
 			.then((result) => {
 				GetDiscount();
@@ -323,9 +323,9 @@ const App = () => {
 			})
 	}
 
-	function handlePromo(description,promocode, date, position) {
+	function handlePromo(description, promocode, date, position) {
 
-		api.addNewPromo(description,promocode, date, position)
+		api.addNewPromo(description, promocode, date, position)
 			.then((result) => {
 				console.log(result)
 				GetPromocode();
@@ -334,6 +334,20 @@ const App = () => {
 				console.log(error)
 			})
 	}
+
+	function handleUpdateCategory(categories, id) {
+		console.log('работает кнопка обновления категории')
+		console.log(categories, id)
+		api.updateCategory(categories, id)
+			.then((result) => {
+				console.log(result)
+				GetCategories();
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+	}
+
 
 
 
@@ -367,6 +381,7 @@ const App = () => {
 					handleNewCategory={handleNewCategory}
 					handleAddDiscount={handleAddDiscount}
 					DeleteCategory={DeleteCategory}
+					handleUpdateCategory={handleUpdateCategory}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}

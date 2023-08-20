@@ -7,10 +7,7 @@ import { BASE_URL } from "../../constants/constants";
 
 function Discount(props) {
 
-  
-
     function DataDiscount() {
-
         props.dataDiscount(props.discount)
     }
 
@@ -18,7 +15,9 @@ function Discount(props) {
         console.log(value.path)
     })
 
+
     return (
+    
         <div className="discount">
             <Link
                 className="discount__link"
@@ -38,9 +37,6 @@ function Discount(props) {
                     }
                 </div>
             </Link>
-
-
-
         </div>
     );
 }

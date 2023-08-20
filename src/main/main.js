@@ -95,6 +95,7 @@ function Main(props) {
                                     loggedIn={props.loggedIn}
                                     handlePopup={handlePopup}
                                     setCAtegoryId={setCAtegoryId}
+                                    handleUpdateCategory = {props.handleUpdateCategory}
                                 />
                             )
                         })}

@@ -51,6 +51,12 @@
     justify-content: center;
 }
 
+.discount__slide{
+    border:1px solid green;
+    border-radius: 25% 0% 25% 0%;
+    margin-top: 20px;
+}
+
 .discount__setting {
     position: absolute;
     z-index: 2;

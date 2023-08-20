@@ -33,9 +33,16 @@ function AddCategories(props) {
                                 </button>
                                 <p className='categories__name-title'>Добавить новую категорию</p>
                             </div>
-                            <form className={newCategory ? "add-categoriesy__form" : "add-categiries__none"} onSubmit={handleSubmit} >
-                                <input className='add-categoriesy__text' type='text' placeholder='Добавьте категорию' onChange={handleCategory} />
-                                <button className='add-categiries__data' onClick={handleChange}>Добавить</button>
+                            <form 
+                            className={newCategory ? "add-categoriesy__form" : "add-categiries__none"}
+                             onSubmit={handleSubmit} >
+                                <input className='add-categoriesy__text' 
+                                type='text'
+                                placeholder='Добавьте категорию'
+                                onChange={handleCategory} />
+                                <button 
+                                className='add-categiries__data'
+                                onClick={handleChange}>Добавить</button>
                             </form>
                         </div>
                     </div>
