@@ -29,13 +29,15 @@
 
 .categories__name-and-delete{
     display: flex;
+    justify-content: space-between;
 }
+
 
 .categories__name {
     display: flex;
     width: 595px;
     height: 44px;
-    background-color: #F0F2F1;
+    background-color: white;
     border-radius: 11px;
     margin-top: 25px;
     margin-left: 25px;
@@ -59,28 +61,38 @@
 }
 
 .categories__buttons-update{
-    width: 80px;
-    margin-left: 22%;
-    border: none;
+    width: 50px;
+    height: 50px;
     background-image: url(../../img/updateCategory.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50px auto;
     background-color: white;
     cursor: pointer;
-    background-color: transparent;
-    cursor: pointer;
     overflow: hidden;
     outline: none;
+    border: none;
 }
 
 
 .bascet-delete_category {
-    margin-top: 22px;
-    position: relative;
-    border: none;
+    width: 50px;
+    height: 50px;
+    background-image: url(../../img/delete.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px auto;
+    background-color: white;
     cursor: pointer;
     overflow: hidden;
+    outline: none;
+    border: none;
+}
+
+
+.categories__buttons {
+    display: flex;
+    gap: 50px;
 }
 
 
@@ -104,6 +116,12 @@
 @media screen and (max-width:485px) {
     .categories__name {
         width: 350px;
+    }
+    .categories__buttons {
+        height: 150px;
+        display: flex;
+       flex-direction: column;
+  
     }
 }
 

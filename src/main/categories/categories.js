@@ -53,15 +53,18 @@ function Categories(props) {
                     <div className="categories__name">
                         <img className="categories__name-arrows" src={arrowsDown} />
                         <p className="categories__name-title">{props.category.categories}</p>
-                        {props.loggedIn ?
-                            <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button> : <></>
-                        }
 
                     </div>
+                    <div className="categories__buttons">
+
                     {
                         props.loggedIn ?
-                            <button className="bascet-delete bascet-delete_category" onClick={onClickButtonDelete}></button> : <></>
+                            <button className="bascet-delete_category" onClick={onClickButtonDelete}></button> : <></>
                     }
+                    {props.loggedIn ?
+                        <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button> : <></>
+                    }
+                    </div>
                 </div>
                 {
                     updateCategory ?

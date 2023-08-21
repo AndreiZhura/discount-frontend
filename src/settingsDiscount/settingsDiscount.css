@@ -211,11 +211,8 @@
     background-size: 50px auto;
     background-color: white;
     cursor: pointer;
-    background-color: transparent;
-    cursor: pointer;
     overflow: hidden;
     outline: none;
-
 }
 
 .input__button-promocode {
