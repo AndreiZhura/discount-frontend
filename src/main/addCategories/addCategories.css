@@ -2,7 +2,7 @@
     margin-top: -7px;
 }
 
-.categories__button{
+.categories__button {
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -13,7 +13,7 @@
     transition-delay: 0.5s;
 }
 
-.categories__name-plus{
+.categories__name-plus {
     height: 40px;
     width: 27px;
     margin-top: 0;
@@ -41,6 +41,7 @@
     margin-top: 25px;
     margin-left: 25px;
 }
+
 .add-categoriesy__text {
     font-family: Inter;
     font-size: 27px;
@@ -49,6 +50,7 @@
     letter-spacing: 0em;
     text-align: left;
 }
+
 .add-categiries__data {
     font-family: Inter;
     font-size: 27px;
@@ -58,25 +60,28 @@
     text-align: left;
 }
 
-.add-categiries__none{
+.add-categiries__none {
     display: none;
 }
 
 @media screen and (max-width:671px) {
     .add-categoriesy__text {
-       width: 330px;
+        width: 330px;
     }
 }
 
 @media screen and (max-width:551px) {
     .add-categoriesy__form {
         display: flex;
-         flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 110px;
     }
+
     .add-categoriesy__text {
-       width: 330px;
+        width: 330px;
     }
-    .add-categiries__data{
+
+    .add-categiries__data {
         margin-top: 50px;
         width: 330px;
         text-align: center;
@@ -87,33 +92,35 @@
 
 @media screen and (max-width:400px) {
     .add-categoriesy__text {
-       width: 300px;
-       border: 5px solid black;
-       border-radius: 10px;
-       font-size: 20px;
+        width: 300px;
+        border: 5px solid black;
+        border-radius: 10px;
+        font-size: 20px;
     }
-    .add-categiries__data{
+
+    .add-categiries__data {
         width: 300px;
     }
 }
 
 @media screen and (max-width:350px) {
     .add-categoriesy__text {
-       width: 280px;
-       border: 5px solid black;
-       border-radius: 10px;
+        width: 280px;
+        border: 5px solid black;
+        border-radius: 10px;
     }
-    .add-categiries__data{
+
+    .add-categiries__data {
         width: 280px;
     }
 }
 
 @media screen and (max-width:330px) {
     .add-categoriesy__text {
-       width: 270px;
+        width: 270px;
     }
-    .add-categiries__data{
+
+    .add-categiries__data {
         width: 270px;
     }
 }
-

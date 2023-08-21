@@ -120,7 +120,7 @@
     .categories__buttons {
         height: 150px;
         display: flex;
-       flex-direction: column;
+       flex-direction: column-reverse;
   
     }
 }
