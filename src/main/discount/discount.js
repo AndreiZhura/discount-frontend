@@ -18,7 +18,7 @@ function Discount(props) {
 
     return (
     
-        <div className="discount">
+        <div className={props.cardSize ? "discount" : "discount discount_big"}>
             <Link
                 className="discount__link"
                 to="/discount"
@@ -29,7 +29,7 @@ function Discount(props) {
                         props.loggedIn ?
                             <Link
                                 to="/setting"
-                                className="discount__setting"
+                                className={props.cardSize ? "discount__setting" : "discount__setting discount__setting_big" }
                                 onClick={DataDiscount} ></Link> : <></>
                     }
                     {

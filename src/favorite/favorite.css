@@ -1,6 +1,10 @@
 .favorites {
     display: flex;
-    
+    flex-direction: column;
+}
+
+.look__button{
+    margin-top: 50px;
 }
 
 .favorites__container {

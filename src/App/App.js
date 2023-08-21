@@ -19,6 +19,7 @@ import LookDiscount from '../lookDiscount/lookDiscount';
 //////////////////////////////////////////////////
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
+import Favorite from '../favorite/favorite';
 
 //Подключаем Api
 import * as api from '../utils/api';
@@ -407,6 +408,9 @@ const App = () => {
 					loginError={loginError}
 					loginMessage={loginMessage}
 					blockButton={blockButton}
+				/>} />
+				<Route path="/favorite" element={<Favorite
+				
 				/>} />
 
 

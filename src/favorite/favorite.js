@@ -1,6 +1,8 @@
 import React from "react";
 import './favorite.css';
 import Discount from "../main/discount/discount";
+import '../settingsDiscount/settingsDiscount.css'
+import { Link } from "react-router-dom";
 
 
 function Favorite(props) {
@@ -10,9 +12,13 @@ function Favorite(props) {
         return filter.name.trim().toLowerCase().includes(props.search.toLowerCase())
     })
 
-    console.log(props.loggedIn)
     return (
         <div className="favorites">
+                <div className="setting__buttons look__button">
+                    <Link to='/'>
+                        <button className="setting__button">Назад</button>
+                    </Link>
+                </div>
             <div className="favorites__container">
                 {props.search === "" ?
                     props.discount.map((value, id) => {
@@ -30,6 +36,7 @@ function Favorite(props) {
                             <Discount
                                 key={id}
                                 discount={value}
+                                cardSize = {props.cardSize}
                                 dataDiscount={props.dataDiscount}
                                 loggedIn = {props.loggedIn}
                             />

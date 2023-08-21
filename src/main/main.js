@@ -17,9 +17,11 @@ function Main(props) {
     const [popupInform, setPopupInform] = useState('');
     const [popupClose, setPopupClose] = useState(false);
     const [popupDelete, setPopupDelete] = useState(false);
-    const [categoryId, setCAtegoryId] = useState('')
+    const [categoryId, setCAtegoryId] = useState('');
+    const [cardSize, setCardSize] = useState(true)
 
     function onInputHandler(value) {
+        setCardSize(false);
         setSearch(value);
     }
 
@@ -77,6 +79,7 @@ function Main(props) {
 
                     <Favorite
                         search={search}
+                        cardSize = {cardSize}
                         discount={props.discount}
                         dataDiscount={props.dataDiscount}
                         loggedIn={props.loggedIn}
