@@ -22,7 +22,6 @@ function Search(props) {
               ></Link>
             }
             <form className="search-form__forma" >
-                <img className="lupa" alt="поиск" src={lupa} />
                 <div className="seach-form__search">
                     <input className="seach-form__input"
                         placeholder="Поиск"
