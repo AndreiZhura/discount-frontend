@@ -9,7 +9,6 @@
     font-weight: 400;
     line-height: 32px;
     letter-spacing: 0em;
-    color: red;
     text-decoration: none;
     align-self: center;
     margin-left: 50px;
@@ -97,8 +96,9 @@
     .seach-form__search {
         width: 80%;
     }
+
     .button-to-login {
-        width: 25%;   
+        width: 25%;
     }
 
 }
@@ -137,8 +137,59 @@
     .seach-form__search {
         width: 80%;
     }
+
     .button-to-login {
-        width: 25%;   
+        width: 25%;
         height: 25px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .search-form {
+        display: flex;
+        flex-direction: row;
+        margin-top: 32px;
+    }
+
+    .search-form__forma{
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0;
+
+    }
+
+    .seach-form__search {
+        width: 135px;
+        height: 31px;
+        margin-right: 15px;
+        border: 2px solid #671309;
+    }
+
+    .lupa {
+        width: 20px;
+        height: 20px;
+        margin-top: 8px;
+        margin-right: 6px;
+    }
+
+
+    .seach-form__input {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    .seach-form__search{
+        padding: 0 10px;        
+    }
+
+    .search-form__enter {
+        width: 13px;
+        height: 10px;
+        margin-right: -7px;
+        background-position: right;
     }
 }

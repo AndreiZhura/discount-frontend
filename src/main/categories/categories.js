@@ -55,15 +55,10 @@ function Categories(props) {
                         <p className="categories__name-title">{props.category.categories}</p>
 
                     </div>
-                    <div className="categories__buttons">
+                    <div className={props.loggedIn ?"categories__buttons" : "categories__buttons_none"}>
+                        <button className="bascet-delete_category" onClick={onClickButtonDelete}></button>
+                        <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button>
 
-                    {
-                        props.loggedIn ?
-                            <button className="bascet-delete_category" onClick={onClickButtonDelete}></button> : <></>
-                    }
-                    {props.loggedIn ?
-                        <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button> : <></>
-                    }
                     </div>
                 </div>
                 {

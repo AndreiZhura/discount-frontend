@@ -13,7 +13,7 @@ function Discount(props) {
 
     return (
     
-        <div className={props.cardSize ? "discount" : "discount discount_big"}>
+        <div className="discount">
             <Link
                 className="discount__link"
                 to="/discount"

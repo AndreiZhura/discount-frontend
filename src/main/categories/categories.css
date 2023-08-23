@@ -5,6 +5,8 @@
 }
 
 .categories__container {
+    display: flex;
+    flex-direction: column;
     width: 1290px;
     margin-left: auto;
     margin-right: auto;
@@ -27,7 +29,7 @@
     background-position: 97% 50%;
 }
 
-.categories__name-and-delete{
+.categories__name-and-delete {
     display: flex;
     justify-content: space-between;
 }
@@ -60,7 +62,7 @@
     line-height: 32.17px;
 }
 
-.categories__buttons-update{
+.categories__buttons-update {
     width: 50px;
     height: 50px;
     background-image: url(../../img/updateCategory.webp);
@@ -95,6 +97,21 @@
     gap: 50px;
 }
 
+.categories__buttons_none {
+    display: none;
+}
+
+
+@media screen and (max-width:1280px) {
+    .categories__container {
+        width: 95%;
+    }
+
+    .categories__name {
+        width: 400px;
+    }
+}
+
 
 @media screen and (max-width:859px) {
     .categories__container {
@@ -109,7 +126,7 @@
 
 @media screen and (max-width:513px) {
     .categories__name {
-       margin-left: 10px;
+        margin-left: 10px;
     }
 }
 
@@ -117,11 +134,12 @@
     .categories__name {
         width: 350px;
     }
+
     .categories__buttons {
         height: 150px;
         display: flex;
-       flex-direction: column-reverse;
-  
+        flex-direction: column-reverse;
+
     }
 }
 
@@ -137,36 +155,50 @@
         margin-left: 0;
         margin-right: 0;
     }
+
     .categories__name-arrows {
         width: 30px;
         margin-left: 20px;
-    
+
     }
 }
 
-@media screen and (max-width:375px) {
-    .categories__name {
-        width: 280px;
-    }
-}
+@media screen and (max-width:390px) {
 
-@media screen and (max-width:345px) {
-    .categories__name {
-        width: 270px;
+    .categories {
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
-}
 
-@media screen and (max-width:320px) {
+    .categories__container {
+        width: 95%;
+        margin-bottom: 0;
+    }
+
     .categories__name {
-        width: 250px;
+        background-color:#F0F2F1;
+        width: 206px;
+        height: 20px;
+        margin-top: 25px;
+        border-radius: 5px
+    }
+
+    .categories__name-title {
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 2px;
+        margin-left: 13px;
     }
 
     .categories__name-arrows {
-        width: 25px;
-        margin-left: 7px;
+        width: 18px;
+        height: 5px;
+        margin-top: 6px;
+        margin-left: 11px;
     }
-    
-    .categories__name-title {
-        font-size: 23px;
-    }    
 }

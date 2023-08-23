@@ -4,7 +4,7 @@
     row-gap: 30px;
     column-gap: 55.3px;
     grid-template-columns: 1fr 1fr 1fr;
-    padding-left: 120px;
+    justify-content: center;
     width: 94%;
 
 }
@@ -20,9 +20,9 @@
     align-items: center;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
     transition: 0.5s;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-
 
 .discount__link{
     position: relative;
@@ -43,12 +43,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.discount__slide{
-    border:1px solid green;
-    border-radius: 25% 0% 25% 0%;
-    margin-top: 20px;
 }
 
 .discount__setting {
@@ -133,39 +127,17 @@
 
 @media screen and (max-width:1164px) {
     .discounts {
-        width: 70%;
-        padding-left: 0;
-        margin-left: 10%;
+        width: 80%;
+        column-gap: 30px;
+    
+
     }
 }
 
-@media screen and (max-width:1161px) {
+@media screen and (max-width:900px) {
     .discounts {
-        column-gap: 0px;
+        width: 90%;
     }
-}
-
-@media screen and (max-width:1046px) {
-   
-
-    .discount {
-        justify-self: center;
-    }
-}
-
-
-@media screen and (max-width:984px) {
-    .discounts {
-        width: 65%;
-    }
-
-}
-
-@media screen and (max-width:984px) {
-    .discounts {
-       margin-left: 5%;
-    }
-
 }
 
 @media screen and (max-width:861px) {
@@ -175,6 +147,10 @@
     .discount {
         width: 147px;
         height: 108px;
+    }
+    .discount__setting{
+        top: 7px;
+        left: 107px;
     }
 }
 
@@ -187,23 +163,12 @@
         width: 147px;
         height: 108px;
     }
-    .discount_big{
-        width: 325px;
-        height: 239px;
-    }
-
     .discount__setting {
         position: relative;
         top: -28px;
         left: 50px;
-    }
 
-    .discount__setting_big{
-        position: relative;
-        top: -82px;
-        left: 120px;
     }
-
     .discount__add {
         padding-top: 0px;
         padding-right: 10px;
@@ -247,10 +212,12 @@
 
 }
 
-@media screen and (max-width:395px) {
-    .discounts {
-        width: 100%;
+@media screen and (max-width:390px) {
+    .discount {
+      margin-top: 15px;
+      gap: 0px;
     }
 
 }
+
 
