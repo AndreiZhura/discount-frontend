@@ -113,6 +113,7 @@
     .search-form {
         flex-direction: column;
         width: 100%;
+        margin-top:50px
     }
 
     .search-form__forma {
@@ -148,7 +149,6 @@
     .search-form {
         display: flex;
         flex-direction: row;
-        margin-top: 32px;
     }
 
     .search-form__forma{
