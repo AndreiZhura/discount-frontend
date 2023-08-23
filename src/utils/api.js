@@ -131,8 +131,7 @@ export const getPromo = () => {
 }
 
 export const addNewDiscount = (name, image, description, link, barcode,fullTerms, category) => {
-console.log('api')
-console.log(name, image, description, link, barcode,fullTerms, category)
+
   const data = new FormData()
   data.append('name', name)
   data.append('image', image)

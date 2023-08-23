@@ -34,7 +34,10 @@ function Main(props) {
         }
 
     }
-
+      
+    function handleBackButton(){
+        setClick(false)
+    }
 
 
     function handlePopup(text, bool) {
@@ -83,6 +86,7 @@ function Main(props) {
                         discount={props.discount}
                         dataDiscount={props.dataDiscount}
                         loggedIn={props.loggedIn}
+                        handleBackButton = {handleBackButton}
                     />
                     :
                     props.category.length === 0 ? <></> :

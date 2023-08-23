@@ -409,11 +409,6 @@ const App = () => {
 					loginMessage={loginMessage}
 					blockButton={blockButton}
 				/>} />
-				<Route path="/favorite" element={<Favorite
-				
-				/>} />
-
-
 				<Route path="/setting" element={
 					<ProtectedRoute loggedIn={loggedIn}>
 						<SettingsDiscount

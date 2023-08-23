@@ -11,11 +11,6 @@ function Discount(props) {
         props.dataDiscount(props.discount)
     }
 
-    props.discount.image.map((value)=>{
-        console.log(value.path)
-    })
-
-
     return (
     
         <div className={props.cardSize ? "discount" : "discount discount_big"}>
