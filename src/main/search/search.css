@@ -1,6 +1,7 @@
 .search-form {
     display: flex;
     justify-content: space-between;
+    margin-top: 50px;
 }
 
 .search-form__link-to-admin {
@@ -107,9 +108,7 @@
     .seach-form__search {
         margin-right: 0;
     }
-     .search-form {
-        margin-top:50px;
-    }
+
 }
 
 @media screen and (max-width:450px) {
