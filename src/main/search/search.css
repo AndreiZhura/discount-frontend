@@ -107,13 +107,15 @@
     .seach-form__search {
         margin-right: 0;
     }
+     .search-form {
+        margin-top:50px;
+    }
 }
 
 @media screen and (max-width:450px) {
     .search-form {
         flex-direction: column;
         width: 100%;
-        margin-top:50px
     }
 
     .search-form__forma {
