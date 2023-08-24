@@ -1,12 +1,12 @@
 
 .discounts {
-    display: grid;
+
     row-gap: 30px;
     column-gap: 55.3px;
-    grid-template-columns: 1fr 1fr 1fr;
+ 
     justify-content: center;
     width: 94%;
-
+    border: 1px solid green;
 }
 
 .discount {
@@ -22,6 +22,7 @@
     transition: 0.5s;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid green;
 }
 
 .discount__link{

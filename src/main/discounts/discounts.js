@@ -3,32 +3,39 @@ import './discounts.css'
 import Discount from "../discount/discount";
 import AddDiscount from "../addDiscount/addDiscount";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { BASE_URL } from "../../constants/constants";
+
+import 'swiper/css';
+
 
 
 function Discounts(props) {
+    console.log(props.discount)
     return (
         <div className="discounts">
-
-            {
-                props.discount.length === 0 ? <></> :
-                    props.discount.map((discount, id) => {
-                        return (
-                            props.category._id === discount.category ?
-                                <Discount
-                                    key={discount._id}
-                                    discount={discount}
-                                    dataDiscount={props.dataDiscount}
-                                    loggedIn = {props.loggedIn}
-                                /> : <></>
-                        );
-                    })
-            }
-            <AddDiscount
-              handleAddDiscount = {props.handleAddDiscount}
-              category = {props.category}
-              infoCategoryID = {props.infoCategoryID}
-              loggedIn = {props.loggedIn}
-            />
+           <Swiper
+                spaceBetween={50}
+                slidesPerView={2}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+              
+                {
+                     props.discount.map((value)=>{
+                           return(
+                            <SwiperSlide>
+                                    <div className="discount">
+                                    <div className="discount__main">
+                                        < img className="discount__image" src={`${BASE_URL}` + `${value.image}`} />
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                           )
+                     })
+                }
+    
+            </Swiper>
         </div>
     );
 }
