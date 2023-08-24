@@ -76,7 +76,7 @@
 
 @media screen and (max-width:841px) {
     .favorites__container {
-      grid-template-columns: 1fr; 
+      grid-template-columns: 1fr 1fr; 
     }
 }
 
