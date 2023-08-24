@@ -2,44 +2,44 @@ import React, { useState } from "react";
 import './discounts.css'
 import Discount from "../discount/discount";
 import AddDiscount from "../addDiscount/addDiscount";
-
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { BASE_URL } from "../../constants/constants";
-import { Link } from "react-router-dom";
 
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 
 function Discounts(props) {
 
-
-    function DataDiscount() {
-        props.dataDiscount(props.discount)
-        console.log(props.discount)
-    }
-
-
     return (
         <div className="discounts">
             <Swiper
+                // install Swiper modules
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={10}
                 slidesPerView={2}
+                navigation
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
 
                 {props.discount.length === 0 ? <></> :
-                    props.discount.map((discount, id) =>{
+                    props.discount.map((discount, id) => {
                         return (
                             props.category._id === discount.category ?
                                 <SwiperSlide>
-                                  <Discount
-                                    key={discount._id}
-                                    discount={discount}
-                                    dataDiscount={props.dataDiscount}
-                                    loggedIn = {props.loggedIn}
-                                /> 
+                                    <Discount
+                                        key={discount._id}
+                                        discount={discount}
+                                        dataDiscount={props.dataDiscount}
+                                        loggedIn={props.loggedIn}
+                                    />
                                 </SwiperSlide> : <></>
                         )
                     })
