@@ -1,7 +1,6 @@
 .discounts {
     width: 100%;
     padding-bottom: 10px;
-    border: 1px solid green;
 }
 
 .discount {
@@ -19,7 +18,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
-    border: 1px solid green;
 }
 
 .discount__link {
