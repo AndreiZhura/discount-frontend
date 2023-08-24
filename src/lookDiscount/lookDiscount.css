@@ -15,9 +15,12 @@
     padding-top: 30px;
 }
 
+
+
 .look__promocode-margin{
     margin-right: 20px;
 }
+
 
 .button__link {
     margin-top: 50px;
@@ -42,12 +45,11 @@
 .look__file-container {
     margin-top: 0;
     width: var(--width780);
-    height: 450px;
+    height: 430px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
     margin-bottom: 25px;
-
 }
 
 .look__file-image {
@@ -110,7 +112,7 @@
 @media screen and (max-width:487px) {
     .look__file-container {
         width: var(--width400);
-        height: 350px;
+        height: 330px;
     }
 
     .button__link {
@@ -130,7 +132,7 @@
 @media screen and (max-width:425px) {
     .look__file-container {
         width: var(--width350);
-        height: 300px;
+        height: 280px;
     }
     .button__link {
         width: var(--width350);
@@ -148,6 +150,7 @@
 @media screen and (max-width:373px) {
     .look__file-container {
         width: var(--width300);
+        height: 250px;
     }
     .button__link {
         width: var(--width300);
