@@ -8,7 +8,7 @@ import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
-    console.log(props.infoDiscount.description.length)
+    //console.log(props.infoDiscount.description.length)
 
     return (
         <div className="settings">

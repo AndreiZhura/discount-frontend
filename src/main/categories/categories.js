@@ -55,6 +55,9 @@ function Categories(props) {
                         <p className="categories__name-title">{props.category.categories}</p>
 
                     </div>
+                    <div className="categories__all">
+                       <button className="categories__all_button"> Показать все</button>
+                    </div>
                     <div className={props.loggedIn ?"categories__buttons" : "categories__buttons_none"}>
                         <button className="bascet-delete_category" onClick={onClickButtonDelete}></button>
                         <button className="categories__buttons-update" onClick={onClickButtonUpdate}></button>

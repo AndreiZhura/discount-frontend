@@ -32,7 +32,10 @@
 .categories__name-and-delete {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 }
+
+
 
 
 .categories__name {
@@ -58,6 +61,16 @@
     color: #671309;
     margin-top: 3px;
     margin-left: 27px;
+    font-weight: 400;
+    font-size: 26.58px;
+    line-height: 32.17px;
+}
+
+.categories__all_button{
+    color: #671309;
+    background-color: white;
+    border: none;
+    margin-right: 50px;
     font-weight: 400;
     font-size: 26.58px;
     line-height: 32.17px;
@@ -122,12 +135,46 @@
     .categories__name {
         width: 400px;
     }
+    .categories__all_button{
+        margin-right: 50px;
+        font-weight: 400;
+        font-size: 26.58px;
+        line-height: 32.17px;
+    }
 }
 
+
+@media screen and (max-width:650px) {
+    .categories__name {
+        width: 300px;
+    }
+    .categories__name-title {
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 12px;
+    }
+
+    .categories__all_button{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-left: 30px;
+    }
+}
 
 @media screen and (max-width:513px) {
     .categories__name {
         margin-left: 10px;
+    }
+    .categories__all_button{
+      width: 120px;
     }
 }
 
@@ -148,15 +195,7 @@
     .categories__name {
         width: 320px;
     }
-    .categories__name-title {
-        font-family: Inter;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 15px;
-        letter-spacing: 0em;
-        text-align: left;
-        margin-top: 12px;
-    }
+ 
     .categories__name-arrows {
         width: 27px;
         height: 8px;
@@ -200,6 +239,11 @@
         border-radius: 5px
     }
 
+    .categories__all_button{
+      width: 100px;
+      font-size: 10px;
+    }
+
     .categories__name-title {
         font-family: Inter;
         font-size: 12px;
@@ -216,4 +260,11 @@
         height: 5px;
         margin-top: 6px;
     }
+}
+
+@media screen and (max-width:380px) {
+    .categories__all_button{
+        width: 90px;
+        font-size: 9px;
+      }
 }
