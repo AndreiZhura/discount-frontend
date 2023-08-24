@@ -28,7 +28,9 @@ function LookDiscount(props) {
                 }
                 {
                     props.infoDiscount.description ?
-                        <p className={props.infoDiscount.description.length > 160 ? "input__text look__text-padding input__text_big" : "input__text look__text-padding input__text_small"}>{props.infoDiscount.description}</p>
+                        <p className={props.infoDiscount.description.length > 200 ? "input__text look__text-padding input__text_big"
+                         : "input__text look__text-padding input__text_small"
+                        }>{props.infoDiscount.description}</p>
                         :
                         <></>
                 }

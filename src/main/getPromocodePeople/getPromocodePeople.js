@@ -12,7 +12,7 @@ function GetPromocodePeople(props) {
         <>
             <div className={ props.value.promocode ? "input__promocode" : "input__promocode input__promocode_no-promocode"}>
                 {
-                    props.value.description ? <p className={props.value.description.length > 235
+                    props.value.description ? <p className={props.value.description.length > 200
                         ?
                         "input__text look__text-padding input__text_description-promocode input__text_big"
                         : 
