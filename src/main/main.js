@@ -103,6 +103,8 @@ function Main(props) {
                                     handlePopup={handlePopup}
                                     setCAtegoryId={setCAtegoryId}
                                     handleUpdateCategory = {props.handleUpdateCategory}
+                                    handleAllCAtegories = {props.handleAllCAtegories}
+                                    handleCategories = {props.handleCategories}
                                 />
                             )
                         })}

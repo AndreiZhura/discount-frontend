@@ -2,11 +2,12 @@ import Discounts from "../discounts/discounts";
 import arrowsDown from '../../img/arrowsDown.svg'
 import '../../settingsDiscount/settingsDiscount.css'
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 
 
 function Categories(props) {
+    
 
     const [updateCategory, setUpdateCategory] = useState(false);
     const [updateCategoryText, setUpdateCategoryText] = useState('')
@@ -44,6 +45,13 @@ function Categories(props) {
         setUpdateCategoryText(evt.target.value);
     }
 
+    function handleAllCategoriesData(){
+        props.handleAllCAtegories(props.discount)
+        props.handleCategories(props.category)
+    }
+
+  
+
 
     return (
         <div className="categories">
@@ -56,7 +64,7 @@ function Categories(props) {
 
                     </div>
                     <div className="categories__all">
-                       <button className="categories__all_button"> Показать все</button>
+                       <Link to="/categories-all" className="categories__all_button" onClick={handleAllCategoriesData}> Показать все</Link>
                     </div>
                     <div className={props.loggedIn ?"categories__buttons" : "categories__buttons_none"}>
                         <button className="bascet-delete_category" onClick={onClickButtonDelete}></button>

@@ -20,6 +20,7 @@ import LookDiscount from '../lookDiscount/lookDiscount';
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
 import Favorite from '../favorite/favorite';
+import СategoriesAll from '../categoriesAll/categoriesAll';
 
 //Подключаем Api
 import * as api from '../utils/api';
@@ -69,6 +70,9 @@ const App = () => {
 	const [email, setEmail] = useState('');
 	const [name, setName] = useState('')
 
+	const [categoriesAll, setCategoriesAll] = useState('')
+	const [categoriesID, setCategoriesID] = useState('')
+
 
 	const history = useNavigate();
 
@@ -97,6 +101,15 @@ const App = () => {
 			});
 	}
 
+	function handleAllCAtegories(categoriesAll) {
+		//console.log(categoriesAll)
+		setCategoriesAll(categoriesAll)
+	}
+
+	function handleCategories(categoryID){
+		//console.log(categoryID)
+		setCategoriesID(categoryID)
+	}
 
 
 
@@ -384,6 +397,8 @@ const App = () => {
 					handleAddDiscount={handleAddDiscount}
 					DeleteCategory={DeleteCategory}
 					handleUpdateCategory={handleUpdateCategory}
+					handleAllCAtegories={handleAllCAtegories}
+					handleCategories = {handleCategories}
 				/>} />
 				<Route path='/discount' element={<LookDiscount
 					promocode={promocode}
@@ -410,6 +425,16 @@ const App = () => {
 					loginMessage={loginMessage}
 					blockButton={blockButton}
 				/>} />
+
+				<Route path="/categories-all" element={
+					<СategoriesAll
+						categoriesAll={categoriesAll}
+						categoriesID = {categoriesID}
+						loggedIn={loggedIn}
+						dataDiscount={dataDiscount}
+					/>
+				} />
+
 				<Route path="/setting" element={
 					<ProtectedRoute loggedIn={loggedIn}>
 						<SettingsDiscount
