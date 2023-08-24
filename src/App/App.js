@@ -11,7 +11,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 // Компоненты
 import Main from '../main/main';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
-import Register from '../auth/Register/Register.js';
+//import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Profile from '../auth/Profile/Profile.js';
 import DiscountAdd from '../main/discountAdd/discountAdd';
@@ -405,17 +405,7 @@ const App = () => {
 					infoDiscount={infoDiscount}
 					loggedIn={loggedIn}
 				/>} />
-				<Route path="/signup" element={<Register
-					handleRegistration={handleRegistration}
-					successfulRegistration={successfulRegistration}
-					successfulRegistrationText={successfulRegistrationText}
-					nameError={nameError}
-					EmailError={EmailError}
-					PasswordError={PasswordError}
-					registerError={registerError}
-					redisterMessage={redisterMessage}
-					blockButton={blockButton}
-				/>} />
+			
 				<Route path="/signin" element={<Login
 					handleLogin={handleLogin}
 					EmailError={EmailError}

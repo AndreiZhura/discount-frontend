@@ -91,7 +91,7 @@ function Login(props) {
               <span className={props.loginError ? 'auth-main__error_hidden' : "auth-main__error"}>{props.loginMessage}</span>
               <button className={emailDirty && passwordDirty && props.blockButton ? 'auth-main__button auth-main__button_login' : 'auth-main__button auth-main__button_login auth-main__button_error'}>Войти</button>
               <p className='auth-main__text auth-main__text_login'>Ещё не зарегистрированы?
-                <Link to="/signup" className='auth-main__text-button auth-main__text-login '>Регистрация
+                <Link to="/" className='auth-main__text-button auth-main__text-login '>Регистрация
                 </Link></p>
             </form>
           </div>
