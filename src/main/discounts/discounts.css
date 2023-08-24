@@ -1,9 +1,11 @@
 .discounts {
     width: 100%;
     padding-bottom: 10px;
+    border: 1px solid green;
 }
 
 .discount {
+
     width: 325px;
     height: 239px;
     margin-top: 25px;
@@ -17,6 +19,7 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+    border: 1px solid green;
 }
 
 .discount__link {
@@ -138,11 +141,6 @@
 
 @media screen and (max-width:799px) {
 
-    .discount {
-        width: 147px;
-        height: 108px;
-    }
-
     .discount__setting {
         position: relative;
         top: -28px;
@@ -160,6 +158,13 @@
 
 @media screen and (max-width:485px) {
  
+    .discount {
+        width: 110px;
+        height: 80px;
+  
+    }
+
+
     .discount:hover {
         transform: none;
     }
