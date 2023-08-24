@@ -8,6 +8,7 @@ import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
+    console.log(props.infoDiscount.description.length)
 
     return (
         <div className="settings">
@@ -27,7 +28,7 @@ function LookDiscount(props) {
                 }
                 {
                     props.infoDiscount.description ?
-                        <p className="input__text look__text-padding">{props.infoDiscount.description}</p>
+                        <p className={props.infoDiscount.description.length > 160 ? "input__text look__text-padding input__text_big" : "input__text look__text-padding input__text_small"}>{props.infoDiscount.description}</p>
                         :
                         <></>
                 }

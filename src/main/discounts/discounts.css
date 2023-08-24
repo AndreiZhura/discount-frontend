@@ -28,7 +28,6 @@
 
 .discount:hover {
     transform: scale(1.1);
-
 }
 
 
@@ -158,7 +157,6 @@
     .discount {
         width: 110px;
         height: 80px;
-  
     }
 
     .discount__setting {

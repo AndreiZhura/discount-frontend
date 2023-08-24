@@ -6,11 +6,13 @@ function GetPromocodePeople(props) {
 
     const date = new Date(props.value.date)
 
+    console.log(props.value.description.length)
+
     return (
         <>
             <div className={ props.value.promocode ? "input__promocode" : "input__promocode input__promocode_no-promocode"}>
                 {
-                    props.value.description ? <p className={props.value.description.length > 200
+                    props.value.description ? <p className={props.value.description.length > 235
                         ?
                         "input__text look__text-padding input__text_description-promocode input__text_big"
                         : 

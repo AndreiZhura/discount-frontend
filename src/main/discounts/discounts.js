@@ -19,7 +19,7 @@ function Discounts(props) {
         <div className="discounts">
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={-30}
+                spaceBetween={-35}
                 slidesPerView={2}
                 navigation
                 pagination={{ clickable: true }}
