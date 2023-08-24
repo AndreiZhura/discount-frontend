@@ -266,6 +266,7 @@ const App = () => {
 
 	//Поднятие стейта 
 	const dataDiscount = (data) => {
+		console.log(data)
 		setInfoDiscount(data);
 	}
 	const infoCategoryID = (id) => {

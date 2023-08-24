@@ -1,8 +1,5 @@
-
 .discounts {
-
     width: 100%;
-    border: 1px solid green;
     padding-bottom: 10px;
 }
 
@@ -19,11 +16,10 @@
     transition: 0.5s;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid green;
     margin-bottom: 20px;
 }
 
-.discount__link{
+.discount__link {
     position: relative;
     width: 100%;
     height: 100%;
@@ -31,7 +27,7 @@
 
 .discount:hover {
     transform: scale(1.1);
-    
+
 }
 
 
@@ -113,61 +109,47 @@
 
 @media screen and (max-width:1249px) {
     .discounts {
-        width: 80%;
         padding-left: 0;
-       margin-left: auto;
-       margin-right: auto;
-       grid-template-columns: 1fr 1fr;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: 1fr 1fr;
     }
+
     .discount {
-       margin-right: auto;
+        margin-right: auto;
     }
 }
 
-@media screen and (max-width:1164px) {
-    .discounts {
-        width: 80%;
-        column-gap: 30px;
-    
 
-    }
-}
 
-@media screen and (max-width:900px) {
-    .discounts {
-        width: 90%;
-    }
-}
 
 @media screen and (max-width:861px) {
-    .discounts {
-      gap: 50px;
-    }
+ 
     .discount {
         width: 147px;
         height: 108px;
     }
-    .discount__setting{
+
+    .discount__setting {
         top: 7px;
         left: 107px;
     }
 }
 
 @media screen and (max-width:799px) {
-    .discounts {
-        margin-left: auto;
-        margin-right: auto;
-      }
+
     .discount {
         width: 147px;
         height: 108px;
     }
+
     .discount__setting {
         position: relative;
         top: -28px;
         left: 50px;
 
     }
+
     .discount__add {
         padding-top: 0px;
         padding-right: 10px;
@@ -175,48 +157,20 @@
 }
 
 
-@media screen and (max-width:681px) {
-    .discounts {
-        width: 70%;
-    }
-    
-
-}
-
-@media screen and (max-width:600px) {
-    .discounts {
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 0;
-    }
-
-}
 
 @media screen and (max-width:485px) {
-    .discounts {
-        width: 80%;
-
-    }
+ 
     .discount:hover {
         transform: none;
     }
 
 }
 
-@media screen and (max-width:419px) {
-    .discounts {
-        width: 90%;
-        gap: 20px;
-    }
-
-}
 
 @media screen and (max-width:390px) {
     .discount {
-      margin-top: 15px;
-      gap: 0px;
+        margin-top: 15px;
+        gap: 0px;
     }
 
 }
-
-
