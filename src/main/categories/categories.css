@@ -36,8 +36,6 @@
 }
 
 
-
-
 .categories__name {
     display: flex;
     width: 595px;
@@ -66,6 +64,7 @@
     line-height: 32.17px;
 }
 
+
 .categories__all_button{
     color: #671309;
     background-color: white;
@@ -74,6 +73,10 @@
     font-weight: 400;
     font-size: 26.58px;
     line-height: 32.17px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    margin-right: 10px;
 }
 
 .categories__buttons-update {
@@ -108,7 +111,8 @@
 
 .categories__buttons {
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    gap: 0px;
 }
 
 .categories__buttons_none {
@@ -136,9 +140,17 @@
         width: 400px;
     }
     .categories__all_button{
-        margin-right: 50px;
         font-weight: 400;
         font-size: 26.58px;
+        line-height: 32.17px;
+    }
+}
+
+@media screen and (max-width:697px) {
+  
+    .categories__all_button{
+        font-weight: 400;
+        font-size: 22.58px;
         line-height: 32.17px;
     }
 }
@@ -165,7 +177,6 @@
         line-height: 15px;
         letter-spacing: 0em;
         text-align: left;
-        margin-left: 30px;
     }
 }
 
@@ -180,7 +191,7 @@
 
 @media screen and (max-width:485px) {
     .categories__name {
-        width: 350px;
+        width: 300px;
     }
 
     .categories__buttons {
@@ -189,11 +200,20 @@
         flex-direction: column-reverse;
 
     }
+
+    .categories__all_button{
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
 }
 
 @media screen and (max-width:450px) {
     .categories__name {
-        width: 320px;
+        width: 275px;
     }
  
     .categories__name-arrows {
@@ -204,9 +224,9 @@
     }
 }
 
-@media screen and (max-width:410px) {
+@media screen and (max-width:420px) {
     .categories__name {
-        width: 300px;
+        width: 250px;
         margin-left: 0;
         margin-right: 0;
     }
@@ -218,7 +238,7 @@
     }
 }
 
-@media screen and (max-width:390px) {
+@media screen and (max-width:395px) {
 
     .categories {
         width: 100%;
