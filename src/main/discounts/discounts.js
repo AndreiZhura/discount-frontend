@@ -18,7 +18,6 @@ function Discounts(props) {
     return (
         <div className="discounts">
             <Swiper
-                // install Swiper modules
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={10}
                 slidesPerView={2}
@@ -28,7 +27,6 @@ function Discounts(props) {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
             >
-
                 {props.discount.length === 0 ? <></> :
                     props.discount.map((discount, id) => {
                         return (
