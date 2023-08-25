@@ -1,6 +1,7 @@
 import React from "react";
 import '../../settingsDiscount/settingsDiscount.css'
 import '../../lookDiscount/lookDiscount.css'
+import '../../settingsDiscount/settingsDiscount.css'
 
 function GetPromocodePeople(props) {
 
@@ -10,19 +11,15 @@ function GetPromocodePeople(props) {
 
     return (
         <>
-            <div className={ props.value.promocode ? "input__promocode" : "input__promocode input__promocode_no-promocode"}>
+         <div className={ props.value.promocode ? "input__promocode" : "input__promocode input__promocode_no-promocode"}>
                 {
-                    props.value.description ? <p className={props.value.description.length > 200
-                        ?
-                        "input__text look__text-padding input__text_description-promocode input__text_big"
-                        : 
-                        "input__text look__text-padding input__text_description-promocode input__text_small"}>{props.value.description}</p> : <></>
+                    props.value.description ? <p className="look__text">{props.value.description}</p> : <></>
                 }
                 {
                     props.value.promocode ?   
-                    <p className="input__add-promocode look__text-padding look__promocode-margin">{props.value.promocode}</p>:<></>
+                    <p className="look__add-promocode">{props.value.promocode}</p>:<></>
                 }
-                <p className="input__add-date look__add-date look__text-padding">до {date.toLocaleDateString()}</p>
+                <p className="look__add-date">до {date.toLocaleDateString()}</p>
             </div>
         </>
     );
