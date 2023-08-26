@@ -79,6 +79,7 @@
 .look__text_description-promocode {
     grid-area: desc;
     margin-bottom: 20px;
+    box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
 }
 
 .look__add-promocode{
@@ -88,6 +89,7 @@
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
     padding-left: 28px;
+    box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
 }
 
 .plug{
@@ -102,6 +104,7 @@
     background-color: #F1F2F6;
     padding-left: 32px;
     margin-left: 8px;
+    box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
 }
 
 .look__promocode-margin{
