@@ -33,7 +33,6 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date)
         props.handleAddDiscount(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date);
 
     }
