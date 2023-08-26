@@ -214,6 +214,7 @@
     
     .look__file-container {
         width: var(--width400);
+         height: 300px;
     }
 
 
