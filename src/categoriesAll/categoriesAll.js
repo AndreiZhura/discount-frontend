@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import '../favorite/favorite.css';
 import Discount from "../main/discount/discount";
 import '../settingsDiscount/settingsDiscount.css'
@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 function СategoriesAll(props) {
  
-    console.log(props.categoriesAll)
-    console.log(props.categoriesID)
+
+
     return (
         <div className="favorites">
         <div className="setting__buttons look__button">
