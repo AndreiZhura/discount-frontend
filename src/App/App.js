@@ -102,12 +102,11 @@ const App = () => {
 	}
 
 	function handleAllCAtegories(categoriesAll) {
-		//console.log(categoriesAll)
 		setCategoriesAll(categoriesAll)
 	}
 
 	function handleCategories(categoryID){
-		//console.log(categoryID)
+
 		setCategoriesID(categoryID)
 	}
 
