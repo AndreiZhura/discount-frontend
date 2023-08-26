@@ -22,8 +22,8 @@ function GetPromocode(props) {
                         :
                         "input__text look__text-padding input__text_description-promocode input__text_small"}>{props.value.description}</p> : <></>
                 }
-                <p className="input__add-promocode look__text-padding">{props.value.promocode}</p>
-                <p className="input__add-date look__add-date look__text-padding">до {date.toLocaleDateString()}</p>
+                <p className="input__add-promocode input__text-padding">{props.value.promocode}</p>
+                <p className="input__add-date input__text-padding">до {date.toLocaleDateString()}</p>
                 {
                     props.loggedIn ?
                         <button className="bascet-delete" onClick={handlePromoDelete}></button>

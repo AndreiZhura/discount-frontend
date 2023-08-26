@@ -49,7 +49,8 @@ function LookDiscount(props) {
                 {
                     props.infoDiscount.link ?
                         <button className="button__link">
-                            <a href={props.infoDiscount.link} target="_blank" className="button__text">
+                            <a href={props.infoDiscount.link} target="_blank"
+                                className="button__text">
                                 Перейти на страницу акции
                             </a>
                         </button> : <></>
@@ -67,7 +68,7 @@ function LookDiscount(props) {
                 }
 
                 <Footer
-                    fullTerms = {props.infoDiscount.fullTerms}
+                    fullTerms={props.infoDiscount.fullTerms}
                 />
             </div>
         </div>

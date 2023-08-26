@@ -346,6 +346,10 @@
     margin-right: 34px;
 }
 
+.input__text-padding{
+    padding: 30px;
+}
+
 @media screen and (max-width:807px) {
     .setting {
         width: var(--width700);
