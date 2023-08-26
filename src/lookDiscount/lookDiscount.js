@@ -15,7 +15,7 @@ function LookDiscount(props) {
             <div className="look__setting" >
                 <div className="setting__buttons">
                     <Link to='/'>
-                        <button className="setting__button">Назад</button>
+                        <button className="setting__button look__font-size">Назад</button>
                     </Link>
                 </div>
 

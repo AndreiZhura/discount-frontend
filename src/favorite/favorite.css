@@ -61,6 +61,10 @@
 
 
 @media screen and (max-width:520px) {
+    .favorites__container {
+        width: 100%;
+    }
+
     .categories__name_favorites {
         width: 400px;
         margin-left: auto;
@@ -68,7 +72,7 @@
     }
 
     .favorites__container {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
@@ -89,7 +93,14 @@
 
 @media screen and (max-width:368px) {
     .favorites__container {
-        grid-template-columns: 1fr 1fr ;
+       column-gap: 0;
     }
 }
+
+@media screen and (max-width:368px) {
+    .favorites__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 

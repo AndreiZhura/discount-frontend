@@ -16,7 +16,7 @@ function Favorite(props) {
         <div className="favorites">
                 <div className="setting__buttons look__button">
                     <Link to='/'>
-                        <button className="setting__button" onClick={props.handleBackButton}>Назад</button>
+                        <button className="setting__button setting__text-size" onClick={props.handleBackButton}>Назад</button>
                     </Link>
                 </div>
             <div className="favorites__container">
