@@ -60,10 +60,10 @@ function SettingsDiscount(props) {
             <form className="setting" onSubmit={handleSubmit}>
                 <div className="setting__logo">
                     <img src={settingLogo} />
-                    <p className="setting__text">НАСТРОЙКИ</p>
+                    <p className="setting__text ">НАСТРОЙКИ</p>
                 </div>
                 <input
-                    className="setting__name-discount"
+                    className="setting__name-discount setting__text-size"
                     type="text"
                     value={name}
                     onChange={handleName}
@@ -86,7 +86,7 @@ function SettingsDiscount(props) {
                         </div>
                 }
                 <textarea
-                    className="input__text"
+                    className="input__text setting__text-size"
                     id="add-text"
                     name="add-text"
                     value={description}
@@ -123,12 +123,12 @@ function SettingsDiscount(props) {
                 }
                 {
                     counter === 0 ?
-                        <button className="input__button-promocode" for='add-text' onClick={handleClick} >Добавить промокод</button>
+                        <button className="input__button-promocode setting__text-size" for='add-text' onClick={handleClick} >Добавить промокод</button>
                         : <></>
                 }
                 <input
                     type="text"
-                    className="input__add-link"
+                    className="input__add-link setting__text-size"
                     placeholder="Добавить ссылку"
                     value={link}
                     onChange={handleLink}
@@ -140,7 +140,7 @@ function SettingsDiscount(props) {
                             <img className="input__barcode-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
                         </div>
                         :
-                        <div className="input__barcode-container">
+                        <div className="input__barcode-container ">
 
                         </div>
                 }
@@ -150,7 +150,7 @@ function SettingsDiscount(props) {
                             <label className="full-terms-add-title input__add-text">Добавить полные условия</label>
                             <textarea
                                 type="text"
-                                className="full-terms-add-input input__text input__text_description-promocode"
+                                className="full-terms-add-input input__text input__text_description-promocode setting__text-size"
                                 placeholder="Добавить полные условия"
                                 value={fullTerms}
                                 onChange={handleFullTerms}
@@ -161,7 +161,7 @@ function SettingsDiscount(props) {
                             <label className="full-terms-add-title input__add-text">Добавить полные условия</label>
                             <textarea
                                 type="text"
-                                className="full-terms-add-input input__text input__text_description-promocode"
+                                className="full-terms-add-input input__text input__text_description-promocode setting__text-size "
                                 placeholder="Добавить полные условия"
                                 onChange={handleFullTerms}
                             ></textarea>
@@ -169,9 +169,9 @@ function SettingsDiscount(props) {
                 }
 
                 <div className="setting__buttons">
-                    <button className="setting__button" onClick={handleSubmit} >СОХРАНИТЬ</button>
+                    <button className="setting__button setting__text-size" onClick={handleSubmit} >СОХРАНИТЬ</button>
                     <Link to='/'>
-                        <button className="setting__button" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
+                        <button className="setting__button setting__text-size" onClick={handleDiscountDelete}>УДАЛИТЬ ПРЕДЛОЖЕНИЕ</button>
                     </Link>
                 </div>
             </form>

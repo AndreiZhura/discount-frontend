@@ -30,26 +30,23 @@
 }
 
 .setting__text {
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 29px;
-    letter-spacing: 0em;
     text-align: left;
     color: #520005;
 }
 
+.setting__text-size{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+}
 
 .setting__name-discount {
     width: var(--width780);
     height: 91.34877014160156px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     padding-left: 28px;
     margin-bottom: 25px;
     border: none;
@@ -102,11 +99,6 @@
 
 
 .input__file-label {
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     width: 231px;
     color: #000000;
     opacity: 40%;
@@ -124,23 +116,12 @@
     padding-top: 21px;
     padding-left: 33px;
     padding-right: 33px;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     margin-bottom: 122px;
 }
 
 
 
 .input__add-text {
-    font-family: Inter;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
-    text-align: left;
     color: #671309;
     border: none;
     background-color: white;
@@ -183,11 +164,6 @@
     height: 91.34877014160156px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     padding-left: 28px;
 }
 
@@ -197,11 +173,6 @@
     height: 91.34877014160156px;
     border-radius: 10.149864196777344px;
     background-color: #F1F2F6;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     padding-left: 32px;
 }
 
@@ -223,11 +194,6 @@
 .input__button-promocode {
     height: 31px;
     width: 100%;
-    font-family: Inter;
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 27px;
-    letter-spacing: 0em;
     color: #671309;
     text-align: left;
     background-image: url('../img/plus.svg');
@@ -246,12 +212,6 @@
     border-radius: 10.149864196777344px;
     box-shadow: 0px 8.119891166687012px 8.119891166687012px 0px #00000017 inset;
     background-color: #F1F2F6;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: left;
     padding-left: 30px;
     margin-bottom: 27px;
 }
@@ -281,7 +241,6 @@
 }
 
 .input__barcode-image {
-
     height: 284.1961975097656px;
     object-fit: contain;
     overflow: hidden;
@@ -291,12 +250,6 @@
     position: absolute;
     top: 27px;
     left: 30px;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
-    text-align: left;
     opacity: 40%;
 }
 
@@ -312,7 +265,6 @@
 .full-terms-add-title {
     margin-top: 10px;
     margin-bottom: 20px;
-
 }
 
 
@@ -333,11 +285,6 @@
     border-radius: 6.08991813659668px;
     box-shadow: 2.029972791671753px 4.059945583343506px 8.119891166687012px 0px #00000073;
     border: none;
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 29px;
-    letter-spacing: 0em;
     text-align: center;
     color: #671309;
 }
@@ -359,6 +306,15 @@
         width: var(--width700);
     }
 
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
     .setting__name-discount {
         width: var(--width700);
     }
@@ -368,8 +324,15 @@
     }
 
     .input__text {
-        width: 100%;
+        width: var(--width700);
 
+    }
+    .input__add-promocode {
+        width: 400px;
+    }
+
+    .input__add-date {
+        width: 233.44686889648438px;
     }
 
     .input__add-link {
@@ -387,99 +350,47 @@
 
 }
 
-@media screen and (max-width:737px) {
-    .input__add-link {
-        width: 100%;
 
-    }
-
-}
-
-@media screen and (max-width:730px) {
+@media screen and (max-width:720px) {
     .setting {
         width: var(--width650);
     }
 
     .setting__logo {
         width: var(--width650);
+    }
 
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
+    .setting__name-discount {
+        width: var(--width650);
     }
 
     .input__file {
         width: var(--width650);
     }
 
-    .setting__name-discount {
-        width: var(--width650);
-    }
-
     .input__text {
-        width: 100%;
-
-    }
-
-    .input__promocode {
         width: var(--width650);
+
     }
-
-
     .input__add-promocode {
         width: 350px;
     }
 
-    .input__add-link {
-        width: var(--width650);
-
-    }
-
-    .input__barcode {
-        width: 100%;
-    }
-
-    .input__barcode-container {
-        width: var(--width650);
-    }
-
-}
-
-@media screen and (max-width:692px) {
-    .setting {
-        width: var(--width600);
-    }
-
-    .setting__logo {
-        width: var(--width600);
-
-    }
-
-    .input__file {
-        width: var(--width600);
-    }
-
-    .setting__name-discount {
-        width: var(--width600);
-    }
-
-
-    .input__text {
-        width: 100%;
-    }
-
-    .input__promocode {
-        width: var(--width600);
-    }
-
-    .input__add-promocode {
-        width: 320px;
-    }
-
     .input__add-date {
         width: 200px;
-        padding-left: 10px;
     }
 
     .input__add-link {
-        width: var(--width600);
+        width: var(--width650);
 
     }
 
@@ -488,70 +399,87 @@
     }
 
     .input__barcode-container {
-        width: var(--width600);
+        width: var(--width650);
     }
 
 }
 
-@media screen and (max-width:635px) {
+@media screen and (max-width:670px) {
     .setting {
-        width: var(--width550);
+        width: var(--width600);
     }
 
     .setting__logo {
-        width: var(--width550);
+        width: var(--width600);
+    }
 
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
+    .setting__name-discount {
+        width: var(--width600);
     }
 
     .input__file {
-        width: var(--width550);
-    }
-
-    .setting__name-discount {
-        width: var(--width550);
+        width: var(--width600);
     }
 
     .input__text {
-        width: 100%;
+        width: var(--width600);
 
     }
-
-    .input__promocode {
-        width: var(--width550);
-    }
-
     .input__add-promocode {
         width: 300px;
     }
 
     .input__add-date {
-        width: 150px;
+        width: 200px;
     }
 
     .input__add-link {
-        width: var(--width550);
+        width: var(--width600);
+
+    }
+
+    .input__barcode {
+        width: 100%;
     }
 
     .input__barcode-container {
-        width: var(--width550);
+        width: var(--width600);
     }
+
 }
 
-@media screen and (max-width:585px) {
+@media screen and (max-width:610px) {
     .setting {
         width: var(--width500);
     }
 
     .setting__logo {
         width: var(--width500);
-
     }
 
-    .input__file {
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
+    .setting__name-discount {
         width: var(--width500);
     }
 
-    .setting__name-discount {
+    .input__file {
         width: var(--width500);
     }
 
@@ -559,23 +487,21 @@
         width: var(--width500);
 
     }
-
-    .input__promocode {
-        width: var(--width500);
-
-    }
-
     .input__add-promocode {
-        width: 280px;
+        width: 220px;
     }
 
     .input__add-date {
-        width: 150px;
+        width: 200px;
     }
 
     .input__add-link {
         width: var(--width500);
 
+    }
+
+    .input__barcode {
+        width: 100%;
     }
 
     .input__barcode-container {
@@ -588,104 +514,119 @@
 
 }
 
-@media screen and (max-width:539px) {
+@media screen and (max-width:522px) {
     .setting {
-        width: var(--width450);
+        width: var(--width400);
     }
 
     .setting__logo {
-        width: var(--width450);
+        width: var(--width400);
+    }
 
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
+    .setting__name-discount {
+        width: var(--width400);
     }
 
     .input__file {
-        width: var(--width450);
-    }
-
-    .setting__name-discount {
-        width: var(--width450);
+        width: var(--width400);
     }
 
     .input__text {
-        width: var(--width450);
+        width: var(--width400);
 
     }
-
-    .input__promocode {
-        width: var(--width450);
-    }
-
     .input__add-promocode {
-        width: 240px;
+        width: 180px;
     }
 
     .input__add-date {
-        width: 130px;
-        font-size: 20px;
+        margin-left: 10px;
+        width: 170px;
     }
 
     .input__add-link {
-        width: var(--width450);
+        width: var(--width400);
 
+    }
+
+    .input__barcode {
+        width: 100%;
     }
 
     .input__barcode-container {
-        width: var(--width450);
+        width: 100%;
     }
-
 
     .setting__button {
         width: 250px;
     }
 
-
 }
 
-@media screen and (max-width:487px) {
+@media screen and (max-width:415px) {
     .setting {
-        width: var(--width400);
+        width: var(--width300);
     }
 
     .setting__logo {
-        width: var(--width400);
+        width: var(--width300);
+    }
 
+    .setting__text-size{
+        font-family: Inter;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 29px;
+        letter-spacing: 0em;
+    }
+    
+
+    .setting__name-discount {
+        width: var(--width300);
     }
 
     .input__file {
-        width: var(--width400);
-    }
-
-    .setting__name-discount {
-        width: var(--width400);
+        width: var(--width300);
     }
 
     .input__text {
-        width: var(--width400);
+        width: var(--width300);
 
     }
-
-    .input__promocode {
-        width: var(--width400);
-    }
-
     .input__add-promocode {
-        width: 240px;
+        width: 120px;
     }
 
     .input__add-date {
-        width: 130px;
-        font-size: 20px;
+        margin-left: 10px;
+        width: 150px;
     }
 
     .input__add-link {
-        width: var(--width400);
+        width: var(--width300);
+    }
 
+    .bascet-delete{
+        width: 40px;
+        height: 40px;
+    }
+
+    .input__barcode {
+        width: 100%;
     }
 
     .input__barcode-container {
-        width: var(--width400);
+        width: 100%;
     }
-
 
     .setting__button {
         width: 200px;
@@ -693,126 +634,25 @@
 
 }
 
-
-@media screen and (max-width:425px) {
-    .setting {
-        width: var(--width350);
-    }
-
-    .setting__logo {
-        width: var(--width350);
-
-    }
-
-    .input__file {
-        width: var(--width350);
-    }
-
-    .setting__name-discount {
-        width: var(--width350);
-    }
-
-    .input__text {
-        width: var(--width350);
-
-    }
-
-    .input__promocode {
-        width: var(--width350);
-    }
+@media screen and (max-width:350px) {
 
     .input__add-promocode {
-        width: 220px;
-        font-size: 15px;
+        width: 110px;
     }
 
     .input__add-date {
-        width: 100px;
-        font-size: 15px;
+        margin-left: 5px;
+        width: 150px;
     }
 
-    .input__add-link {
-        width: var(--width350);
-
+   
+    .bascet-delete{
+        width: 40px;
+        height: 40px;
     }
-
-    .input__barcode-container {
-        width: var(--width350);
-    }
-
 
     .setting__button {
-        width: 160px;
-        font-size: 15px;
-    }
-
-    .setting__button:first-child {
-        margin-left: 0px;
-        margin-right: 15px;
-    }
-
-}
-
-
-@media screen and (max-width:373px) {
-    .setting {
-        width: var(--width300);
-    }
-
-    .setting__logo {
-        width: var(--width300);
-
-    }
-
-    .input__file {
-        width: var(--width300);
-    }
-
-    .setting__name-discount {
-        width: var(--width300);
-    }
-
-    .input__text {
-        width: var(--width300);
-
-    }
-
-    .input__promocode {
-        width: var(--width300);
-    }
-
-    .input__add-promocode {
-        width: 160px;
-        font-size: 15px;
-    }
-
-    .input__add-date {
-        width: 100px;
-        font-size: 15px;
-    }
-
-    .bascet-delete {
-        margin-left: 8px;
-    }
-
-    .input__add-link {
-        width: var(--width300);
-
-    }
-
-    .input__barcode-container {
-        width: var(--width300);
-    }
-
-
-    .setting__button {
-        width: 160px;
-        font-size: 15px;
-    }
-
-    .setting__button:first-child {
-        margin-left: 0px;
-        margin-right: 15px;
+        width: 200px;
     }
 
 }
