@@ -11,8 +11,8 @@ function LookDiscount(props) {
     //console.log(props.infoDiscount.description.length)
 
     return (
-        <div className="settings">
-            <div className="setting" >
+        <div className="look__settings">
+            <div className="look__setting" >
                 <div className="setting__buttons">
                     <Link to='/'>
                         <button className="setting__button">Назад</button>
@@ -28,7 +28,7 @@ function LookDiscount(props) {
                 }
                 {
                     props.infoDiscount.description ?
-                        <p className={"look__text look__text-padding"
+                        <p className={"look__text look__text-padding look__font-size"
                         }>{props.infoDiscount.description}</p>
                         :
                         <></>
@@ -50,7 +50,7 @@ function LookDiscount(props) {
                     props.infoDiscount.link ?
                         <button className="button__link">
                             <a href={props.infoDiscount.link} target="_blank"
-                                className="button__text">
+                                className="button__text look__font-size">
                                 Перейти на страницу акции
                             </a>
                         </button> : <></>
