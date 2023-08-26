@@ -102,11 +102,12 @@ const App = () => {
 	}
 
 	function handleAllCAtegories(categoriesAll) {
+		//console.log(categoriesAll)
 		setCategoriesAll(categoriesAll)
 	}
 
 	function handleCategories(categoryID){
-
+		//console.log(categoryID)
 		setCategoriesID(categoryID)
 	}
 
@@ -341,7 +342,7 @@ const App = () => {
 
 		api.addNewPromo(description, promocode, date, position)
 			.then((result) => {
-				
+				console.log(result)
 				GetPromocode();
 			})
 			.catch((error) => {
@@ -350,9 +351,11 @@ const App = () => {
 	}
 
 	function handleUpdateCategory(categories, id) {
+		console.log('работает кнопка обновления категории')
+		console.log(categories, id)
 		api.updateCategory(categories, id)
 			.then((result) => {
-				
+				console.log(result)
 				GetCategories();
 			})
 			.catch((error) => {

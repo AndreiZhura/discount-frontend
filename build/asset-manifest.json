@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3f5a9e7d.css",
-    "main.js": "/static/js/main.0fbb6a46.js",
+    "main.css": "/static/css/main.b4cbc304.css",
+    "main.js": "/static/js/main.adeafc44.js",
     "static/media/Inter-Medium.woff?v=3.19": "/static/media/Inter-Medium.9053572c46aeb4b16caa.woff",
     "static/media/Inter-Black.woff?v=3.19": "/static/media/Inter-Black.c6938660eec019fefd68.woff",
     "static/media/Inter-Regular.woff?v=3.19": "/static/media/Inter-Regular.8c206db99195777c6769.woff",
@@ -9,6 +9,7 @@
     "static/media/Inter-Black.woff2?v=3.19": "/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
     "static/media/Inter-Regular.woff2?v=3.19": "/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
     "static/media/setting.svg": "/static/media/setting.93eb775539e1d810982ca3fd35ec6d29.svg",
+    "static/media/lupa.svg": "/static/media/lupa.8aad96c59a36897f48c3849b806d706a.svg",
     "static/media/add-pictyres.svg": "/static/media/add-pictyres.5c9c2768c65a24562a7b747820fd0997.svg",
     "static/media/updateCategory.webp": "/static/media/updateCategory.61fc8829be40f080f471.webp",
     "static/media/delete.webp": "/static/media/delete.5e5b76bbdcbf73ed3341.webp",
@@ -23,11 +24,11 @@
     "static/media/arrowsDown.svg": "/static/media/arrowsDown.e0306ab203dfd9570a081428294c57a2.svg",
     "static/media/left_arrows.svg": "/static/media/left_arrows.e4158aceef123c117210.svg",
     "static/media/right_arrows.svg": "/static/media/right_arrows.8da43fbecbc212fafa33.svg",
-    "main.3f5a9e7d.css.map": "/static/css/main.3f5a9e7d.css.map",
-    "main.0fbb6a46.js.map": "/static/js/main.0fbb6a46.js.map"
+    "main.b4cbc304.css.map": "/static/css/main.b4cbc304.css.map",
+    "main.adeafc44.js.map": "/static/js/main.adeafc44.js.map"
   },
   "entrypoints": [
-    "static/css/main.3f5a9e7d.css",
-    "static/js/main.0fbb6a46.js"
+    "static/css/main.b4cbc304.css",
+    "static/js/main.adeafc44.js"
   ]
 }

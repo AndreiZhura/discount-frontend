@@ -8,6 +8,7 @@ import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
+    //console.log(props.infoDiscount.description.length)
 
     return (
         <div className="look__settings">

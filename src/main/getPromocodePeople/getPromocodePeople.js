@@ -7,6 +7,8 @@ function GetPromocodePeople(props) {
 
     const date = new Date(props.value.date)
 
+    console.log(props.value.description.length)
+
     return (
         <>
          <div className={ props.value.promocode ? "look__promocode" : "look__none"}>
