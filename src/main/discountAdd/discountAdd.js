@@ -18,13 +18,6 @@ function DiscountAdd(props) {
     const [date, setDate] = useState('');
     const [fullTerms, setFullTerms] = useState('');
 
-    const [save, setSave] = useState(false);
-
-
-    function SaveCArd() {
-        setSave(!save)
-    }
-
     function handleClick() {
         setCounter(!counter)
     }
@@ -33,9 +26,7 @@ function DiscountAdd(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date)
         props.handleAddDiscount(name, image, description, link, barcode,fullTerms, props.categoryID, promocodeDescription, promocode, date);
-
     }
 
     function handleName(e) {

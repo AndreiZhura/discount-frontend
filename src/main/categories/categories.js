@@ -59,7 +59,7 @@ function Categories(props) {
                 <div className="categories__name-and-delete">
 
                     <div className="categories__name">
-                        <img className="categories__name-arrows" src={arrowsDown} />
+                        <img className="categories__name-arrows" src={arrowsDown}  alt="стрелочка вниз"/>
                         <p className="categories__name-title">{props.category.categories}</p>
 
                     </div>

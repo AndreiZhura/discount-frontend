@@ -2,11 +2,6 @@ import '../App/App.css'
 import { useState, useEffect, } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-;
-
-import bridge from '@vkontakte/vk-bridge';
-import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol } from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';
 
 // Компоненты
 import Main from '../main/main';
@@ -19,7 +14,7 @@ import LookDiscount from '../lookDiscount/lookDiscount';
 //////////////////////////////////////////////////
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
-import Favorite from '../favorite/favorite';
+
 import СategoriesAll from '../categoriesAll/categoriesAll';
 
 //Подключаем Api
@@ -102,12 +97,10 @@ const App = () => {
 	}
 
 	function handleAllCAtegories(categoriesAll) {
-		//console.log(categoriesAll)
 		setCategoriesAll(categoriesAll)
 	}
 
 	function handleCategories(categoryID){
-		//console.log(categoryID)
 		setCategoriesID(categoryID)
 	}
 
@@ -279,7 +272,6 @@ const App = () => {
 
 	//Поднятие стейта 
 	const dataDiscount = (data) => {
-		console.log(data)
 		setInfoDiscount(data);
 	}
 	const infoCategoryID = (id) => {
@@ -342,7 +334,6 @@ const App = () => {
 
 		api.addNewPromo(description, promocode, date, position)
 			.then((result) => {
-				console.log(result)
 				GetPromocode();
 			})
 			.catch((error) => {
@@ -351,11 +342,8 @@ const App = () => {
 	}
 
 	function handleUpdateCategory(categories, id) {
-		console.log('работает кнопка обновления категории')
-		console.log(categories, id)
 		api.updateCategory(categories, id)
 			.then((result) => {
-				console.log(result)
 				GetCategories();
 			})
 			.catch((error) => {

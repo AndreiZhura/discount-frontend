@@ -1,8 +1,6 @@
 import React from "react";
 import './discount';
-import SettingsDiscount from "../../settingsDiscount/settingsDiscount";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
 import { BASE_URL } from "../../constants/constants";
 
 function Discount(props) {
@@ -28,7 +26,7 @@ function Discount(props) {
                                 onClick={DataDiscount} ></Link> : <></>
                     }
                     {
-                        < img className="discount__image" src={`${BASE_URL}` + `${props.discount.image}`} />
+                        < img className="discount__image" src={`${BASE_URL}` + `${props.discount.image}`} alt="изображение скидки" />
                     }
                 </div>
             </Link>

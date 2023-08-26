@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import './settingsDiscount.css'
 import settingLogo from '../img/setting.svg';
 import addPictures from '../img/add-pictyres.svg'
-import plusAdd from '../img/plusAdd.svg'
 import { Link } from "react-router-dom";
 import GetPromocode from "../main/getPromocode/getPromocode";
 import AddPromoSetting from "../main/addPromocodeSetting/addPromocodeSetting";
-//import Footer from "../main/footer/footer"
 import { BASE_URL } from "../constants/constants";
 
 
@@ -59,7 +57,7 @@ function SettingsDiscount(props) {
         <div className="settings">
             <form className="setting" onSubmit={handleSubmit}>
                 <div className="setting__logo">
-                    <img src={settingLogo} />
+                    <img src={settingLogo}  alt="логотип"/>
                     <p className="setting__text ">НАСТРОЙКИ</p>
                 </div>
                 <input
@@ -71,7 +69,7 @@ function SettingsDiscount(props) {
                 {
                     props.infoDiscount.image ?
                         <div className="input__file-container" >
-                            <img className="input__file input__file_pull" src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
+                            <img className="input__file input__file_pull" src={`${BASE_URL}` + `${props.infoDiscount.image}`} alt="изображение" />
                         </div>
                         :
                         <div className="input__file">
@@ -81,7 +79,7 @@ function SettingsDiscount(props) {
                                 placeholder="Добавить картинку"
                                 name="add-file" id="add-file"
                             />
-                            <img className="input-file-img" src={addPictures} />
+                            <img className="input-file-img" src={addPictures} alt="изображение картинки" />
                             <label for="add-file" className="input__file-label">Добавить картинку</label>
                         </div>
                 }
@@ -137,7 +135,7 @@ function SettingsDiscount(props) {
                     props.infoDiscount.barcode ?
                         <div className="input__barcode-container">
 
-                            <img className="input__barcode-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
+                            <img className="input__barcode-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`}  alt="штрихкоде"/>
                         </div>
                         :
                         <div className="input__barcode-container ">

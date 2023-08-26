@@ -55,19 +55,6 @@
 }
 
 
-.footer__favorite-like {
-    cursor: pointer;
-    width: 55px;
-    height: 50px;
-    margin-top: 4px;
-    margin-right: 10px;
-    background-image: url('../../img/like-favorite.svg');
-    background-position: center;
-    background-size: cover;
-    border: none;
-    background-color: white;
-    align-self: flex-end;
-}
 
 .footer__group {
     cursor: pointer;

@@ -16,7 +16,7 @@
     transition: 0.5s;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 
@@ -72,29 +72,7 @@
 
 }
 
-.discount__like {
-    background-image: url(../../img/like.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    align-self: center;
-}
 
-
-.discount__like_add {
-    position: relative;
-    top: -8px;
-    right: -22px;
-    border-radius: 50%;
-    width: 50px;
-    height: 46px;
-    background-image: url(../../img/likeAdd.svg);
-    background-repeat: no-repeat;
-    background-position: 0px 5px;
-}
 
 .discount__add {
     padding-top: 25px;

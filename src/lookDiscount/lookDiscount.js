@@ -8,8 +8,6 @@ import { BASE_URL } from "../constants/constants";
 
 function LookDiscount(props) {
 
-    //console.log(props.infoDiscount.description.length)
-
     return (
         <div className="look__settings">
             <div className="look__setting" >
@@ -23,7 +21,7 @@ function LookDiscount(props) {
                     props.infoDiscount.image ?
                         <div className="look__file-container" >
                             <img className="look__file-image"
-                                src={`${BASE_URL}` + `${props.infoDiscount.image}`} />
+                                src={`${BASE_URL}` + `${props.infoDiscount.image}`} alt="главная картинка" />
                         </div> : <></>
                 }
                 {
@@ -60,7 +58,7 @@ function LookDiscount(props) {
                 {
                     props.infoDiscount.barcode ?
                         <div className="look__file-container">
-                            <img className="look__file-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} />
+                            <img className="look__file-image" src={`${BASE_URL}` + `${props.infoDiscount.barcode}`} alt="штрихкод" />
                         </div>
                         :
                         <>
