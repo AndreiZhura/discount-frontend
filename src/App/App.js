@@ -6,15 +6,12 @@ import { useNavigate } from "react-router-dom";
 // Компоненты
 import Main from '../main/main';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
-//import Register from '../auth/Register/Register.js';
 import Login from '../auth/Login/Login.js'
 import Profile from '../auth/Profile/Profile.js';
 import DiscountAdd from '../main/discountAdd/discountAdd';
 import LookDiscount from '../lookDiscount/lookDiscount';
-//////////////////////////////////////////////////
 import CurrentUserContext from "../contexts/CurrentUserContext";
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js'
-
 import СategoriesAll from '../categoriesAll/categoriesAll';
 
 //Подключаем Api
