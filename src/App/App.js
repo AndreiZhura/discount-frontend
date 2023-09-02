@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 // Компоненты
+import Register from '../auth/Register/Register.js';
 import Main from '../main/main';
 import SettingsDiscount from '../settingsDiscount/settingsDiscount';
 import Login from '../auth/Login/Login.js'
@@ -390,7 +391,17 @@ const App = () => {
 					infoDiscount={infoDiscount}
 					loggedIn={loggedIn}
 				/>} />
-			
+			  	<Route path="/signup" element={<Register
+					handleRegistration={handleRegistration}
+					successfulRegistration={successfulRegistration}
+					successfulRegistrationText={successfulRegistrationText}
+					nameError={nameError}
+					EmailError={EmailError}
+					PasswordError={PasswordError}
+					registerError={registerError}
+					redisterMessage={redisterMessage}
+					blockButton={blockButton}
+				/>} />
 				<Route path="/signin" element={<Login
 					handleLogin={handleLogin}
 					EmailError={EmailError}
