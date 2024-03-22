@@ -22,7 +22,7 @@ function DiscountAdd(props) {
         setCounter(!counter)
     }
 
-
+console.log(image)
 
     function handleSubmit(e) {
         e.preventDefault();
