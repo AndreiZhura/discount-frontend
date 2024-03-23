@@ -70,7 +70,7 @@ const App = () => {
 	const history = useNavigate();
 
 	useEffect(() => {
-		signOut()
+		//signOut()
 		const token = localStorage.getItem("token");
 		if (token) {
 			newAuth(token);
@@ -135,6 +135,7 @@ const App = () => {
 		api
 			.authorize(email, password)
 			.then((res) => {
+				
 				setloggedIn(true);
 				setEmailError(true);
 				setPasswordError(true);
